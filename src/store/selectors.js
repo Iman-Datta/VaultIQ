@@ -3,7 +3,7 @@ import { CATEGORY_COLORS } from "../data/mockData";
 // Raw list
 export const selectAllTransactions = (state) => state.transactions.transactions;
 
-// ── Filtered + sorted list ────────────────────────────────────────────────────
+// Filtered + sorted list
 export const selectFilteredTransactions = (state) => {
   const { transactions } = state.transactions;
   const { searchQuery, typeFilter, sortField, sortDir } = state.filter;
@@ -30,7 +30,7 @@ export const selectFilteredTransactions = (state) => {
   return result;
 };
 
-// ── Summary totals ────────────────────────────────────────────────────────────
+// Summary totals
 export const selectTotals = (state) => {
   const txns = state.transactions.transactions;
   const totalIncome = txns
@@ -47,7 +47,7 @@ export const selectTotals = (state) => {
   };
 };
 
-// ── Spending by category (for donut chart) ────────────────────────────────────
+// Spending by category (for donut chart)
 export const selectSpendingByCategory = (state) => {
   const txns = state.transactions.transactions.filter(
     (t) => t.type === "expense",
@@ -63,7 +63,7 @@ export const selectSpendingByCategory = (state) => {
   }));
 };
 
-// ── Insights ──────────────────────────────────────────────────────────────────
+// Insights
 export const selectInsights = (state) => {
   const txns = state.transactions.transactions;
   const spending = selectSpendingByCategory(state);
