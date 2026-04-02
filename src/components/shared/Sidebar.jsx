@@ -22,13 +22,15 @@ export default function Sidebar() {
   const role = useSelector((s) => s.role.role);
 
   return (
-    <aside className="w-16 md:w-56 h-screen bg-gray-900 flex flex-col shrink-0 border-r border-gray-800">
+    <aside className="w-16 md:w-56 h-screen bg-white dark:bg-gray-900 flex flex-col shrink-0 border-r border-gray-200 dark:border-gray-800">
       {/* Logo */}
-      <div className="flex items-center gap-2 px-4 py-5 border-b border-gray-800">
+      <div className="flex items-center gap-2 px-4 py-5 border-b border-gray-200 dark:border-gray-800">
         <div className="w-7 h-7 bg-blue-500 rounded-md flex items-center justify-center shrink-0">
-          <span className="text-white text-xs font-bold">V</span>
+          <span className="hidden md:block text-gray-900 dark:text-white font-semibold text-sm">
+            V
+          </span>
         </div>
-        <span className="hidden md:block text-white font-semibold text-sm">
+        <span className="hidden md:block text-gray-900 dark:text-white font-semibold text-sm">
           VaultIQ
         </span>
       </div>
