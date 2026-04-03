@@ -25,23 +25,16 @@ const formatXAxis = (date, range) => {
   }
 
   if (range === "30D") {
-    const day = d.getDate();
-
-    if (day <= 7) return "Week 1";
-    if (day <= 14) return "Week 2";
-    if (day <= 21) return "Week 3";
-    return "Week 4";
-  }
-
-  if (range === "3M" || range === "6M") {
     return d.toLocaleDateString("en-IN", {
+      day: "numeric",
       month: "short",
     });
   }
 
-  if (range === "1Y" || range === "All") {
+  if (range === "3M" || range === "6M" || range === "1Y" || range === "All") {
     return d.toLocaleDateString("en-IN", {
       month: "short",
+      year: "2-digit",
     });
   }
 
@@ -94,14 +87,24 @@ const buildRunningBalance = (transactions, allTransactions) => {
     }
   }
 
-  return sortedFiltered.map((t) => {
+  const dailyMap = new Map();
+
+  for (const t of sortedFiltered) {
+    const dateObj = new Date(t.timestamp);
+
+    if (isNaN(dateObj.getTime())) continue;
+
+    const dateKey = dateObj.toLocaleDateString("en-CA");
+
     running += t.amount;
 
-    return {
-      timestamp: t.timestamp,
+    dailyMap.set(dateKey, {
+      timestamp: dateKey,
       balance: running,
-    };
-  });
+    });
+  }
+
+  return Array.from(dailyMap.values());
 };
 
 const CustomTooltip = ({ active, payload, range }) => {
@@ -181,11 +184,19 @@ export default function BalanceTrend() {
     }
 
     if (selectedRange === "3M") {
-      return [
-        chartData[0]?.timestamp,
-        chartData[Math.floor(chartData.length / 2)]?.timestamp,
-        chartData[chartData.length - 1]?.timestamp,
-      ].filter(Boolean);
+      const seenMonths = new Set();
+
+      return chartData
+        .filter((d) => {
+          const dateObj = new Date(d.timestamp);
+          const key = `${dateObj.getFullYear()}-${dateObj.getMonth()}`;
+
+          if (seenMonths.has(key)) return false;
+
+          seenMonths.add(key);
+          return true;
+        })
+        .map((d) => d.timestamp);
     }
 
     if (selectedRange === "6M") {
@@ -311,6 +322,8 @@ export default function BalanceTrend() {
               tick={{ fill: "#6b7280", fontSize: 11 }}
               axisLine={false}
               tickLine={false}
+              angle={-30}
+              textAnchor="end"
             />
 
             <YAxis
