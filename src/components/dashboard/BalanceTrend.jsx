@@ -9,33 +9,31 @@ import {
   CartesianGrid,
 } from "recharts";
 
-import {
-  formatCurrency,
-  formatDate,
-} from "../../utils/formatCurrency";
+import { formatCurrency, formatDate } from "../../utils/formatCurrency";
+
+const CustomTooltip = ({ active, payload, label }) => {
+  if (!active || !payload?.length) return null;
+
+  return (
+    <div className="bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-xs">
+      <p className="text-gray-400 mb-1">{label}</p>
+      <p className="text-white font-medium">
+        {formatCurrency(payload[0].value)}
+      </p>
+    </div>
+  );
+};
 
 export default function BalanceTrend() {
-  const transactions = useSelector(
-    (state) => state.transactions.transactions
-  );
+  const transactions = useSelector((state) => state.transactions.transactions);
 
-  const chartData = transactions.slice(0, 6).map((t) => ({
-    month: formatDate(t.date),
-    balance: t.amount,
-  }));
-
-  const CustomTooltip = ({ active, payload, label }) => {
-    if (!active || !payload?.length) return null;
-
-    return (
-      <div className="bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-xs">
-        <p className="text-gray-400 mb-1">{label}</p>
-        <p className="text-white font-medium">
-          {formatCurrency(payload[0].value)}
-        </p>
-      </div>
-    );
-  };
+  const chartData = transactions
+    .slice(0, 6)
+    .reverse()
+    .map((t) => ({
+      month: formatDate(t.date),
+      balance: t.amount,
+    }));
 
   return (
     <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-4">

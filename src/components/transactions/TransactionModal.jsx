@@ -9,7 +9,7 @@ import { X } from "lucide-react";
 
 const empty = {
   description: "",
-  category: "",
+  category: "Salary",
   amount: "",
   type: "expense",
   date: "",
