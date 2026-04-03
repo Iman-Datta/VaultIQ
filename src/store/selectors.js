@@ -22,7 +22,8 @@ export const selectFilteredTransactions = (state) => {
 
   result.sort((a, b) => {
     let diff = 0;
-    if (sortField === "date") diff = new Date(a.timestamp) - new Date(b.timestamp);
+    if (sortField === "date")
+      diff = new Date(a.timestamp) - new Date(b.timestamp);
     if (sortField === "amount") diff = Math.abs(a.amount) - Math.abs(b.amount);
     return sortDir === "asc" ? diff : -diff;
   });
@@ -107,24 +108,39 @@ export const selectMonthlyComparison = (state) => {
   const monthlyMap = {};
 
   txns.forEach((t) => {
+    const dateKey = t.timestamp.slice(0, 7); // YYYY-MM
     const month = new Date(t.timestamp).toLocaleString("en-IN", {
       month: "short",
     });
 
-    if (!monthlyMap[month]) {
-      monthlyMap[month] = {
+    if (!monthlyMap[dateKey]) {
+      monthlyMap[dateKey] = {
         month,
+        dateKey,
         income: 0,
         expenses: 0,
       };
     }
 
     if (t.type === "income") {
-      monthlyMap[month].income += Math.abs(t.amount);
+      monthlyMap[dateKey].income += Math.abs(t.amount);
     } else {
-      monthlyMap[month].expenses += Math.abs(t.amount);
+      monthlyMap[dateKey].expenses += Math.abs(t.amount);
     }
   });
 
-  return Object.values(monthlyMap);
+  const sortedData = Object.values(monthlyMap).sort((a, b) =>
+    a.dateKey.localeCompare(b.dateKey),
+  );
+
+  let runningBalance = 0;
+
+  return sortedData.map((item) => {
+    runningBalance += item.income - item.expenses;
+
+    return {
+      ...item,
+      balance: runningBalance,
+    };
+  });
 };

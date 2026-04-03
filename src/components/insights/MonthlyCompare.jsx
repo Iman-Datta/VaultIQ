@@ -1,6 +1,7 @@
 import {
   BarChart,
   Bar,
+  Line,
   XAxis,
   YAxis,
   Tooltip,
@@ -42,10 +43,10 @@ export default function MonthlyCompare() {
     "Nov",
     "Dec",
   ];
+
   const sortedData = [...data].sort(
     (a, b) => monthOrder.indexOf(a.month) - monthOrder.indexOf(b.month),
   );
-  console.log(data); // Debug
 
   return (
     <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-4">
@@ -73,9 +74,14 @@ export default function MonthlyCompare() {
             tickLine={false}
           />
           <YAxis
-            tick={{ fill: "#6b7280", fontSize: 11 }}
-            axisLine={false}
-            tickLine={false}
+            yAxisId="left"
+            tickFormatter={(v) => `₹${(v / 1000).toFixed(0)}k`}
+            width={40}
+          />
+
+          <YAxis
+            yAxisId="right"
+            orientation="right"
             tickFormatter={(v) => `₹${(v / 1000).toFixed(0)}k`}
             width={40}
           />
@@ -89,16 +95,27 @@ export default function MonthlyCompare() {
             formatter={(v) => <span style={{ color: "#9ca3af" }}>{v}</span>}
           />
           <Bar
+            yAxisId="left"
             dataKey="income"
             fill="#22c55e"
             radius={[4, 4, 0, 0]}
             name="income"
           />
           <Bar
+            yAxisId="left"
             dataKey="expenses"
             fill="#ef4444"
             radius={[4, 4, 0, 0]}
             name="expenses"
+          />
+          <Line
+            yAxisId="right"
+            type="monotone"
+            dataKey="balance"
+            stroke="#3b82f6"
+            strokeWidth={2}
+            dot={{ r: 3 }}
+            name="balance"
           />
         </BarChart>
       </ResponsiveContainer>
