@@ -13,7 +13,7 @@ function CenterLabel({ total, active }) {
   return (
     <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none px-2 text-center">
       <span
-        className={`text-[10px] font-semibold uppercase tracking-wide truncate max-w-[90px] ${
+        className={`text-xs font-semibold uppercase tracking-wide truncate max-w-24 ${
           active ? "" : "text-slate-500 dark:text-slate-400"
         }`}
         style={active ? { color: active.fill } : {}}
@@ -22,7 +22,7 @@ function CenterLabel({ total, active }) {
       </span>
 
       <span
-        className={`text-xs font-bold font-mono truncate max-w-[100px] ${
+        className={`text-xs font-bold font-mono truncate max-w-24 ${
           active ? "" : "text-slate-900 dark:text-slate-100"
         }`}
         style={active ? { color: active.fill } : {}}
@@ -31,7 +31,7 @@ function CenterLabel({ total, active }) {
       </span>
 
       {percentage && (
-        <span className="text-[10px] text-slate-400 dark:text-slate-500 mt-0.5">
+        <span className="text-xs text-slate-400 dark:text-slate-500 mt-0.5">
           {percentage}%
         </span>
       )}
@@ -57,7 +57,7 @@ export default function SpendingDonut() {
 
       <div className="flex items-center gap-5 flex-wrap">
         {/* Donut Chart */}
-        <div className="relative w-[150px] h-[150px] shrink-0">
+        <div className="relative w-36 h-36 shrink-0">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
@@ -90,7 +90,7 @@ export default function SpendingDonut() {
         </div>
 
         {/* Legend */}
-        <div className="flex-1 min-w-[180px] flex flex-col gap-3">
+        <div className="flex-1 min-w-44 flex flex-col gap-3">
           {data.map((d) => {
             const pct = total > 0 ? ((d.value / total) * 100).toFixed(0) : 0;
             const isActive = activeEntry?.name === d.name;
@@ -136,7 +136,7 @@ export default function SpendingDonut() {
                   </div>
 
                   <span
-                    className="text-[11px] font-mono min-w-[28px] text-right"
+                    className="text-xs font-mono min-w-7 text-right"
                     style={{
                       color: isActive ? d.fill : "rgb(148 163 184)",
                     }}

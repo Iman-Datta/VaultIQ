@@ -17,17 +17,35 @@ const formatCurrency = (value) => `₹${Number(value).toLocaleString("en-IN")}`;
 const formatXAxis = (date, range) => {
   const d = new Date(date);
 
-  if (range === "1Y" || range === "All" || range === "6M") {
+  if (range === "7D") {
     return d.toLocaleDateString("en-IN", {
+      day: "numeric",
       month: "short",
-      year: "2-digit",
     });
   }
 
-  return d.toLocaleDateString("en-IN", {
-    day: "numeric",
-    month: "short",
-  });
+  if (range === "30D") {
+    const day = d.getDate();
+
+    if (day <= 7) return "Week 1";
+    if (day <= 14) return "Week 2";
+    if (day <= 21) return "Week 3";
+    return "Week 4";
+  }
+
+  if (range === "3M" || range === "6M") {
+    return d.toLocaleDateString("en-IN", {
+      month: "short",
+    });
+  }
+
+  if (range === "1Y" || range === "All") {
+    return d.toLocaleDateString("en-IN", {
+      month: "short",
+    });
+  }
+
+  return "";
 };
 
 const filterByRange = (transactions, range) => {
@@ -42,21 +60,17 @@ const filterByRange = (transactions, range) => {
   if (range === "All") return transactions;
 
   const sorted = [...transactions].sort(
-    (a, b) => new Date(a.timestamp) - new Date(b.timestamp)
+    (a, b) => new Date(a.timestamp) - new Date(b.timestamp),
   );
 
-  const latestDate = new Date(
-    sorted[sorted.length - 1].timestamp
-  );
+  const latestDate = new Date(sorted[sorted.length - 1].timestamp);
 
   const days = daysMap[range];
 
   const cutoff = new Date(latestDate);
   cutoff.setDate(latestDate.getDate() - days);
 
-  return sorted.filter(
-    (t) => new Date(t.timestamp) >= cutoff
-  );
+  return sorted.filter((t) => new Date(t.timestamp) >= cutoff);
 };
 
 const buildRunningBalance = (transactions, allTransactions) => {
@@ -90,14 +104,18 @@ const buildRunningBalance = (transactions, allTransactions) => {
   });
 };
 
-const CustomTooltip = ({ active, payload, label, range }) => {
+const CustomTooltip = ({ active, payload, range }) => {
   if (!active || !payload?.length) return null;
+
+  const point = payload[0]?.payload;
 
   return (
     <div className="bg-gray-900 border border-gray-700 rounded-xl px-3 py-2 shadow-lg">
-      <p className="text-xs text-gray-400 mb-1">{formatXAxis(label, range)}</p>
+      <p className="text-xs text-gray-400 mb-1">
+        {formatXAxis(point.timestamp, range)}
+      </p>
       <p className="text-sm text-white font-semibold">
-        {formatCurrency(payload[0].value)}
+        {formatCurrency(point.balance)}
       </p>
     </div>
   );
@@ -140,10 +158,72 @@ export default function BalanceTrend() {
 
     const fullData = buildRunningBalance(filtered, transactions);
 
-    const visiblePoints = Math.max(10, Math.floor(fullData.length / zoomLevel));
+    const step = Math.max(1, Math.floor(zoomLevel));
 
-    return fullData.slice(-visiblePoints);
+    return fullData.filter((_, index) => index % step === 0);
   }, [transactions, selectedRange, zoomLevel]);
+
+  const xTicks = useMemo(() => {
+    if (!chartData.length) return [];
+
+    if (selectedRange === "7D") {
+      return chartData.map((d) => d.timestamp);
+    }
+
+    if (selectedRange === "30D") {
+      return [
+        chartData[0]?.timestamp,
+        chartData[Math.floor(chartData.length * 0.25)]?.timestamp,
+        chartData[Math.floor(chartData.length * 0.5)]?.timestamp,
+        chartData[Math.floor(chartData.length * 0.75)]?.timestamp,
+        chartData[chartData.length - 1]?.timestamp,
+      ].filter(Boolean);
+    }
+
+    if (selectedRange === "3M") {
+      return [
+        chartData[0]?.timestamp,
+        chartData[Math.floor(chartData.length / 2)]?.timestamp,
+        chartData[chartData.length - 1]?.timestamp,
+      ].filter(Boolean);
+    }
+
+    if (selectedRange === "6M") {
+      const seenMonths = new Set();
+
+      return chartData
+        .filter((d) => {
+          const monthKey = new Date(d.timestamp).getMonth();
+
+          if (seenMonths.has(monthKey)) return false;
+
+          seenMonths.add(monthKey);
+          return true;
+        })
+        .map((d) => d.timestamp);
+    }
+
+    if (selectedRange === "1Y" || selectedRange === "All") {
+      const seenMonths = new Set();
+
+      return chartData
+        .filter((d) => {
+          const dateObj = new Date(d.timestamp);
+          const month = dateObj.getMonth();
+          const year = dateObj.getFullYear();
+
+          const key = `${year}-${month}`;
+
+          if (seenMonths.has(key)) return false;
+
+          seenMonths.add(key);
+          return true;
+        })
+        .map((d) => d.timestamp);
+    }
+
+    return [];
+  }, [chartData, selectedRange]);
 
   const curveType = {
     "7D": "monotone",
@@ -210,7 +290,7 @@ export default function BalanceTrend() {
         }}
       >
         <ResponsiveContainer width="100%" height="100%">
-          <AreaChart data={chartData}>
+          <AreaChart data={chartData} syncMethod="value">
             <defs>
               <linearGradient id="balanceGrad" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.2} />
@@ -220,12 +300,13 @@ export default function BalanceTrend() {
 
             <CartesianGrid
               strokeDasharray="3 3"
-              vertical={false}
+              vertical={selectedRange !== "7D"}
               stroke="#374151"
             />
 
             <XAxis
               dataKey="timestamp"
+              ticks={xTicks}
               tickFormatter={(v) => formatXAxis(v, selectedRange)}
               tick={{ fill: "#6b7280", fontSize: 11 }}
               axisLine={false}
@@ -241,18 +322,26 @@ export default function BalanceTrend() {
               width={90}
             />
 
-            <Tooltip content={<CustomTooltip range={selectedRange} />} />
+            <Tooltip
+              content={<CustomTooltip range={selectedRange} />}
+              cursor={{ stroke: "#9ca3af", strokeWidth: 1 }}
+              trigger="axis"
+              isAnimationActive={false}
+            />
 
             <Area
               type={curveType[selectedRange]}
+              isAnimationActive={false}
               dataKey="balance"
               stroke="#3b82f6"
-              strokeWidth={2.5}
+              strokeWidth={3}
               fill="url(#balanceGrad)"
               dot={false}
               activeDot={{
-                r: 5,
+                r: 6,
                 fill: "#3b82f6",
+                stroke: "#fff",
+                strokeWidth: 2,
               }}
               animationDuration={400}
             />
