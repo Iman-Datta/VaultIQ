@@ -117,6 +117,10 @@ export const selectMonthlyComparison = (state) => {
       monthlyMap[dateKey] = {
         month,
         dateKey,
+        label: new Date(t.timestamp).toLocaleString("en-IN", {
+          month: "short",
+          year: "2-digit",
+        }),
         income: 0,
         expenses: 0,
       };

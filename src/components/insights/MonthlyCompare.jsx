@@ -15,37 +15,33 @@ import { selectMonthlyComparison } from "../../store/selectors";
 
 const CustomTooltip = ({ active, payload, label }) => {
   if (!active || !payload?.length) return null;
+
+  const income = payload.find((p) => p.dataKey === "income")?.value || 0;
+  const expenses =
+    payload.find((p) => p.dataKey === "expenses")?.value || 0;
+  const balance =
+    payload.find((p) => p.dataKey === "balance")?.value || 0;
+
+  const net = income - expenses;
+
   return (
     <div className="bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-xs space-y-1">
       <p className="text-gray-400 mb-1">{label}</p>
-      {payload.map((p) => (
-        <p key={p.name} style={{ color: p.fill }}>
-          {p.name}: ₹{p.value.toLocaleString()}
-        </p>
-      ))}
+      <p className="text-green-400">income: ₹{income.toLocaleString()}</p>
+      <p className="text-red-400">expenses: ₹{expenses.toLocaleString()}</p>
+      <p className={net >= 0 ? "text-green-300" : "text-red-300"}>
+        net: ₹{net.toLocaleString()}
+      </p>
+      <p className="text-blue-400">balance: ₹{balance.toLocaleString()}</p>
     </div>
   );
 };
 
 export default function MonthlyCompare() {
   const data = useSelector(selectMonthlyComparison);
-  const monthOrder = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
 
-  const sortedData = [...data].sort(
-    (a, b) => monthOrder.indexOf(a.month) - monthOrder.indexOf(b.month),
+  const sortedData = [...data].sort((a, b) =>
+    a.dateKey.localeCompare(b.dateKey),
   );
 
   return (
@@ -68,7 +64,7 @@ export default function MonthlyCompare() {
             vertical={false}
           />
           <XAxis
-            dataKey="month"
+            dataKey="label"
             tick={{ fill: "#6b7280", fontSize: 11 }}
             axisLine={false}
             tickLine={false}
