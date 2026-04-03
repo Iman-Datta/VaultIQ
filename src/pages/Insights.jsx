@@ -2,6 +2,8 @@ import Topbar from "../components/shared/Topbar";
 import InsightCards from "../components/insights/InsightCards";
 import MonthlyCompare from "../components/insights/MonthlyCompare";
 import SpendingDonut from "../components/dashboard/SpendingDonut";
+import BalanceForecast from "../components/insights/BalanceForecast";
+import BudgetVsActual from "../components/insights/BudgetVsActual";
 
 export default function Insights() {
   return (
@@ -14,6 +16,10 @@ export default function Insights() {
             <MonthlyCompare />
           </div>
           <SpendingDonut />
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+          <BudgetVsActual />
+          <BalanceForecast />
         </div>
       </main>
     </div>

@@ -12,18 +12,13 @@ export default function Dashboard() {
       <Topbar title="Dashboard" subtitle="Welcome back, Iman" />
       <div className="flex-1 overflow-y-auto bg-gray-50 dark:bg-gray-950 p-5 space-y-4">
         <SummaryCards />
-
-        {/* Charts row */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <div className="lg:col-span-2">
             <BalanceTrend />
           </div>
           <SpendingDonut />
         </div>
-
-        {/* <InsightCards /> */}
-
-        {/* Mini transactions on dashboard */}
+        <InsightCards />
         <div>
           <FilterBar />
           <div className="mt-3">

@@ -11,7 +11,7 @@ import RoleGuard from "../shared/RoleGuard";
 import TransactionModal from "./TransactionModal";
 import { Pencil, Trash2, Plus } from "lucide-react";
 
-const PAGE_SIZE = 8;
+const PAGE_SIZE = 12;
 
 export default function TransactionTable() {
   const dispatch = useDispatch();
