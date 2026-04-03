@@ -9,6 +9,7 @@ import {
   ResponsiveContainer,
   CartesianGrid,
 } from "recharts";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const ranges = ["7D", "30D", "3M", "6M", "1Y", "All"];
 
@@ -41,7 +42,7 @@ const formatXAxis = (date, range) => {
   return "";
 };
 
-const filterByRange = (transactions, range) => {
+const filterByRange = (transactions, range, offset = 0) => {
   const daysMap = {
     "7D": 7,
     "30D": 30,
@@ -60,10 +61,16 @@ const filterByRange = (transactions, range) => {
 
   const days = daysMap[range];
 
-  const cutoff = new Date(latestDate);
-  cutoff.setDate(latestDate.getDate() - days);
+  const windowEnd = new Date(latestDate);
+  windowEnd.setDate(windowEnd.getDate() - offset * days);
 
-  return sorted.filter((t) => new Date(t.timestamp) >= cutoff);
+  const cutoff = new Date(windowEnd);
+  cutoff.setDate(windowEnd.getDate() - days);
+
+  return sorted.filter((t) => {
+    const date = new Date(t.timestamp);
+    return date >= cutoff && date <= windowEnd;
+  });
 };
 
 const buildRunningBalance = (transactions, allTransactions) => {
@@ -126,8 +133,21 @@ const CustomTooltip = ({ active, payload, range }) => {
 
 export default function BalanceTrend() {
   const [selectedRange, setSelectedRange] = useState("30D");
+  const [windowOffset, setWindowOffset] = useState(0);
   const [zoomLevel, setZoomLevel] = useState(1);
   const chartRef = useRef(null);
+
+  const transactions = useSelector((state) => state.transactions.transactions);
+
+  const chartData = useMemo(() => {
+    const filtered = filterByRange(transactions, selectedRange, windowOffset);
+
+    const fullData = buildRunningBalance(filtered, transactions);
+
+    const step = Math.max(1, Math.floor(zoomLevel));
+
+    return fullData.filter((_, index) => index % step === 0);
+  }, [transactions, selectedRange, windowOffset, zoomLevel]);
 
   useEffect(() => {
     const chartElement = chartRef.current;
@@ -154,17 +174,14 @@ export default function BalanceTrend() {
     };
   }, []);
 
-  const transactions = useSelector((state) => state.transactions.transactions);
+  const isRightDisabled = windowOffset === 0;
 
-  const chartData = useMemo(() => {
-    const filtered = filterByRange(transactions, selectedRange);
+  const nextWindowData =
+    selectedRange === "All"
+      ? []
+      : filterByRange(transactions, selectedRange, windowOffset + 1);
 
-    const fullData = buildRunningBalance(filtered, transactions);
-
-    const step = Math.max(1, Math.floor(zoomLevel));
-
-    return fullData.filter((_, index) => index % step === 0);
-  }, [transactions, selectedRange, zoomLevel]);
+  const isLeftDisabled = selectedRange === "All" || nextWindowData.length === 0;
 
   const xTicks = useMemo(() => {
     if (!chartData.length) return [];
@@ -260,7 +277,7 @@ export default function BalanceTrend() {
 
   return (
     <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 shadow-sm">
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-start justify-between mb-4">
         <div>
           <p className="text-sm font-semibold text-gray-900 dark:text-white">
             Balance Trend
@@ -268,20 +285,51 @@ export default function BalanceTrend() {
           <p className="text-xs text-gray-500 mt-1">Use mouse wheel to zoom</p>
         </div>
 
-        <div className="flex gap-2 flex-wrap">
-          {ranges.map((range) => (
+        <div className="flex items-center gap-3 flex-wrap">
+          <div className="flex gap-2 flex-wrap">
+            {ranges.map((range) => (
+              <button
+                key={range}
+                onClick={() => {
+                  setSelectedRange(range);
+                  setWindowOffset(0);
+                }}
+                className={`px-3 py-1 rounded-lg text-xs font-medium transition-all duration-300 ${
+                  selectedRange === range
+                    ? "bg-blue-500 text-white shadow-md"
+                    : "bg-gray-100 dark:bg-gray-800 text-gray-500 hover:bg-gray-200"
+                }`}
+              >
+                {range}
+              </button>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-1">
             <button
-              key={range}
-              onClick={() => setSelectedRange(range)}
-              className={`px-3 py-1 rounded-lg text-xs font-medium transition-all duration-300 ${
-                selectedRange === range
-                  ? "bg-blue-500 text-white shadow-md"
-                  : "bg-gray-100 dark:bg-gray-800 text-gray-500 hover:bg-gray-200"
+              onClick={() => setWindowOffset((prev) => prev + 1)}
+              disabled={isLeftDisabled}
+              className={`p-2 rounded-lg border transition ${
+                isLeftDisabled
+                  ? "opacity-40 cursor-not-allowed"
+                  : "hover:bg-gray-100 dark:hover:bg-gray-800"
               }`}
             >
-              {range}
+              <ChevronLeft size={16} />
             </button>
-          ))}
+
+            <button
+              onClick={() => setWindowOffset((prev) => Math.max(0, prev - 1))}
+              disabled={isRightDisabled}
+              className={`p-2 rounded-lg border transition ${
+                isRightDisabled
+                  ? "opacity-40 cursor-not-allowed"
+                  : "hover:bg-gray-100 dark:hover:bg-gray-800"
+              }`}
+            >
+              <ChevronRight size={16} />
+            </button>
+          </div>
         </div>
       </div>
       <div
@@ -341,7 +389,6 @@ export default function BalanceTrend() {
               trigger="axis"
               isAnimationActive={false}
             />
-
             <Area
               type={curveType[selectedRange]}
               isAnimationActive={false}
