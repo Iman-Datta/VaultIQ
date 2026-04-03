@@ -22,7 +22,7 @@ export const selectFilteredTransactions = (state) => {
 
   result.sort((a, b) => {
     let diff = 0;
-    if (sortField === "date") diff = new Date(a.date) - new Date(b.date);
+    if (sortField === "date") diff = new Date(a.timestamp) - new Date(b.timestamp);
     if (sortField === "amount") diff = Math.abs(a.amount) - Math.abs(b.amount);
     return sortDir === "asc" ? diff : -diff;
   });
@@ -88,7 +88,7 @@ export const selectInsights = (state) => {
   txns
     .filter((t) => t.type === "expense")
     .forEach((t) => {
-      const m = t.date.slice(0, 7);
+      const m = t.timestamp.slice(0, 7);
       byMonth[m] = (byMonth[m] || 0) + Math.abs(t.amount);
     });
   const months = Object.keys(byMonth).sort();
@@ -107,7 +107,7 @@ export const selectMonthlyComparison = (state) => {
   const monthlyMap = {};
 
   txns.forEach((t) => {
-    const month = new Date(t.date).toLocaleString("en-IN", {
+    const month = new Date(t.timestamp).toLocaleString("en-IN", {
       month: "short",
     });
 

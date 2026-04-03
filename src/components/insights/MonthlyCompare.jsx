@@ -28,6 +28,25 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 export default function MonthlyCompare() {
   const data = useSelector(selectMonthlyComparison);
+  const monthOrder = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  const sortedData = [...data].sort(
+    (a, b) => monthOrder.indexOf(a.month) - monthOrder.indexOf(b.month),
+  );
+  console.log(data); // Debug
+
   return (
     <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-4">
       <p className="text-sm font-medium text-gray-900 dark:text-white mb-0.5">
@@ -38,7 +57,7 @@ export default function MonthlyCompare() {
       </p>
       <ResponsiveContainer width="100%" height={220}>
         <BarChart
-          data={data}
+          data={sortedData}
           barSize={14}
           margin={{ top: 4, right: 4, left: 0, bottom: 0 }}
         >
