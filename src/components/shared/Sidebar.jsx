@@ -10,6 +10,8 @@ import {
   HelpCircle,
 } from "lucide-react";
 
+import VaultLogo from "../VaultLogo";
+
 const navItems = [
   { to: "/", label: "Dashboard", icon: LayoutDashboard },
   { to: "/transactions", label: "Transactions", icon: ArrowLeftRight },
@@ -20,21 +22,17 @@ const navItems = [
 export default function Sidebar() {
   const dispatch = useDispatch();
   const role = useSelector((s) => s.role.role);
-
   return (
     <aside className="w-16 md:w-56 h-screen bg-white dark:bg-gray-900 flex flex-col shrink-0 border-r border-gray-200 dark:border-gray-800">
       {/* Logo */}
-      <div className="flex items-center gap-2 px-4 py-5 border-b border-gray-200 dark:border-gray-800">
-        <div className="w-7 h-7 bg-blue-500 rounded-md flex items-center justify-center shrink-0">
-          <span className="hidden md:block text-gray-900 dark:text-white font-semibold text-sm">
-            V
-          </span>
-        </div>
-        <span className="hidden md:block text-gray-900 dark:text-white font-semibold text-sm">
-          VaultIQ
-        </span>
-      </div>
+      <div className="flex items-center gap-3 px-4 py-5 border-b border-gray-200 dark:border-slate-800">
+        <VaultLogo size={36} />
 
+        <h1 className="hidden md:block text-xl font-bold tracking-tight">
+          <span className="text-gray-900 dark:text-white">Vault</span>
+          <span className="text-cyan-500 dark:text-cyan-400">IQ</span>
+        </h1>
+      </div>
       {/* Navigation */}
       <nav className="flex-1 px-2 py-4 space-y-1">
         <p className="hidden md:block text-gray-500 text-xs px-2 mb-2">Menu</p>
