@@ -1,61 +1,1458 @@
 id,timestamp,description,category,amount,type
-1,2025-01-01T09:00:00,Salary Deposit,Salary,5200,income
-2,2025-01-01T13:15:00,Coffee Shop,Food,-120,expense
-3,2025-01-01T19:30:00,Dinner,Food,-340,expense
-4,2025-01-02T10:00:00,Metro Recharge,Travel,-150,expense
-5,2025-01-02T18:45:00,Grocery Store,Food,-680,expense
-6,2025-01-03T11:30:00,Freelance Payment,Freelance,1200,income
-7,2025-01-03T20:00:00,Movie Tickets,Entertainment,-300,expense
-8,2025-01-04T09:15:00,Electric Bill,Bills,-950,expense
-9,2025-01-04T14:20:00,Amazon Purchase,Shopping,-760,expense
-10,2025-01-05T08:45:00,Breakfast,Food,-90,expense
-11,2025-01-05T17:30:00,Internet Bill,Bills,-700,expense
-12,2025-01-06T12:00:00,Restaurant Lunch,Food,-420,expense
-13,2025-01-07T09:00:00,Salary Deposit,Salary,5200,income
-14,2025-01-07T18:10:00,Uber Ride,Travel,-180,expense
-15,2025-01-08T15:00:00,Grocery Store,Food,-850,expense
-16,2025-01-09T20:15:00,Netflix Subscription,Entertainment,-199,expense
-17,2025-01-10T10:30:00,Freelance Payment,Freelance,1500,income
-18,2025-01-10T21:00:00,Shopping Mall,Shopping,-1200,expense
-19,2025-01-11T09:00:00,Rent Payment,Rent,-8500,expense
-20,2025-01-12T19:30:00,Dinner,Food,-390,expense
-21,2025-01-13T08:50:00,Metro Recharge,Travel,-200,expense
-22,2025-01-14T14:00:00,Electric Bill,Bills,-980,expense
-23,2025-01-15T09:00:00,Salary Deposit,Salary,5200,income
-24,2025-01-15T13:30:00,Coffee Shop,Food,-110,expense
-25,2025-01-16T18:00:00,Flight Tickets,Travel,-3500,expense
-26,2025-01-17T11:30:00,Freelance Payment,Freelance,1800,income
-27,2025-01-18T19:00:00,Restaurant Dinner,Food,-500,expense
-28,2025-01-19T15:30:00,Amazon Purchase,Shopping,-950,expense
-29,2025-01-20T09:00:00,Gym Membership,Bills,-1200,expense
-30,2025-01-21T20:00:00,Movie Tickets,Entertainment,-250,expense
-31,2025-02-01T09:00:00,Salary Deposit,Salary,5300,income
-32,2025-02-02T13:15:00,Coffee Shop,Food,-120,expense
-33,2025-02-03T19:30:00,Grocery Store,Food,-720,expense
-34,2025-02-04T10:00:00,Metro Recharge,Travel,-150,expense
-35,2025-02-05T18:45:00,Restaurant Dinner,Food,-430,expense
-36,2025-02-06T11:30:00,Freelance Payment,Freelance,1700,income
-37,2025-02-07T20:00:00,Movie Tickets,Entertainment,-300,expense
-38,2025-02-08T09:15:00,Electric Bill,Bills,-920,expense
-39,2025-02-09T14:20:00,Amazon Purchase,Shopping,-680,expense
-40,2025-02-10T08:45:00,Breakfast,Food,-90,expense
-41,2025-03-01T09:00:00,Salary Deposit,Salary,5400,income
-42,2025-03-02T13:15:00,Coffee Shop,Food,-130,expense
-43,2025-03-03T19:30:00,Grocery Store,Food,-790,expense
-44,2025-03-04T10:00:00,Uber Ride,Travel,-220,expense
-45,2025-03-05T18:45:00,Restaurant Dinner,Food,-470,expense
-46,2025-03-06T11:30:00,Freelance Payment,Freelance,2100,income
-47,2025-03-07T20:00:00,Movie Tickets,Entertainment,-350,expense
-48,2025-03-08T09:15:00,Electric Bill,Bills,-1000,expense
-49,2025-03-09T14:20:00,Amazon Purchase,Shopping,-820,expense
-50,2025-03-10T08:45:00,Breakfast,Food,-95,expense
-51,2026-01-01T09:00:00,Salary Deposit,Salary,6200,income
-52,2026-01-03T13:15:00,Coffee Shop,Food,-140,expense
-53,2026-01-05T19:30:00,Grocery Store,Food,-820,expense
-54,2026-02-01T09:00:00,Salary Deposit,Salary,6300,income
-55,2026-02-04T18:45:00,Restaurant Dinner,Food,-520,expense
-56,2026-03-01T09:00:00,Salary Deposit,Salary,6400,income
-57,2026-03-06T11:30:00,Freelance Payment,Freelance,2200,income
-58,2026-03-09T14:20:00,Amazon Purchase,Shopping,-980,expense
-59,2026-04-01T09:00:00,Salary Deposit,Salary,6500,income
-60,2026-04-03T18:00:00,Shopping Mall,Shopping,-1500,expense
+3,2025-01-01 09:20:25,Medical Consultation,Other,-395.18,expense
+1,2025-01-01 09:46:39,Rent Payment,Rent,-13039.51,expense
+2,2025-01-01 16:21:05,Street Food,Food,-63.15,expense
+4,2025-01-01 20:13:23,Restaurant Dinner,Food,-439.55,expense
+7,2025-01-02 10:42:11,Petrol Station,Travel,-1145.04,expense
+6,2025-01-02 13:47:50,Restaurant Dinner,Food,-403.41,expense
+5,2025-01-02 17:29:33,Netflix Subscription,Entertainment,-649,expense
+9,2025-01-03 14:39:00,Bus Pass,Travel,-104.16,expense
+11,2025-01-03 19:34:25,Restaurant Dinner,Food,-287.42,expense
+8,2025-01-03 20:43:52,Cashback Refund,Other,92.12,income
+10,2025-01-03 22:12:57,Ola Cab,Travel,-217.36,expense
+13,2025-01-04 16:26:07,Movie Tickets,Entertainment,-284.21,expense
+14,2025-01-04 18:11:26,Lunch Canteen,Food,-129.91,expense
+12,2025-01-04 18:22:44,Amazon Prime,Entertainment,-299,expense
+15,2025-01-05 14:07:54,Metro Card Recharge,Travel,-207.36,expense
+16,2025-01-05 21:32:18,Stationery Shop,Shopping,-184.89,expense
+20,2025-01-06 11:46:19,Bakery,Food,-103.53,expense
+18,2025-01-06 17:11:56,Ola Cab,Travel,-206.67,expense
+17,2025-01-06 19:13:24,Cashback Refund,Other,512.93,income
+19,2025-01-06 22:49:28,Restaurant Dinner,Food,-171.56,expense
+24,2025-01-07 09:42:52,Juice Bar,Food,-66.3,expense
+21,2025-01-07 15:18:28,Street Food,Food,-35.62,expense
+22,2025-01-07 19:04:32,Cafe Coffee,Food,-43.81,expense
+23,2025-01-07 22:34:08,Uber Ride,Travel,-84.85,expense
+25,2025-01-08 18:18:24,Spotify Premium,Entertainment,-119,expense
+26,2025-01-08 18:22:00,Petrol Station,Travel,-1586.08,expense
+28,2025-01-09 15:00:07,Bakery,Food,-95.3,expense
+27,2025-01-09 20:47:48,Zomato Delivery,Food,-166.84,expense
+32,2025-01-10 10:02:03,Lunch Canteen,Food,-71.46,expense
+30,2025-01-10 13:32:50,Hotel Booking,Travel,-2675.34,expense
+29,2025-01-10 16:34:12,Electricity Bill,Bills,-800.92,expense
+31,2025-01-10 18:47:01,Bus Pass,Travel,-123.84,expense
+35,2025-01-11 09:55:54,Metro Card Recharge,Travel,-367.88,expense
+34,2025-01-11 13:16:29,Movie Tickets,Entertainment,-256.36,expense
+33,2025-01-11 18:48:06,Books Purchase,Other,-139.64,expense
+36,2025-01-12 19:13:17,Sports Event Ticket,Entertainment,-470.97,expense
+37,2025-01-12 22:11:52,Petrol Station,Travel,-1170.07,expense
+40,2025-01-13 08:41:46,Metro Card Recharge,Travel,-200.93,expense
+39,2025-01-13 16:00:07,Haircut Salon,Other,-294.9,expense
+38,2025-01-13 23:10:04,Books Purchase,Other,-162.08,expense
+42,2025-01-14 09:02:03,Juice Bar,Food,-80.87,expense
+44,2025-01-14 18:51:12,Petrol Station,Travel,-1736.74,expense
+41,2025-01-14 19:40:00,Cashback Refund,Other,433.93,income
+43,2025-01-14 22:10:53,Metro Card Recharge,Travel,-272.17,expense
+48,2025-01-15 06:48:32,Swiggy Order,Food,-285.45,expense
+45,2025-01-15 12:31:10,Internet Bill,Bills,-691.15,expense
+46,2025-01-15 14:41:52,Haircut Salon,Other,-138.67,expense
+47,2025-01-15 21:46:08,Haircut Salon,Other,-331.26,expense
+49,2025-01-16 14:49:03,Bakery,Food,-77.73,expense
+50,2025-01-16 18:19:11,Metro Card Recharge,Travel,-197.64,expense
+51,2025-01-17 07:24:58,Medical Consultation,Other,-371.19,expense
+52,2025-01-17 16:28:46,Lunch Canteen,Food,-73.47,expense
+53,2025-01-18 15:23:16,Zomato Delivery,Food,-143.63,expense
+54,2025-01-18 22:01:19,Metro Card Recharge,Travel,-252.68,expense
+56,2025-01-19 08:10:38,Bus Pass,Travel,-83.81,expense
+55,2025-01-19 19:07:31,Gaming Purchase,Entertainment,-622.9,expense
+58,2025-01-20 15:26:32,Grocery Store,Food,-302.88,expense
+57,2025-01-20 18:35:09,Restaurant Dinner,Food,-395.57,expense
+60,2025-01-21 09:00:36,Books Purchase,Other,-401.27,expense
+59,2025-01-21 13:11:33,Freelance Payment,Freelance,5788.02,income
+61,2025-01-21 13:40:19,Grocery Store,Food,-264.42,expense
+62,2025-01-22 10:25:59,Bus Pass,Travel,-162.14,expense
+63,2025-01-22 21:21:27,Petrol Station,Travel,-1718.58,expense
+64,2025-01-23 21:45:54,Medical Consultation,Other,-628.05,expense
+65,2025-01-23 23:12:57,Restaurant Dinner,Food,-221.74,expense
+68,2025-01-24 15:33:35,Medical Consultation,Other,-597.95,expense
+66,2025-01-24 18:41:33,Zomato Delivery,Food,-152.96,expense
+67,2025-01-24 21:15:15,Medical Consultation,Other,-287.31,expense
+69,2025-01-25 12:50:40,Laundry Service,Other,-193.19,expense
+70,2025-01-25 17:20:12,Grocery Store,Food,-209.48,expense
+71,2025-01-25 21:17:57,Concert Tickets,Entertainment,-1160.02,expense
+73,2025-01-26 14:33:16,Street Food,Food,-61.08,expense
+72,2025-01-26 17:10:22,Medical Consultation,Other,-567.1,expense
+75,2025-01-27 06:01:01,Ola Cab,Travel,-233.46,expense
+74,2025-01-27 21:22:20,Swiggy Order,Food,-180.1,expense
+76,2025-01-28 07:13:14,Salary Deposit,Salary,59271.61,income
+79,2025-01-28 14:45:22,Haircut Salon,Other,-148.5,expense
+78,2025-01-28 19:31:27,Cafe Coffee,Food,-58.11,expense
+77,2025-01-28 21:42:27,Cafe Coffee,Food,-61.62,expense
+80,2025-01-29 14:20:39,Cafe Coffee,Food,-40.23,expense
+81,2025-01-29 18:13:28,Lunch Canteen,Food,-116.97,expense
+82,2025-01-29 21:49:24,Petrol Station,Travel,-1225.8,expense
+84,2025-01-30 08:25:49,Juice Bar,Food,-78.54,expense
+83,2025-01-30 18:38:44,Petrol Station,Travel,-1331.6,expense
+85,2025-01-31 11:01:03,ATM Withdrawal,Other,-1127.66,expense
+86,2025-01-31 15:12:27,Restaurant Dinner,Food,-187.89,expense
+87,2025-02-01 06:19:53,Rent Payment,Rent,-13989.18,expense
+90,2025-02-01 15:25:08,Gym Membership,Other,-702.96,expense
+88,2025-02-01 19:54:46,Lunch Canteen,Food,-133.4,expense
+89,2025-02-01 21:02:47,Zomato Delivery,Food,-176.71,expense
+91,2025-02-02 14:38:30,Freelance Payment,Freelance,7204.23,income
+92,2025-02-02 18:29:18,Petrol Station,Travel,-1522.49,expense
+94,2025-02-03 07:35:27,Auto Rickshaw,Travel,-50.88,expense
+96,2025-02-03 15:29:06,Cafe Coffee,Food,-109.21,expense
+93,2025-02-03 18:12:21,Spotify Premium,Entertainment,-119,expense
+95,2025-02-03 20:37:50,Swiggy Order,Food,-188.23,expense
+97,2025-02-03 21:19:12,Cafe Coffee,Food,-109.64,expense
+99,2025-02-04 08:25:21,Metro Card Recharge,Travel,-393.71,expense
+98,2025-02-04 12:39:07,Uber Ride,Travel,-202.28,expense
+100,2025-02-04 22:34:39,Medical Consultation,Other,-680.73,expense
+104,2025-02-05 11:33:54,Gym Membership,Other,-991.47,expense
+102,2025-02-05 13:02:44,Freelance Payment,Freelance,6036.78,income
+105,2025-02-05 16:37:22,Haircut Salon,Other,-279.44,expense
+101,2025-02-05 19:13:22,Netflix Subscription,Entertainment,-649,expense
+103,2025-02-05 23:30:10,Bakery,Food,-57.68,expense
+109,2025-02-06 06:11:40,Metro Card Recharge,Travel,-294.09,expense
+108,2025-02-06 12:42:58,Lunch Canteen,Food,-78.23,expense
+106,2025-02-06 13:08:27,Electricity Bill,Bills,-1264.28,expense
+107,2025-02-06 18:35:21,Haircut Salon,Other,-282.63,expense
+110,2025-02-06 23:34:24,Cafe Coffee,Food,-74.39,expense
+113,2025-02-07 15:20:37,Lunch Canteen,Food,-61.88,expense
+112,2025-02-07 18:04:16,Street Food,Food,-25.82,expense
+111,2025-02-07 19:37:41,Amazon Prime,Entertainment,-299,expense
+114,2025-02-07 22:26:57,Bakery,Food,-79.54,expense
+115,2025-02-08 10:32:34,Amazon Order,Shopping,-774.69,expense
+116,2025-02-08 13:26:33,Swiggy Order,Food,-192.95,expense
+117,2025-02-09 21:30:41,Sports Event Ticket,Entertainment,-692.63,expense
+118,2025-02-09 22:15:49,Restaurant Dinner,Food,-341.94,expense
+120,2025-02-10 06:00:53,Auto Rickshaw,Travel,-39.57,expense
+119,2025-02-10 12:59:22,Hotel Booking,Travel,-3160.75,expense
+121,2025-02-10 15:12:41,Street Food,Food,-37.41,expense
+125,2025-02-11 08:03:40,Gym Membership,Other,-1187.5,expense
+123,2025-02-11 15:11:56,Restaurant Dinner,Food,-301.07,expense
+122,2025-02-11 16:48:29,Internet Bill,Bills,-938.5,expense
+124,2025-02-11 22:18:53,Swiggy Order,Food,-96.83,expense
+127,2025-02-12 12:50:21,Uber Ride,Travel,-138.18,expense
+129,2025-02-12 20:53:05,Juice Bar,Food,-80.23,expense
+126,2025-02-12 20:54:23,Cashback Refund,Other,209.57,income
+128,2025-02-12 21:42:26,Laundry Service,Other,-110.01,expense
+131,2025-02-13 11:16:14,Zomato Delivery,Food,-172.01,expense
+132,2025-02-13 13:33:55,Zomato Delivery,Food,-135.85,expense
+130,2025-02-13 20:00:35,Juice Bar,Food,-37.31,expense
+135,2025-02-14 08:36:09,ATM Withdrawal,Other,-807.18,expense
+134,2025-02-14 15:17:47,Grocery Store,Food,-619.0,expense
+133,2025-02-14 19:50:10,Auto Rickshaw,Travel,-63.93,expense
+136,2025-02-15 15:13:32,Haircut Salon,Other,-196.34,expense
+137,2025-02-15 19:49:27,Lunch Canteen,Food,-72.56,expense
+138,2025-02-16 13:50:24,Amazon Order,Shopping,-1700.21,expense
+139,2025-02-16 15:14:21,Cafe Coffee,Food,-103.95,expense
+141,2025-02-17 16:40:27,Grocery Store,Food,-389.84,expense
+140,2025-02-17 20:21:32,ATM Withdrawal,Other,-1082.27,expense
+142,2025-02-18 15:36:23,Zomato Delivery,Food,-211.8,expense
+143,2025-02-18 20:11:29,Swiggy Order,Food,-100.33,expense
+144,2025-02-18 23:28:39,Medical Consultation,Other,-480.76,expense
+146,2025-02-19 17:46:12,Street Food,Food,-64.31,expense
+145,2025-02-19 20:00:24,Petrol Station,Travel,-1587.96,expense
+147,2025-02-20 06:08:37,Haircut Salon,Other,-136.03,expense
+148,2025-02-20 14:01:22,Street Food,Food,-63.98,expense
+149,2025-02-20 17:12:14,Restaurant Dinner,Food,-157.15,expense
+150,2025-02-20 23:48:00,Gym Membership,Other,-603.48,expense
+152,2025-02-21 10:02:52,Books Purchase,Other,-328.29,expense
+151,2025-02-21 18:18:01,Auto Rickshaw,Travel,-67.46,expense
+153,2025-02-21 22:49:52,Street Food,Food,-34.07,expense
+154,2025-02-22 20:41:31,Shopping Mall,Shopping,-1511.26,expense
+155,2025-02-22 21:16:34,Grocery Store,Food,-385.48,expense
+157,2025-02-23 14:20:58,Auto Rickshaw,Travel,-66.25,expense
+156,2025-02-23 17:11:23,Amazon Order,Shopping,-364.76,expense
+159,2025-02-24 11:12:07,ATM Withdrawal,Other,-1420.73,expense
+158,2025-02-24 17:05:42,Gym Membership,Other,-703.28,expense
+160,2025-02-25 16:16:51,Bakery,Food,-125.43,expense
+162,2025-02-25 20:47:50,Metro Card Recharge,Travel,-352.33,expense
+161,2025-02-25 21:55:21,Haircut Salon,Other,-258.78,expense
+164,2025-02-26 08:41:22,ATM Withdrawal,Other,-1340.54,expense
+163,2025-02-26 12:19:22,Grocery Store,Food,-358.67,expense
+166,2025-02-27 10:05:51,Juice Bar,Food,-66.26,expense
+165,2025-02-27 16:16:15,Freelance Payment,Freelance,10401.65,income
+167,2025-02-27 23:43:12,Haircut Salon,Other,-309.53,expense
+168,2025-02-28 08:31:24,Salary Deposit,Salary,63838.21,income
+170,2025-02-28 09:14:56,Bus Pass,Travel,-64.41,expense
+171,2025-02-28 14:29:50,Uber Ride,Travel,-147.03,expense
+172,2025-02-28 18:02:12,Street Food,Food,-65.48,expense
+169,2025-02-28 23:29:17,Bakery,Food,-111.75,expense
+174,2025-03-01 08:11:44,Petrol Station,Travel,-1447.29,expense
+173,2025-03-01 09:38:03,Rent Payment,Rent,-10298.07,expense
+175,2025-03-02 14:42:52,Freelance Payment,Freelance,4870.78,income
+176,2025-03-02 18:39:29,Shopping Mall,Shopping,-2078.91,expense
+178,2025-03-03 07:12:08,Restaurant Dinner,Food,-482.99,expense
+179,2025-03-03 16:58:54,Zomato Delivery,Food,-210.92,expense
+177,2025-03-03 17:17:55,Spotify Premium,Entertainment,-119,expense
+180,2025-03-04 14:05:50,Freelance Payment,Freelance,4157.08,income
+182,2025-03-04 19:33:28,Gym Membership,Other,-1037.47,expense
+181,2025-03-04 23:38:29,Haircut Salon,Other,-345.85,expense
+184,2025-03-05 06:55:57,Gym Membership,Other,-679.21,expense
+183,2025-03-05 21:50:32,Haircut Salon,Other,-270.82,expense
+189,2025-03-06 10:54:29,Books Purchase,Other,-203.37,expense
+188,2025-03-06 14:08:09,Street Food,Food,-36.09,expense
+185,2025-03-06 17:10:38,Netflix Subscription,Entertainment,-649,expense
+186,2025-03-06 17:18:24,Laundry Service,Other,-178.74,expense
+187,2025-03-06 21:04:38,Zomato Delivery,Food,-198.81,expense
+191,2025-03-07 11:51:30,Juice Bar,Food,-77.79,expense
+190,2025-03-07 13:21:23,Electricity Bill,Bills,-663.18,expense
+192,2025-03-07 19:29:55,Laundry Service,Other,-228.72,expense
+194,2025-03-08 09:48:08,Grocery Store,Food,-257.92,expense
+193,2025-03-08 18:13:59,Amazon Prime,Entertainment,-299,expense
+195,2025-03-08 21:08:24,Gym Membership,Other,-877.99,expense
+196,2025-03-09 10:06:30,Auto Rickshaw,Travel,-77.34,expense
+199,2025-03-09 13:22:20,Petrol Station,Travel,-1163.81,expense
+197,2025-03-09 19:42:32,Lunch Canteen,Food,-88.49,expense
+198,2025-03-09 21:39:05,Sports Event Ticket,Entertainment,-348.43,expense
+201,2025-03-10 08:13:24,Laundry Service,Other,-168.89,expense
+202,2025-03-10 13:13:37,Petrol Station,Travel,-877.26,expense
+200,2025-03-10 18:51:14,Zomato Delivery,Food,-178.42,expense
+204,2025-03-11 08:50:31,Restaurant Dinner,Food,-490.86,expense
+203,2025-03-11 22:51:06,Gym Membership,Other,-1112.07,expense
+207,2025-03-12 09:08:47,Gym Membership,Other,-1004.3,expense
+205,2025-03-12 16:59:04,Internet Bill,Bills,-860.91,expense
+206,2025-03-12 20:57:37,Haircut Salon,Other,-167.48,expense
+210,2025-03-13 16:03:43,Petrol Station,Travel,-1054.21,expense
+208,2025-03-13 17:39:32,Auto Rickshaw,Travel,-44.87,expense
+209,2025-03-13 23:34:01,Restaurant Dinner,Food,-462.34,expense
+212,2025-03-14 07:41:14,Haircut Salon,Other,-200.94,expense
+211,2025-03-14 13:04:15,Bus Pass,Travel,-122.41,expense
+214,2025-03-14 18:26:35,Laundry Service,Other,-142.36,expense
+213,2025-03-14 23:04:37,Metro Card Recharge,Travel,-304.27,expense
+216,2025-03-15 15:18:29,Restaurant Dinner,Food,-398.57,expense
+215,2025-03-15 18:17:23,Gaming Purchase,Entertainment,-604.52,expense
+217,2025-03-16 10:32:02,Concert Tickets,Entertainment,-400.27,expense
+219,2025-03-16 15:11:10,Uber Ride,Travel,-155.89,expense
+218,2025-03-16 22:32:52,Medical Consultation,Other,-291.73,expense
+222,2025-03-17 14:07:30,Swiggy Order,Food,-270.18,expense
+221,2025-03-17 17:31:33,Ola Cab,Travel,-273.56,expense
+220,2025-03-17 23:37:37,Street Food,Food,-39.78,expense
+223,2025-03-18 10:09:25,Gym Membership,Other,-618.16,expense
+224,2025-03-18 18:40:09,Bakery,Food,-60.74,expense
+225,2025-03-18 22:51:12,Grocery Store,Food,-566.14,expense
+226,2025-03-19 11:23:14,ATM Withdrawal,Other,-507.02,expense
+227,2025-03-19 17:00:50,Cafe Coffee,Food,-58.31,expense
+229,2025-03-20 16:57:09,Cafe Coffee,Food,-84.13,expense
+231,2025-03-20 19:09:46,Metro Card Recharge,Travel,-228.07,expense
+228,2025-03-20 20:46:57,Cashback Refund,Other,351.13,income
+230,2025-03-20 22:25:02,Lunch Canteen,Food,-71.19,expense
+233,2025-03-21 13:09:47,Medical Consultation,Other,-655.77,expense
+232,2025-03-21 23:06:19,Lunch Canteen,Food,-94.78,expense
+236,2025-03-22 15:55:40,Auto Rickshaw,Travel,-48.25,expense
+234,2025-03-22 20:04:13,Metro Card Recharge,Travel,-157.12,expense
+235,2025-03-22 22:44:11,Gaming Purchase,Entertainment,-283.56,expense
+237,2025-03-23 14:32:28,Restaurant Dinner,Food,-522.39,expense
+238,2025-03-23 16:40:47,Juice Bar,Food,-44.69,expense
+240,2025-03-24 20:16:56,Grocery Store,Food,-575.15,expense
+239,2025-03-24 21:00:37,Gym Membership,Other,-997.92,expense
+241,2025-03-25 19:36:54,Laundry Service,Other,-241.23,expense
+242,2025-03-25 22:11:13,Street Food,Food,-61.83,expense
+244,2025-03-26 09:15:47,Auto Rickshaw,Travel,-77.48,expense
+243,2025-03-26 22:16:45,Grocery Store,Food,-531.32,expense
+245,2025-03-27 08:03:00,Bakery,Food,-54.4,expense
+247,2025-03-27 16:45:57,Ola Cab,Travel,-245.37,expense
+246,2025-03-27 23:03:58,Cafe Coffee,Food,-104.36,expense
+248,2025-03-28 07:22:28,Salary Deposit,Salary,56896.93,income
+251,2025-03-28 08:13:37,ATM Withdrawal,Other,-731.69,expense
+249,2025-03-28 20:29:49,Ola Cab,Travel,-241.41,expense
+250,2025-03-28 23:33:14,Juice Bar,Food,-70.83,expense
+253,2025-03-29 08:11:18,Movie Tickets,Entertainment,-437.19,expense
+252,2025-03-29 23:18:19,Shopping Mall,Shopping,-493.15,expense
+255,2025-03-30 09:06:29,Movie Tickets,Entertainment,-504.7,expense
+254,2025-03-30 15:55:53,Bus Pass,Travel,-99.22,expense
+257,2025-03-31 10:19:15,Metro Card Recharge,Travel,-277.0,expense
+256,2025-03-31 12:06:03,Haircut Salon,Other,-236.46,expense
+258,2025-04-01 08:11:52,Rent Payment,Rent,-12217.19,expense
+259,2025-04-01 16:23:40,Juice Bar,Food,-83.68,expense
+260,2025-04-01 21:20:18,Uber Ride,Travel,-165.12,expense
+263,2025-04-02 09:11:30,Bus Pass,Travel,-124.09,expense
+262,2025-04-02 13:11:53,Haircut Salon,Other,-148.21,expense
+261,2025-04-02 17:31:54,Ola Cab,Travel,-157.6,expense
+264,2025-04-02 23:48:59,ATM Withdrawal,Other,-1078.84,expense
+266,2025-04-03 15:54:58,Laundry Service,Other,-137.73,expense
+267,2025-04-03 20:07:00,Uber Ride,Travel,-202.91,expense
+265,2025-04-03 20:12:37,Amazon Prime,Entertainment,-299,expense
+270,2025-04-04 09:50:07,Lunch Canteen,Food,-94.3,expense
+271,2025-04-04 12:50:30,Bus Pass,Travel,-125.73,expense
+268,2025-04-04 19:02:00,Netflix Subscription,Entertainment,-649,expense
+269,2025-04-04 19:42:24,Bus Pass,Travel,-134.78,expense
+272,2025-04-04 21:03:25,Grocery Store,Food,-243.93,expense
+273,2025-04-05 14:42:32,Metro Card Recharge,Travel,-345.34,expense
+274,2025-04-05 21:33:16,Flipkart Purchase,Shopping,-1094.16,expense
+276,2025-04-06 09:30:37,Gym Membership,Other,-785.93,expense
+275,2025-04-06 17:03:21,Spotify Premium,Entertainment,-119,expense
+277,2025-04-06 17:07:03,Shopping Mall,Shopping,-1352.36,expense
+278,2025-04-07 19:01:10,Petrol Station,Travel,-1369.1,expense
+279,2025-04-07 22:50:03,Uber Ride,Travel,-190.27,expense
+280,2025-04-08 06:09:23,Medical Consultation,Other,-420.13,expense
+282,2025-04-08 16:12:58,Ola Cab,Travel,-145.76,expense
+281,2025-04-08 17:06:08,Uber Ride,Travel,-184.24,expense
+283,2025-04-08 21:35:09,Juice Bar,Food,-63.34,expense
+288,2025-04-09 10:25:38,Bakery,Food,-66.66,expense
+284,2025-04-09 15:19:45,Electricity Bill,Bills,-1125.79,expense
+286,2025-04-09 16:36:43,Uber Ride,Travel,-160.47,expense
+287,2025-04-09 17:06:18,Lunch Canteen,Food,-119.28,expense
+285,2025-04-09 21:07:08,Haircut Salon,Other,-263.37,expense
+291,2025-04-10 09:13:03,Street Food,Food,-58.74,expense
+289,2025-04-10 12:07:41,Medical Consultation,Other,-343.32,expense
+290,2025-04-10 17:20:58,Zomato Delivery,Food,-370.74,expense
+293,2025-04-11 11:09:58,Bus Pass,Travel,-85.02,expense
+292,2025-04-11 15:23:32,Street Food,Food,-48.16,expense
+294,2025-04-11 22:43:50,Swiggy Order,Food,-138.06,expense
+297,2025-04-12 10:29:09,Stationery Shop,Shopping,-235.16,expense
+295,2025-04-12 14:06:37,Freelance Payment,Freelance,5199.0,income
+296,2025-04-12 15:15:47,Haircut Salon,Other,-161.12,expense
+299,2025-04-12 20:07:05,Street Food,Food,-44.58,expense
+298,2025-04-12 21:54:24,Lunch Canteen,Food,-120.55,expense
+301,2025-04-13 08:53:34,Street Food,Food,-66.88,expense
+300,2025-04-13 21:28:26,Petrol Station,Travel,-1423.65,expense
+302,2025-04-14 12:04:46,Internet Bill,Bills,-502.86,expense
+303,2025-04-14 16:09:20,Freelance Payment,Freelance,5207.15,income
+304,2025-04-14 16:15:15,Restaurant Dinner,Food,-409.1,expense
+305,2025-04-14 20:10:27,Grocery Store,Food,-678.46,expense
+309,2025-04-15 08:52:54,Ola Cab,Travel,-122.73,expense
+307,2025-04-15 15:55:46,Lunch Canteen,Food,-121.89,expense
+306,2025-04-15 17:03:51,Books Purchase,Other,-248.76,expense
+308,2025-04-15 21:41:46,Laundry Service,Other,-111.61,expense
+310,2025-04-16 07:51:19,Juice Bar,Food,-66.86,expense
+311,2025-04-16 20:08:54,Auto Rickshaw,Travel,-49.72,expense
+312,2025-04-16 21:20:27,Street Food,Food,-51.37,expense
+315,2025-04-17 12:22:16,Bakery,Food,-95.69,expense
+313,2025-04-17 20:11:46,Haircut Salon,Other,-133.3,expense
+314,2025-04-17 23:36:20,Restaurant Dinner,Food,-489.12,expense
+317,2025-04-18 13:25:34,Laundry Service,Other,-146.15,expense
+316,2025-04-18 20:07:28,Juice Bar,Food,-36.28,expense
+318,2025-04-19 12:54:22,Flight Ticket,Travel,-5505.22,expense
+319,2025-04-19 16:43:17,ATM Withdrawal,Other,-1490.46,expense
+322,2025-04-20 08:28:53,Pharmacy,Shopping,-181.07,expense
+321,2025-04-20 14:44:11,Haircut Salon,Other,-121.8,expense
+320,2025-04-20 16:05:03,Freelance Payment,Freelance,5724.06,income
+323,2025-04-20 18:51:32,Laundry Service,Other,-89.75,expense
+324,2025-04-21 11:15:05,Cafe Coffee,Food,-82.94,expense
+325,2025-04-21 14:50:24,Bus Pass,Travel,-176.52,expense
+327,2025-04-21 18:52:43,Petrol Station,Travel,-1686.12,expense
+326,2025-04-21 21:52:03,Grocery Store,Food,-450.45,expense
+330,2025-04-22 10:52:22,Grocery Store,Food,-363.21,expense
+328,2025-04-22 18:11:44,Haircut Salon,Other,-145.54,expense
+329,2025-04-22 22:32:42,Books Purchase,Other,-316.43,expense
+332,2025-04-23 11:33:23,Auto Rickshaw,Travel,-84.12,expense
+331,2025-04-23 12:00:32,Bus Pass,Travel,-76.36,expense
+333,2025-04-24 07:14:03,Books Purchase,Other,-279.84,expense
+335,2025-04-24 13:25:55,Haircut Salon,Other,-135.47,expense
+334,2025-04-24 23:22:15,Books Purchase,Other,-426.05,expense
+337,2025-04-25 16:13:56,Metro Card Recharge,Travel,-230.8,expense
+336,2025-04-25 20:28:34,Metro Card Recharge,Travel,-328.67,expense
+338,2025-04-25 21:31:17,Bakery,Food,-108.42,expense
+340,2025-04-26 14:56:25,ATM Withdrawal,Other,-938.74,expense
+339,2025-04-26 23:14:43,Swiggy Order,Food,-212.03,expense
+341,2025-04-27 13:56:09,Amazon Order,Shopping,-1246.54,expense
+342,2025-04-27 22:35:29,Sports Event Ticket,Entertainment,-403.16,expense
+344,2025-04-28 10:03:26,Haircut Salon,Other,-247.92,expense
+343,2025-04-28 10:33:44,Salary Deposit,Salary,64343.84,income
+345,2025-04-28 20:33:36,Gym Membership,Other,-623.38,expense
+346,2025-04-29 10:35:48,Laundry Service,Other,-220.26,expense
+348,2025-04-29 15:15:36,Books Purchase,Other,-122.78,expense
+347,2025-04-29 19:15:01,Swiggy Order,Food,-244.86,expense
+351,2025-04-30 06:17:20,Grocery Store,Food,-478.99,expense
+349,2025-04-30 16:07:04,Petrol Station,Travel,-746.94,expense
+350,2025-04-30 19:18:08,Bus Pass,Travel,-85.97,expense
+355,2025-05-01 08:19:54,Lunch Canteen,Food,-121.37,expense
+352,2025-05-01 09:04:09,Rent Payment,Rent,-11994.02,expense
+354,2025-05-01 16:36:51,Street Food,Food,-65.42,expense
+353,2025-05-01 22:23:27,Uber Ride,Travel,-117.02,expense
+360,2025-05-02 09:26:44,Ola Cab,Travel,-130.42,expense
+361,2025-05-02 12:35:13,Haircut Salon,Other,-138.39,expense
+358,2025-05-02 18:07:25,Metro Card Recharge,Travel,-391.14,expense
+357,2025-05-02 18:18:14,Amazon Prime,Entertainment,-299,expense
+356,2025-05-02 20:41:46,Netflix Subscription,Entertainment,-649,expense
+359,2025-05-02 23:45:10,Lunch Canteen,Food,-62.25,expense
+364,2025-05-03 13:41:31,Haircut Salon,Other,-288.52,expense
+363,2025-05-03 19:03:30,Street Food,Food,-64.21,expense
+362,2025-05-03 20:05:50,Spotify Premium,Entertainment,-119,expense
+366,2025-05-04 11:09:15,ATM Withdrawal,Other,-806.25,expense
+365,2025-05-04 21:56:42,Movie Tickets,Entertainment,-257.25,expense
+369,2025-05-05 06:28:54,Restaurant Dinner,Food,-209.45,expense
+367,2025-05-05 16:26:02,Uber Ride,Travel,-141.57,expense
+368,2025-05-05 21:35:15,ATM Withdrawal,Other,-738.96,expense
+370,2025-05-06 06:28:38,Cafe Coffee,Food,-105.26,expense
+371,2025-05-06 20:49:19,Gym Membership,Other,-876.14,expense
+372,2025-05-06 23:39:26,Metro Card Recharge,Travel,-302.35,expense
+374,2025-05-07 11:29:40,Uber Ride,Travel,-120.26,expense
+373,2025-05-07 15:19:54,Freelance Payment,Freelance,8956.71,income
+375,2025-05-07 21:13:45,Laundry Service,Other,-107.14,expense
+378,2025-05-08 06:09:52,Lunch Canteen,Food,-76.08,expense
+376,2025-05-08 12:34:45,Electricity Bill,Bills,-746.26,expense
+377,2025-05-08 19:22:30,Haircut Salon,Other,-328.18,expense
+379,2025-05-09 19:33:42,Books Purchase,Other,-357.8,expense
+380,2025-05-09 21:58:25,Gym Membership,Other,-1079.12,expense
+381,2025-05-10 09:03:40,Stationery Shop,Shopping,-126.54,expense
+383,2025-05-10 12:44:33,Lunch Canteen,Food,-83.45,expense
+382,2025-05-10 20:44:50,Haircut Salon,Other,-331.78,expense
+384,2025-05-10 21:22:53,Ola Cab,Travel,-165.14,expense
+386,2025-05-11 11:27:35,Zomato Delivery,Food,-227.62,expense
+387,2025-05-11 13:56:26,Pharmacy,Shopping,-204.96,expense
+385,2025-05-11 18:50:27,Movie Tickets,Entertainment,-284.23,expense
+390,2025-05-12 09:59:00,Zomato Delivery,Food,-227.11,expense
+388,2025-05-12 12:41:29,Juice Bar,Food,-40.66,expense
+389,2025-05-12 18:02:06,Juice Bar,Food,-35.65,expense
+391,2025-05-13 12:04:23,Internet Bill,Bills,-590.81,expense
+392,2025-05-13 14:14:01,Gym Membership,Other,-788.83,expense
+393,2025-05-13 18:04:29,Lunch Canteen,Food,-73.61,expense
+394,2025-05-13 21:20:51,ATM Withdrawal,Other,-509.8,expense
+395,2025-05-14 11:02:48,Zomato Delivery,Food,-362.93,expense
+398,2025-05-14 12:41:03,Haircut Salon,Other,-150.09,expense
+397,2025-05-14 18:40:23,Cafe Coffee,Food,-90.58,expense
+396,2025-05-14 22:36:14,Uber Ride,Travel,-98.02,expense
+399,2025-05-15 11:49:38,Grocery Store,Food,-237.68,expense
+401,2025-05-15 16:37:49,Juice Bar,Food,-82.09,expense
+400,2025-05-15 17:18:39,Zomato Delivery,Food,-305.98,expense
+402,2025-05-15 22:12:28,Petrol Station,Travel,-953.38,expense
+405,2025-05-16 08:28:51,ATM Withdrawal,Other,-870.19,expense
+404,2025-05-16 12:28:08,Metro Card Recharge,Travel,-228.05,expense
+403,2025-05-16 20:48:32,Restaurant Dinner,Food,-196.04,expense
+406,2025-05-17 14:34:37,Clothing Store,Shopping,-1807.5,expense
+407,2025-05-17 15:30:34,Cafe Coffee,Food,-95.41,expense
+412,2025-05-18 08:40:49,Shopping Mall,Shopping,-1841.04,expense
+411,2025-05-18 12:37:56,Cafe Coffee,Food,-71.4,expense
+408,2025-05-18 12:39:12,Freelance Payment,Freelance,7693.46,income
+410,2025-05-18 19:06:33,Haircut Salon,Other,-325.23,expense
+409,2025-05-18 21:59:44,Books Purchase,Other,-145.96,expense
+415,2025-05-19 12:57:50,Grocery Store,Food,-252.99,expense
+414,2025-05-19 19:04:02,Street Food,Food,-64.29,expense
+413,2025-05-19 21:43:33,Uber Ride,Travel,-184.67,expense
+417,2025-05-20 14:46:13,Grocery Store,Food,-690.79,expense
+416,2025-05-20 20:59:26,Grocery Store,Food,-363.62,expense
+418,2025-05-21 12:01:51,Metro Card Recharge,Travel,-153.19,expense
+419,2025-05-21 23:56:34,Medical Consultation,Other,-378.24,expense
+421,2025-05-22 19:36:38,Street Food,Food,-39.22,expense
+420,2025-05-22 23:51:11,Haircut Salon,Other,-252.29,expense
+424,2025-05-23 11:47:25,ATM Withdrawal,Other,-712.96,expense
+422,2025-05-23 15:25:07,Grocery Store,Food,-319.46,expense
+423,2025-05-23 21:02:45,Restaurant Dinner,Food,-146.02,expense
+428,2025-05-24 08:01:28,Pharmacy,Shopping,-84.04,expense
+425,2025-05-24 13:56:10,Lunch Canteen,Food,-66.29,expense
+426,2025-05-24 20:24:34,Auto Rickshaw,Travel,-75.96,expense
+427,2025-05-24 22:15:30,Uber Ride,Travel,-128.96,expense
+429,2025-05-25 11:24:17,Metro Card Recharge,Travel,-237.69,expense
+431,2025-05-25 19:37:28,Metro Card Recharge,Travel,-320.27,expense
+430,2025-05-25 22:38:26,Laundry Service,Other,-190.38,expense
+435,2025-05-26 07:11:38,Grocery Store,Food,-381.08,expense
+432,2025-05-26 13:49:03,Grocery Store,Food,-638.84,expense
+433,2025-05-26 20:24:29,Laundry Service,Other,-182.43,expense
+434,2025-05-26 22:15:09,Juice Bar,Food,-69.46,expense
+437,2025-05-27 11:20:36,Restaurant Dinner,Food,-194.42,expense
+436,2025-05-27 19:27:36,Haircut Salon,Other,-173.17,expense
+438,2025-05-27 22:13:38,Gym Membership,Other,-1078.68,expense
+439,2025-05-28 07:21:27,Salary Deposit,Salary,55571.05,income
+442,2025-05-28 07:44:17,Metro Card Recharge,Travel,-205.13,expense
+441,2025-05-28 12:45:06,Ola Cab,Travel,-142.18,expense
+443,2025-05-28 20:39:52,Zomato Delivery,Food,-167.94,expense
+440,2025-05-28 21:38:48,Lunch Canteen,Food,-86.53,expense
+444,2025-05-29 07:33:33,Bus Pass,Travel,-106.55,expense
+445,2025-05-29 18:18:37,Gym Membership,Other,-837.23,expense
+446,2025-05-30 14:47:02,Petrol Station,Travel,-1743.76,expense
+447,2025-05-30 15:37:40,Street Food,Food,-59.21,expense
+449,2025-05-31 06:21:38,Zomato Delivery,Food,-351.78,expense
+451,2025-05-31 14:40:09,Gym Membership,Other,-892.82,expense
+448,2025-05-31 18:11:07,Gaming Purchase,Entertainment,-417.1,expense
+450,2025-05-31 23:07:04,Ola Cab,Travel,-170.35,expense
+452,2025-06-01 06:32:29,Rent Payment,Rent,-11012.55,expense
+454,2025-06-01 09:52:10,Grocery Store,Food,-422.27,expense
+453,2025-06-01 17:17:45,Spotify Premium,Entertainment,-119,expense
+455,2025-06-01 23:50:56,Clothing Store,Shopping,-1943.11,expense
+457,2025-06-02 06:39:45,Metro Card Recharge,Travel,-368.84,expense
+456,2025-06-02 12:19:55,Uber Ride,Travel,-113.63,expense
+461,2025-06-03 11:04:50,Metro Card Recharge,Travel,-302.22,expense
+460,2025-06-03 15:36:18,Zomato Delivery,Food,-223.25,expense
+459,2025-06-03 19:37:56,Haircut Salon,Other,-229.25,expense
+458,2025-06-03 22:16:06,Zomato Delivery,Food,-149.79,expense
+463,2025-06-04 06:17:02,Laundry Service,Other,-242.85,expense
+464,2025-06-04 17:22:32,Bus Pass,Travel,-80.84,expense
+462,2025-06-04 23:32:10,Cafe Coffee,Food,-106.6,expense
+467,2025-06-05 06:51:28,Petrol Station,Travel,-1676.46,expense
+465,2025-06-05 19:26:51,Netflix Subscription,Entertainment,-649,expense
+466,2025-06-05 20:33:23,Amazon Prime,Entertainment,-299,expense
+469,2025-06-06 13:02:36,Restaurant Dinner,Food,-521.1,expense
+468,2025-06-06 15:09:19,Electricity Bill,Bills,-1351.86,expense
+470,2025-06-06 20:23:28,Medical Consultation,Other,-340.37,expense
+473,2025-06-07 07:42:29,ATM Withdrawal,Other,-624.87,expense
+471,2025-06-07 20:53:51,Bus Pass,Travel,-90.2,expense
+472,2025-06-07 22:14:33,Sports Event Ticket,Entertainment,-768.63,expense
+475,2025-06-08 07:26:02,Haircut Salon,Other,-255.74,expense
+476,2025-06-08 15:24:33,Restaurant Dinner,Food,-500.0,expense
+474,2025-06-08 21:54:45,Pharmacy,Shopping,-207.64,expense
+478,2025-06-09 10:21:36,ATM Withdrawal,Other,-1467.21,expense
+477,2025-06-09 21:28:47,Juice Bar,Food,-63.19,expense
+480,2025-06-10 06:54:19,Laundry Service,Other,-206.13,expense
+481,2025-06-10 13:29:23,Bakery,Food,-45.18,expense
+482,2025-06-10 19:41:05,Juice Bar,Food,-57.4,expense
+479,2025-06-10 21:13:59,Restaurant Dinner,Food,-461.7,expense
+484,2025-06-11 07:07:19,Uber Ride,Travel,-167.32,expense
+483,2025-06-11 12:42:44,Lunch Canteen,Food,-134.57,expense
+486,2025-06-11 18:16:21,Lunch Canteen,Food,-91.47,expense
+485,2025-06-11 23:46:04,Cafe Coffee,Food,-74.29,expense
+487,2025-06-12 08:20:26,Gym Membership,Other,-703.75,expense
+488,2025-06-12 20:40:25,Restaurant Dinner,Food,-401.09,expense
+489,2025-06-13 14:18:49,Internet Bill,Bills,-835.15,expense
+491,2025-06-13 18:44:10,Cafe Coffee,Food,-102.05,expense
+490,2025-06-13 22:22:31,Laundry Service,Other,-203.82,expense
+492,2025-06-14 16:15:42,Stationery Shop,Shopping,-149.09,expense
+494,2025-06-14 17:32:45,Clothing Store,Shopping,-992.51,expense
+493,2025-06-14 22:41:36,Lunch Canteen,Food,-117.59,expense
+495,2025-06-15 16:08:09,Bus Pass,Travel,-157.51,expense
+496,2025-06-15 22:50:12,ATM Withdrawal,Other,-1439.26,expense
+497,2025-06-16 10:35:55,Cafe Coffee,Food,-93.84,expense
+498,2025-06-16 13:10:03,Bakery,Food,-100.74,expense
+500,2025-06-16 20:54:21,Gym Membership,Other,-925.83,expense
+499,2025-06-16 22:54:11,Auto Rickshaw,Travel,-81.12,expense
+501,2025-06-17 07:05:47,Cafe Coffee,Food,-65.07,expense
+503,2025-06-17 20:59:06,Auto Rickshaw,Travel,-32.03,expense
+502,2025-06-17 22:33:45,Ola Cab,Travel,-269.94,expense
+505,2025-06-18 19:37:58,Swiggy Order,Food,-234.99,expense
+504,2025-06-18 21:49:16,Gym Membership,Other,-853.09,expense
+509,2025-06-19 06:32:27,Laundry Service,Other,-216.74,expense
+507,2025-06-19 14:36:28,Bakery,Food,-93.61,expense
+506,2025-06-19 17:16:29,Books Purchase,Other,-184.77,expense
+508,2025-06-19 21:30:02,Street Food,Food,-50.92,expense
+511,2025-06-20 13:43:30,Juice Bar,Food,-40.26,expense
+510,2025-06-20 14:03:33,Freelance Payment,Freelance,6725.33,income
+513,2025-06-20 20:33:43,Lunch Canteen,Food,-130.46,expense
+512,2025-06-20 21:30:58,Zomato Delivery,Food,-182.77,expense
+514,2025-06-21 15:39:29,Petrol Station,Travel,-809.63,expense
+515,2025-06-21 23:00:44,Restaurant Dinner,Food,-503.91,expense
+516,2025-06-22 15:00:58,Petrol Station,Travel,-1119.06,expense
+517,2025-06-22 17:13:00,Street Food,Food,-58.6,expense
+519,2025-06-23 09:19:55,Haircut Salon,Other,-220.54,expense
+518,2025-06-23 13:11:47,Freelance Payment,Freelance,4946.53,income
+520,2025-06-23 16:49:12,Books Purchase,Other,-161.28,expense
+521,2025-06-23 23:48:48,Bakery,Food,-62.5,expense
+522,2025-06-24 12:10:38,Zomato Delivery,Food,-287.3,expense
+523,2025-06-24 20:50:44,Medical Consultation,Other,-454.59,expense
+524,2025-06-25 10:09:25,Restaurant Dinner,Food,-336.84,expense
+526,2025-06-25 16:48:42,Gym Membership,Other,-661.79,expense
+525,2025-06-25 21:02:13,Ola Cab,Travel,-179.38,expense
+527,2025-06-26 10:23:23,Juice Bar,Food,-40.24,expense
+528,2025-06-26 20:52:14,Metro Card Recharge,Travel,-336.35,expense
+529,2025-06-27 19:03:32,Street Food,Food,-67.3,expense
+530,2025-06-27 23:15:58,Metro Card Recharge,Travel,-196.87,expense
+531,2025-06-28 09:46:29,Salary Deposit,Salary,54445.52,income
+532,2025-06-28 15:28:31,Gym Membership,Other,-976.85,expense
+533,2025-06-29 16:20:44,Shopping Mall,Shopping,-909.74,expense
+534,2025-06-29 21:53:14,Bus Pass,Travel,-160.16,expense
+535,2025-06-30 09:37:30,Uber Ride,Travel,-200.4,expense
+536,2025-06-30 23:46:11,Gym Membership,Other,-716.5,expense
+540,2025-07-01 06:59:06,Ola Cab,Travel,-115.86,expense
+537,2025-07-01 11:14:56,Rent Payment,Rent,-12903.97,expense
+539,2025-07-01 16:57:44,Uber Ride,Travel,-146.73,expense
+538,2025-07-01 20:16:35,Cashback Refund,Other,487.14,income
+541,2025-07-01 21:56:20,Bus Pass,Travel,-85.49,expense
+543,2025-07-02 14:25:31,Uber Ride,Travel,-164.87,expense
+542,2025-07-02 21:31:06,Uber Ride,Travel,-202.49,expense
+544,2025-07-03 10:47:51,Petrol Station,Travel,-1201.42,expense
+545,2025-07-03 20:03:15,Restaurant Dinner,Food,-458.87,expense
+546,2025-07-04 07:26:52,Lunch Canteen,Food,-133.52,expense
+547,2025-07-04 22:56:04,Auto Rickshaw,Travel,-29.98,expense
+550,2025-07-05 06:56:55,Clothing Store,Shopping,-1289.25,expense
+548,2025-07-05 19:13:18,Spotify Premium,Entertainment,-119,expense
+549,2025-07-05 19:35:57,Amazon Prime,Entertainment,-299,expense
+552,2025-07-06 13:05:23,Freelance Payment,Freelance,9366.24,income
+554,2025-07-06 14:09:54,Flipkart Purchase,Shopping,-1351.22,expense
+551,2025-07-06 18:40:11,Netflix Subscription,Entertainment,-649,expense
+553,2025-07-06 22:12:30,Haircut Salon,Other,-298.19,expense
+557,2025-07-07 14:31:01,Grocery Store,Food,-263.33,expense
+556,2025-07-07 17:48:34,Ola Cab,Travel,-121.16,expense
+555,2025-07-07 21:19:16,Books Purchase,Other,-200.72,expense
+560,2025-07-08 11:52:48,Uber Ride,Travel,-118.26,expense
+558,2025-07-08 15:54:50,Uber Ride,Travel,-153.44,expense
+559,2025-07-08 18:42:39,Books Purchase,Other,-468.56,expense
+563,2025-07-09 07:18:24,Grocery Store,Food,-314.33,expense
+565,2025-07-09 13:09:36,ATM Withdrawal,Other,-1390.09,expense
+561,2025-07-09 16:08:15,Electricity Bill,Bills,-710.75,expense
+562,2025-07-09 19:41:54,Bakery,Food,-124.22,expense
+564,2025-07-09 22:10:34,Metro Card Recharge,Travel,-308.19,expense
+567,2025-07-10 06:08:09,Petrol Station,Travel,-1651.66,expense
+566,2025-07-10 15:35:23,Hotel Booking,Travel,-4862.74,expense
+569,2025-07-11 07:53:08,Street Food,Food,-29.67,expense
+568,2025-07-11 15:46:38,Internet Bill,Bills,-843.88,expense
+571,2025-07-11 15:57:06,Auto Rickshaw,Travel,-36.63,expense
+570,2025-07-11 23:29:08,Auto Rickshaw,Travel,-80.25,expense
+573,2025-07-12 07:35:42,Auto Rickshaw,Travel,-78.56,expense
+575,2025-07-12 15:59:11,Ola Cab,Travel,-216.43,expense
+572,2025-07-12 18:15:18,Shopping Mall,Shopping,-620.12,expense
+574,2025-07-12 22:31:10,Uber Ride,Travel,-189.85,expense
+578,2025-07-13 12:31:39,Sports Event Ticket,Entertainment,-833.82,expense
+577,2025-07-13 17:41:14,Movie Tickets,Entertainment,-491.0,expense
+576,2025-07-13 21:13:17,Bakery,Food,-70.5,expense
+579,2025-07-14 12:52:32,Books Purchase,Other,-318.67,expense
+581,2025-07-14 19:40:47,ATM Withdrawal,Other,-889.16,expense
+580,2025-07-14 22:14:38,Street Food,Food,-56.69,expense
+583,2025-07-15 06:18:26,Auto Rickshaw,Travel,-33.64,expense
+584,2025-07-15 15:13:02,Petrol Station,Travel,-1286.54,expense
+582,2025-07-15 23:11:19,Swiggy Order,Food,-261.37,expense
+587,2025-07-16 11:22:03,ATM Withdrawal,Other,-1148.39,expense
+585,2025-07-16 20:10:12,ATM Withdrawal,Other,-565.01,expense
+586,2025-07-16 22:01:13,Bakery,Food,-50.22,expense
+589,2025-07-17 12:42:52,Uber Ride,Travel,-217.85,expense
+588,2025-07-17 22:35:55,Metro Card Recharge,Travel,-315.56,expense
+591,2025-07-18 15:32:17,Petrol Station,Travel,-1588.79,expense
+590,2025-07-18 20:28:09,Metro Card Recharge,Travel,-227.25,expense
+592,2025-07-19 19:42:15,ATM Withdrawal,Other,-1126.89,expense
+593,2025-07-19 21:13:52,Cafe Coffee,Food,-75.31,expense
+594,2025-07-20 20:17:10,Gym Membership,Other,-853.07,expense
+595,2025-07-20 21:43:17,Grocery Store,Food,-646.79,expense
+597,2025-07-21 06:24:46,Swiggy Order,Food,-267.42,expense
+596,2025-07-21 12:48:03,Cafe Coffee,Food,-71.7,expense
+599,2025-07-21 19:01:11,Cafe Coffee,Food,-95.65,expense
+598,2025-07-21 23:22:48,Cafe Coffee,Food,-83.24,expense
+600,2025-07-22 09:47:27,Bus Pass,Travel,-121.62,expense
+601,2025-07-22 23:47:42,Laundry Service,Other,-221.11,expense
+603,2025-07-23 15:42:10,Medical Consultation,Other,-435.4,expense
+602,2025-07-23 19:21:14,Zomato Delivery,Food,-306.23,expense
+604,2025-07-24 14:31:15,Grocery Store,Food,-553.11,expense
+605,2025-07-24 23:12:12,Gym Membership,Other,-757.26,expense
+607,2025-07-25 13:41:43,Zomato Delivery,Food,-326.26,expense
+606,2025-07-25 18:18:00,Cafe Coffee,Food,-77.86,expense
+608,2025-07-26 14:18:42,Uber Ride,Travel,-209.0,expense
+610,2025-07-26 17:47:17,Petrol Station,Travel,-1348.44,expense
+609,2025-07-26 21:21:20,Flipkart Purchase,Shopping,-363.69,expense
+613,2025-07-27 14:13:31,Cafe Coffee,Food,-57.74,expense
+611,2025-07-27 18:06:53,Street Food,Food,-27.12,expense
+612,2025-07-27 21:21:15,Ola Cab,Travel,-171.74,expense
+614,2025-07-28 07:23:26,Salary Deposit,Salary,69423.75,income
+615,2025-07-28 18:38:43,Petrol Station,Travel,-1641.21,expense
+616,2025-07-29 07:55:09,Swiggy Order,Food,-273.51,expense
+617,2025-07-29 16:35:27,Bakery,Food,-108.21,expense
+618,2025-07-29 21:28:29,Juice Bar,Food,-46.87,expense
+619,2025-07-30 08:12:08,Juice Bar,Food,-42.29,expense
+621,2025-07-30 18:44:09,Street Food,Food,-63.78,expense
+620,2025-07-30 22:00:23,Street Food,Food,-65.48,expense
+623,2025-07-31 08:19:49,Metro Card Recharge,Travel,-341.44,expense
+624,2025-07-31 15:12:17,Zomato Delivery,Food,-375.0,expense
+622,2025-07-31 18:34:21,Lunch Canteen,Food,-63.37,expense
+625,2025-08-01 09:00:15,Rent Payment,Rent,-12890.59,expense
+627,2025-08-01 10:55:51,Metro Card Recharge,Travel,-383.71,expense
+626,2025-08-01 18:33:40,Bakery,Food,-46.15,expense
+628,2025-08-01 22:35:36,Books Purchase,Other,-305.18,expense
+629,2025-08-02 20:53:51,Medical Consultation,Other,-563.46,expense
+630,2025-08-02 22:25:48,Movie Tickets,Entertainment,-549.21,expense
+631,2025-08-03 20:59:52,Spotify Premium,Entertainment,-119,expense
+632,2025-08-03 22:46:18,Grocery Store,Food,-552.09,expense
+634,2025-08-04 12:12:23,Freelance Payment,Freelance,7607.17,income
+635,2025-08-04 13:05:17,Metro Card Recharge,Travel,-202.86,expense
+633,2025-08-04 17:08:21,Netflix Subscription,Entertainment,-649,expense
+637,2025-08-04 18:37:37,Ola Cab,Travel,-195.81,expense
+636,2025-08-04 23:11:35,Laundry Service,Other,-245.62,expense
+638,2025-08-05 13:08:38,Electricity Bill,Bills,-1100.91,expense
+640,2025-08-05 19:07:28,Haircut Salon,Other,-228.58,expense
+639,2025-08-05 19:19:51,Amazon Prime,Entertainment,-299,expense
+641,2025-08-05 23:50:20,Petrol Station,Travel,-1739.17,expense
+643,2025-08-06 08:24:42,Street Food,Food,-51.09,expense
+645,2025-08-06 14:52:06,Cafe Coffee,Food,-96.66,expense
+644,2025-08-06 18:59:10,Haircut Salon,Other,-163.66,expense
+642,2025-08-06 22:35:13,Bakery,Food,-66.88,expense
+646,2025-08-07 09:32:10,Cafe Coffee,Food,-100.37,expense
+648,2025-08-07 14:42:49,Petrol Station,Travel,-972.44,expense
+647,2025-08-07 23:59:57,Grocery Store,Food,-211.87,expense
+650,2025-08-08 12:48:18,Medical Consultation,Other,-512.31,expense
+649,2025-08-08 20:16:54,Laundry Service,Other,-176.56,expense
+654,2025-08-09 06:20:59,Sports Event Ticket,Entertainment,-836.83,expense
+653,2025-08-09 14:35:24,Books Purchase,Other,-367.72,expense
+651,2025-08-09 14:44:17,Hotel Booking,Travel,-3974.81,expense
+652,2025-08-09 17:26:57,Street Food,Food,-58.65,expense
+657,2025-08-10 11:16:01,Ola Cab,Travel,-224.81,expense
+656,2025-08-10 15:33:51,Sports Event Ticket,Entertainment,-417.28,expense
+655,2025-08-10 22:28:48,Street Food,Food,-37.55,expense
+658,2025-08-11 14:08:25,Internet Bill,Bills,-629.41,expense
+660,2025-08-11 16:30:46,Bus Pass,Travel,-166.09,expense
+661,2025-08-11 18:18:22,Gym Membership,Other,-1158.52,expense
+659,2025-08-11 22:59:13,Street Food,Food,-63.13,expense
+664,2025-08-12 12:10:01,Bakery,Food,-72.94,expense
+662,2025-08-12 16:35:56,Freelance Payment,Freelance,7631.82,income
+663,2025-08-12 19:02:38,ATM Withdrawal,Other,-595.42,expense
+666,2025-08-13 20:08:57,Street Food,Food,-34.3,expense
+665,2025-08-13 22:51:21,Laundry Service,Other,-89.11,expense
+668,2025-08-14 07:05:20,Laundry Service,Other,-211.74,expense
+667,2025-08-14 19:25:22,Zomato Delivery,Food,-357.15,expense
+669,2025-08-14 22:11:09,Zomato Delivery,Food,-261.75,expense
+670,2025-08-15 20:46:48,Haircut Salon,Other,-185.87,expense
+671,2025-08-15 21:41:19,Laundry Service,Other,-89.17,expense
+673,2025-08-16 11:39:09,Lunch Canteen,Food,-108.26,expense
+674,2025-08-16 18:18:42,Flipkart Purchase,Shopping,-586.98,expense
+672,2025-08-16 22:11:00,Street Food,Food,-27.7,expense
+676,2025-08-17 17:06:58,Uber Ride,Travel,-194.0,expense
+675,2025-08-17 22:08:45,Juice Bar,Food,-85.11,expense
+678,2025-08-18 07:16:06,Street Food,Food,-25.78,expense
+677,2025-08-18 09:33:25,Petrol Station,Travel,-1512.29,expense
+680,2025-08-19 10:01:32,Gym Membership,Other,-609.65,expense
+679,2025-08-19 18:08:57,Cashback Refund,Other,250.0,income
+681,2025-08-20 07:47:27,Street Food,Food,-54.59,expense
+683,2025-08-20 16:18:51,Gym Membership,Other,-1149.56,expense
+682,2025-08-20 23:46:07,Zomato Delivery,Food,-115.66,expense
+686,2025-08-21 08:03:51,Haircut Salon,Other,-328.2,expense
+684,2025-08-21 13:01:01,Street Food,Food,-30.8,expense
+685,2025-08-21 21:43:16,Zomato Delivery,Food,-125.65,expense
+687,2025-08-22 14:03:16,Medical Consultation,Other,-387.37,expense
+688,2025-08-22 23:34:39,Zomato Delivery,Food,-273.69,expense
+690,2025-08-23 18:47:52,Petrol Station,Travel,-764.71,expense
+689,2025-08-23 19:39:30,Cashback Refund,Other,408.01,income
+693,2025-08-24 11:53:51,Swiggy Order,Food,-168.76,expense
+692,2025-08-24 16:49:13,Street Food,Food,-29.55,expense
+691,2025-08-24 18:34:41,Amazon Order,Shopping,-378.11,expense
+694,2025-08-25 07:32:12,Grocery Store,Food,-307.8,expense
+695,2025-08-25 13:57:48,Haircut Salon,Other,-242.6,expense
+696,2025-08-25 22:36:12,Laundry Service,Other,-157.91,expense
+698,2025-08-26 07:24:15,ATM Withdrawal,Other,-1311.81,expense
+697,2025-08-26 18:08:30,Zomato Delivery,Food,-330.6,expense
+700,2025-08-27 13:27:05,Lunch Canteen,Food,-115.64,expense
+699,2025-08-27 17:49:03,Petrol Station,Travel,-1612.84,expense
+701,2025-08-28 08:11:18,Salary Deposit,Salary,53851.77,income
+703,2025-08-28 11:23:34,Medical Consultation,Other,-648.93,expense
+702,2025-08-28 19:04:35,Bakery,Food,-70.93,expense
+705,2025-08-29 11:37:31,Gym Membership,Other,-606.01,expense
+704,2025-08-29 17:40:46,Lunch Canteen,Food,-120.84,expense
+707,2025-08-30 09:20:08,Petrol Station,Travel,-777.9,expense
+706,2025-08-30 21:58:13,Stationery Shop,Shopping,-205.25,expense
+709,2025-08-31 18:18:01,Metro Card Recharge,Travel,-170.17,expense
+708,2025-08-31 21:21:34,Stationery Shop,Shopping,-206.04,expense
+710,2025-09-01 07:58:23,Rent Payment,Rent,-11838.46,expense
+714,2025-09-01 08:23:25,Medical Consultation,Other,-282.74,expense
+712,2025-09-01 14:26:33,Haircut Salon,Other,-218.98,expense
+711,2025-09-01 18:41:20,Cashback Refund,Other,138.9,income
+713,2025-09-01 20:48:06,Lunch Canteen,Food,-85.56,expense
+715,2025-09-01 21:23:17,Medical Consultation,Other,-663.39,expense
+716,2025-09-02 11:35:00,Medical Consultation,Other,-549.22,expense
+717,2025-09-02 18:05:51,Books Purchase,Other,-432.81,expense
+718,2025-09-03 13:38:58,ATM Withdrawal,Other,-698.87,expense
+719,2025-09-03 19:15:32,Laundry Service,Other,-217.27,expense
+720,2025-09-03 22:00:50,Metro Card Recharge,Travel,-388.26,expense
+721,2025-09-04 08:22:08,Medical Consultation,Other,-544.69,expense
+722,2025-09-04 14:42:40,Laundry Service,Other,-224.74,expense
+723,2025-09-04 17:18:06,Medical Consultation,Other,-308.73,expense
+725,2025-09-05 09:17:34,Metro Card Recharge,Travel,-315.55,expense
+724,2025-09-05 20:29:30,Haircut Salon,Other,-202.17,expense
+726,2025-09-05 21:24:48,Books Purchase,Other,-192.88,expense
+729,2025-09-06 12:54:47,Uber Ride,Travel,-218.67,expense
+730,2025-09-06 19:22:18,Shopping Mall,Shopping,-2107.01,expense
+727,2025-09-06 19:23:01,Spotify Premium,Entertainment,-119,expense
+728,2025-09-06 20:59:47,Cashback Refund,Other,549.61,income
+732,2025-09-07 18:24:55,Shopping Mall,Shopping,-1550.19,expense
+731,2025-09-07 23:21:04,Movie Tickets,Entertainment,-304.38,expense
+736,2025-09-08 07:43:32,Uber Ride,Travel,-114.72,expense
+735,2025-09-08 14:16:43,Freelance Payment,Freelance,7130.26,income
+733,2025-09-08 17:46:56,Netflix Subscription,Entertainment,-649,expense
+734,2025-09-08 18:59:54,Amazon Prime,Entertainment,-299,expense
+737,2025-09-08 22:53:57,Metro Card Recharge,Travel,-276.25,expense
+739,2025-09-09 13:12:09,Bus Pass,Travel,-109.59,expense
+738,2025-09-09 23:30:08,Medical Consultation,Other,-337.55,expense
+744,2025-09-10 08:57:27,Auto Rickshaw,Travel,-33.08,expense
+740,2025-09-10 14:56:52,Electricity Bill,Bills,-816.13,expense
+741,2025-09-10 16:52:48,Metro Card Recharge,Travel,-343.25,expense
+742,2025-09-10 17:53:51,Restaurant Dinner,Food,-275.26,expense
+743,2025-09-10 21:10:31,Juice Bar,Food,-46.52,expense
+748,2025-09-11 06:14:42,Books Purchase,Other,-209.78,expense
+747,2025-09-11 12:55:54,Medical Consultation,Other,-419.14,expense
+745,2025-09-11 14:29:56,Internet Bill,Bills,-831.12,expense
+749,2025-09-11 18:27:33,Gym Membership,Other,-644.08,expense
+746,2025-09-11 23:23:00,Cafe Coffee,Food,-87.7,expense
+751,2025-09-12 11:11:58,Bus Pass,Travel,-102.34,expense
+752,2025-09-12 13:21:51,Juice Bar,Food,-45.52,expense
+753,2025-09-12 17:50:04,Auto Rickshaw,Travel,-59.1,expense
+750,2025-09-12 21:57:09,Auto Rickshaw,Travel,-61.07,expense
+756,2025-09-13 06:21:59,ATM Withdrawal,Other,-1039.19,expense
+755,2025-09-13 14:12:01,Gaming Purchase,Entertainment,-734.69,expense
+754,2025-09-13 18:16:45,Cashback Refund,Other,545.01,income
+757,2025-09-14 07:57:03,Restaurant Dinner,Food,-380.52,expense
+758,2025-09-14 20:40:45,Swiggy Order,Food,-183.01,expense
+759,2025-09-15 14:28:37,Freelance Payment,Freelance,7475.15,income
+761,2025-09-15 16:17:21,Juice Bar,Food,-63.03,expense
+760,2025-09-15 19:44:15,Uber Ride,Travel,-191.79,expense
+762,2025-09-15 21:01:10,Uber Ride,Travel,-127.06,expense
+764,2025-09-16 09:17:01,Zomato Delivery,Food,-274.5,expense
+765,2025-09-16 17:22:20,Gym Membership,Other,-972.64,expense
+763,2025-09-16 22:40:11,Street Food,Food,-58.99,expense
+766,2025-09-17 10:42:21,Laundry Service,Other,-98.57,expense
+767,2025-09-17 18:18:26,Swiggy Order,Food,-318.13,expense
+768,2025-09-18 06:00:02,Medical Consultation,Other,-449.52,expense
+769,2025-09-18 23:23:05,Gym Membership,Other,-1189.64,expense
+773,2025-09-19 08:20:24,Laundry Service,Other,-239.24,expense
+770,2025-09-19 13:49:01,Books Purchase,Other,-323.47,expense
+772,2025-09-19 18:44:42,Juice Bar,Food,-81.29,expense
+771,2025-09-19 22:58:54,Cafe Coffee,Food,-84.63,expense
+776,2025-09-20 07:56:48,Medical Consultation,Other,-496.71,expense
+775,2025-09-20 13:20:58,Zomato Delivery,Food,-196.29,expense
+774,2025-09-20 22:37:48,Uber Ride,Travel,-176.07,expense
+777,2025-09-21 10:56:17,Swiggy Order,Food,-199.42,expense
+778,2025-09-21 12:22:55,Shopping Mall,Shopping,-1123.43,expense
+779,2025-09-22 14:08:09,Juice Bar,Food,-56.33,expense
+780,2025-09-22 23:54:13,ATM Withdrawal,Other,-715.5,expense
+781,2025-09-23 08:07:01,Bakery,Food,-68.28,expense
+782,2025-09-23 23:47:55,Petrol Station,Travel,-713.49,expense
+783,2025-09-24 08:42:25,Grocery Store,Food,-549.99,expense
+785,2025-09-24 18:25:47,Street Food,Food,-69.57,expense
+784,2025-09-24 23:49:03,Haircut Salon,Other,-203.15,expense
+789,2025-09-25 08:21:57,Gym Membership,Other,-876.8,expense
+786,2025-09-25 12:55:49,Cafe Coffee,Food,-89.16,expense
+788,2025-09-25 17:46:07,Auto Rickshaw,Travel,-86.08,expense
+787,2025-09-25 23:11:43,Grocery Store,Food,-530.16,expense
+791,2025-09-26 08:36:49,Grocery Store,Food,-615.62,expense
+790,2025-09-26 15:02:37,Laundry Service,Other,-137.85,expense
+793,2025-09-26 19:54:15,Lunch Canteen,Food,-133.17,expense
+792,2025-09-26 21:20:13,Uber Ride,Travel,-111.93,expense
+795,2025-09-27 10:55:08,Shopping Mall,Shopping,-1074.64,expense
+794,2025-09-27 16:59:28,Pharmacy,Shopping,-265.7,expense
+796,2025-09-28 08:54:03,Salary Deposit,Salary,67486.54,income
+799,2025-09-28 09:51:17,Stationery Shop,Shopping,-238.02,expense
+800,2025-09-28 17:14:15,Gaming Purchase,Entertainment,-486.96,expense
+797,2025-09-28 18:26:51,Cashback Refund,Other,127.82,income
+798,2025-09-28 21:10:08,Restaurant Dinner,Food,-538.79,expense
+801,2025-09-29 08:22:58,Bakery,Food,-46.11,expense
+802,2025-09-29 20:02:50,Street Food,Food,-65.82,expense
+804,2025-09-30 19:00:45,Bakery,Food,-104.17,expense
+803,2025-09-30 21:03:31,Petrol Station,Travel,-1537.92,expense
+805,2025-10-01 08:01:23,Rent Payment,Rent,-11775.86,expense
+806,2025-10-01 14:16:45,Gym Membership,Other,-1163.65,expense
+809,2025-10-02 12:21:29,Metro Card Recharge,Travel,-240.46,expense
+808,2025-10-02 20:26:22,Metro Card Recharge,Travel,-244.83,expense
+807,2025-10-02 21:39:33,Restaurant Dinner,Food,-485.96,expense
+812,2025-10-03 06:48:17,Bakery,Food,-109.03,expense
+813,2025-10-03 16:17:20,Ola Cab,Travel,-179.57,expense
+810,2025-10-03 19:55:20,Amazon Prime,Entertainment,-299,expense
+811,2025-10-03 23:48:12,Books Purchase,Other,-304.43,expense
+816,2025-10-04 12:37:16,Bakery,Food,-116.18,expense
+814,2025-10-04 18:57:22,Spotify Premium,Entertainment,-119,expense
+815,2025-10-04 23:32:29,Swiggy Order,Food,-254.2,expense
+818,2025-10-05 10:25:39,Grocery Store,Food,-682.71,expense
+820,2025-10-05 12:48:00,ATM Withdrawal,Other,-968.1,expense
+819,2025-10-05 18:10:16,Cafe Coffee,Food,-59.16,expense
+817,2025-10-05 18:46:24,Netflix Subscription,Entertainment,-649,expense
+821,2025-10-06 14:05:00,Freelance Payment,Freelance,11702.27,income
+823,2025-10-06 15:14:28,Medical Consultation,Other,-662.01,expense
+822,2025-10-06 22:37:55,ATM Withdrawal,Other,-671.86,expense
+825,2025-10-07 08:40:09,Grocery Store,Food,-387.65,expense
+824,2025-10-07 20:22:06,Ola Cab,Travel,-277.57,expense
+826,2025-10-08 13:01:01,Freelance Payment,Freelance,13255.36,income
+828,2025-10-08 15:32:16,Gym Membership,Other,-605.04,expense
+827,2025-10-08 17:30:47,Ola Cab,Travel,-204.74,expense
+832,2025-10-09 08:06:58,Ola Cab,Travel,-262.34,expense
+830,2025-10-09 15:14:43,Lunch Canteen,Food,-113.21,expense
+829,2025-10-09 15:52:12,Electricity Bill,Bills,-677.28,expense
+833,2025-10-09 17:19:42,Medical Consultation,Other,-272.89,expense
+831,2025-10-09 23:06:08,Metro Card Recharge,Travel,-378.49,expense
+835,2025-10-10 19:04:50,Petrol Station,Travel,-1052.15,expense
+834,2025-10-10 22:43:46,Laundry Service,Other,-186.2,expense
+839,2025-10-11 09:49:22,Books Purchase,Other,-237.01,expense
+836,2025-10-11 16:46:26,Freelance Payment,Freelance,13029.09,income
+837,2025-10-11 17:16:16,Cashback Refund,Other,221.49,income
+838,2025-10-11 22:14:39,ATM Withdrawal,Other,-1004.16,expense
+840,2025-10-12 07:44:20,Swiggy Order,Food,-271.13,expense
+841,2025-10-12 15:29:38,Books Purchase,Other,-303.5,expense
+842,2025-10-12 21:52:48,Petrol Station,Travel,-1401.93,expense
+843,2025-10-13 10:46:36,Books Purchase,Other,-397.23,expense
+846,2025-10-13 16:30:41,Bus Pass,Travel,-99.48,expense
+844,2025-10-13 18:11:43,Juice Bar,Food,-56.4,expense
+845,2025-10-13 21:14:35,Bus Pass,Travel,-174.43,expense
+848,2025-10-14 10:17:24,Cafe Coffee,Food,-82.45,expense
+847,2025-10-14 12:38:28,Internet Bill,Bills,-580.22,expense
+851,2025-10-14 14:53:23,ATM Withdrawal,Other,-711.18,expense
+849,2025-10-14 17:17:36,Haircut Salon,Other,-269.26,expense
+850,2025-10-14 22:16:39,Lunch Canteen,Food,-122.4,expense
+853,2025-10-15 11:14:16,Lunch Canteen,Food,-113.02,expense
+852,2025-10-15 21:56:28,Petrol Station,Travel,-1544.29,expense
+855,2025-10-16 06:46:39,Gym Membership,Other,-752.44,expense
+854,2025-10-16 13:53:30,Zomato Delivery,Food,-195.07,expense
+858,2025-10-17 09:49:18,Street Food,Food,-36.35,expense
+856,2025-10-17 12:07:31,Lunch Canteen,Food,-96.26,expense
+857,2025-10-17 23:52:01,Uber Ride,Travel,-168.73,expense
+860,2025-10-18 09:08:57,Lunch Canteen,Food,-97.37,expense
+859,2025-10-18 19:32:37,Clothing Store,Shopping,-1828.75,expense
+861,2025-10-19 06:40:16,Books Purchase,Other,-182.47,expense
+862,2025-10-19 23:00:04,Petrol Station,Travel,-1635.17,expense
+865,2025-10-20 06:13:13,Cafe Coffee,Food,-60.22,expense
+863,2025-10-20 14:44:03,Gym Membership,Other,-911.61,expense
+864,2025-10-20 23:59:02,Metro Card Recharge,Travel,-337.71,expense
+867,2025-10-21 10:44:03,Medical Consultation,Other,-648.61,expense
+866,2025-10-21 14:21:33,Uber Ride,Travel,-156.03,expense
+870,2025-10-22 09:53:20,Ola Cab,Travel,-115.1,expense
+869,2025-10-22 15:17:38,Auto Rickshaw,Travel,-58.25,expense
+871,2025-10-22 20:13:42,Juice Bar,Food,-62.14,expense
+868,2025-10-22 23:44:25,Bakery,Food,-84.5,expense
+873,2025-10-23 07:05:34,Laundry Service,Other,-134.97,expense
+875,2025-10-23 12:27:35,Gym Membership,Other,-720.49,expense
+874,2025-10-23 19:49:43,Lunch Canteen,Food,-107.86,expense
+872,2025-10-23 22:41:47,Cafe Coffee,Food,-57.02,expense
+876,2025-10-24 09:20:12,Cafe Coffee,Food,-68.19,expense
+877,2025-10-24 18:56:43,Haircut Salon,Other,-184.1,expense
+878,2025-10-24 22:52:24,Bus Pass,Travel,-171.39,expense
+879,2025-10-25 06:50:44,Sports Event Ticket,Entertainment,-462.56,expense
+881,2025-10-25 14:10:23,Gaming Purchase,Entertainment,-474.1,expense
+880,2025-10-25 21:24:53,Haircut Salon,Other,-221.3,expense
+882,2025-10-26 14:46:08,Grocery Store,Food,-647.19,expense
+883,2025-10-26 17:58:42,Gym Membership,Other,-1197.02,expense
+887,2025-10-27 10:14:53,Gym Membership,Other,-1139.77,expense
+885,2025-10-27 16:41:26,Ola Cab,Travel,-173.51,expense
+886,2025-10-27 20:53:09,Restaurant Dinner,Food,-156.42,expense
+884,2025-10-27 23:34:36,Medical Consultation,Other,-571.55,expense
+890,2025-10-28 07:29:43,Uber Ride,Travel,-164.89,expense
+888,2025-10-28 09:37:16,Salary Deposit,Salary,63889.26,income
+889,2025-10-28 17:29:30,Bus Pass,Travel,-89.83,expense
+891,2025-10-28 21:20:09,Ola Cab,Travel,-146.99,expense
+894,2025-10-29 11:43:22,Petrol Station,Travel,-828.15,expense
+892,2025-10-29 20:21:48,Metro Card Recharge,Travel,-331.15,expense
+893,2025-10-29 22:53:07,Bakery,Food,-116.5,expense
+899,2025-10-30 09:13:53,Auto Rickshaw,Travel,-79.19,expense
+897,2025-10-30 13:02:48,Juice Bar,Food,-85.07,expense
+895,2025-10-30 18:30:01,Cashback Refund,Other,165.13,income
+896,2025-10-30 19:26:39,Haircut Salon,Other,-122.58,expense
+898,2025-10-30 22:27:11,Metro Card Recharge,Travel,-270.1,expense
+900,2025-10-31 10:04:24,Medical Consultation,Other,-375.56,expense
+903,2025-10-31 13:06:18,Bakery,Food,-91.35,expense
+901,2025-10-31 17:28:35,Swiggy Order,Food,-190.75,expense
+902,2025-10-31 23:21:35,Swiggy Order,Food,-200.01,expense
+904,2025-11-01 11:58:33,Rent Payment,Rent,-11076.19,expense
+905,2025-11-01 19:50:30,Sports Event Ticket,Entertainment,-745.24,expense
+906,2025-11-01 21:29:31,ATM Withdrawal,Other,-1096.03,expense
+911,2025-11-02 07:17:33,Haircut Salon,Other,-274.34,expense
+908,2025-11-02 12:19:33,Freelance Payment,Freelance,10794.44,income
+909,2025-11-02 14:06:34,Cafe Coffee,Food,-70.3,expense
+907,2025-11-02 17:28:42,Netflix Subscription,Entertainment,-649,expense
+910,2025-11-02 20:13:37,Swiggy Order,Food,-147.57,expense
+912,2025-11-02 23:04:06,Metro Card Recharge,Travel,-391.07,expense
+916,2025-11-03 08:52:10,Laundry Service,Other,-89.6,expense
+917,2025-11-03 12:03:41,Haircut Salon,Other,-252.82,expense
+915,2025-11-03 19:36:35,Zomato Delivery,Food,-155.17,expense
+913,2025-11-03 20:28:42,Amazon Prime,Entertainment,-299,expense
+914,2025-11-03 23:04:25,Metro Card Recharge,Travel,-218.85,expense
+918,2025-11-04 07:55:51,Grocery Store,Food,-664.01,expense
+920,2025-11-04 15:13:17,Laundry Service,Other,-177.86,expense
+919,2025-11-04 18:55:56,Cafe Coffee,Food,-42.03,expense
+921,2025-11-04 22:53:09,Bus Pass,Travel,-163.18,expense
+923,2025-11-05 06:28:44,Medical Consultation,Other,-657.73,expense
+925,2025-11-05 12:39:57,ATM Withdrawal,Other,-421.14,expense
+922,2025-11-05 18:18:29,Spotify Premium,Entertainment,-119,expense
+924,2025-11-05 19:24:22,Laundry Service,Other,-226.88,expense
+928,2025-11-06 08:18:51,Bakery,Food,-112.87,expense
+926,2025-11-06 13:45:46,Electricity Bill,Bills,-1014.42,expense
+927,2025-11-06 20:34:45,Ola Cab,Travel,-168.37,expense
+930,2025-11-07 16:40:44,Juice Bar,Food,-43.88,expense
+929,2025-11-07 21:48:51,Auto Rickshaw,Travel,-59.07,expense
+932,2025-11-08 15:06:38,Clothing Store,Shopping,-1389.8,expense
+931,2025-11-08 17:43:43,Books Purchase,Other,-130.92,expense
+933,2025-11-09 17:13:58,Cashback Refund,Other,359.5,income
+934,2025-11-09 17:29:36,Shopping Mall,Shopping,-1207.06,expense
+938,2025-11-10 11:53:18,Books Purchase,Other,-189.37,expense
+936,2025-11-10 16:31:08,Metro Card Recharge,Travel,-306.41,expense
+935,2025-11-10 17:39:46,Auto Rickshaw,Travel,-30.22,expense
+937,2025-11-10 22:37:16,Haircut Salon,Other,-329.51,expense
+940,2025-11-11 10:19:45,Uber Ride,Travel,-117.01,expense
+939,2025-11-11 12:14:59,Bakery,Food,-69.7,expense
+941,2025-11-11 22:35:57,Grocery Store,Food,-552.47,expense
+943,2025-11-12 10:12:47,ATM Withdrawal,Other,-1024.25,expense
+942,2025-11-12 17:50:22,Ola Cab,Travel,-214.27,expense
+946,2025-11-13 07:24:54,Ola Cab,Travel,-174.76,expense
+944,2025-11-13 12:14:10,Flight Ticket,Travel,-4630.59,expense
+945,2025-11-13 14:43:46,Gym Membership,Other,-875.72,expense
+949,2025-11-14 14:30:37,Gym Membership,Other,-1140.65,expense
+947,2025-11-14 20:31:54,Street Food,Food,-26.68,expense
+948,2025-11-14 22:33:25,Swiggy Order,Food,-241.79,expense
+952,2025-11-15 11:06:24,Clothing Store,Shopping,-1032.49,expense
+950,2025-11-15 15:00:29,Internet Bill,Bills,-662.23,expense
+951,2025-11-15 23:25:59,Pharmacy,Shopping,-242.8,expense
+955,2025-11-16 11:47:23,Gaming Purchase,Entertainment,-676.24,expense
+953,2025-11-16 15:49:18,Juice Bar,Food,-82.0,expense
+954,2025-11-16 19:17:20,Zomato Delivery,Food,-360.98,expense
+956,2025-11-16 21:31:36,Shopping Mall,Shopping,-2275.14,expense
+960,2025-11-17 09:07:27,Laundry Service,Other,-126.18,expense
+957,2025-11-17 12:40:38,Lunch Canteen,Food,-79.19,expense
+959,2025-11-17 19:21:28,Books Purchase,Other,-190.85,expense
+958,2025-11-17 23:50:23,Medical Consultation,Other,-641.83,expense
+963,2025-11-18 07:08:47,Ola Cab,Travel,-161.06,expense
+961,2025-11-18 16:52:15,ATM Withdrawal,Other,-753.4,expense
+962,2025-11-18 20:42:59,Cafe Coffee,Food,-81.48,expense
+965,2025-11-19 14:10:24,Bakery,Food,-95.6,expense
+964,2025-11-19 17:41:19,Restaurant Dinner,Food,-508.8,expense
+967,2025-11-20 18:05:19,Bakery,Food,-87.47,expense
+966,2025-11-20 22:57:55,ATM Withdrawal,Other,-1420.4,expense
+970,2025-11-21 06:57:33,Uber Ride,Travel,-144.75,expense
+969,2025-11-21 12:22:41,Street Food,Food,-59.04,expense
+968,2025-11-21 20:16:58,Street Food,Food,-56.21,expense
+971,2025-11-21 23:21:43,Cafe Coffee,Food,-78.13,expense
+974,2025-11-22 09:21:47,Pharmacy,Shopping,-407.61,expense
+972,2025-11-22 12:53:12,Freelance Payment,Freelance,7571.95,income
+973,2025-11-22 21:11:03,Street Food,Food,-29.93,expense
+976,2025-11-23 06:10:34,Movie Tickets,Entertainment,-213.83,expense
+977,2025-11-23 16:47:21,Stationery Shop,Shopping,-224.62,expense
+975,2025-11-23 18:04:51,Stationery Shop,Shopping,-241.25,expense
+978,2025-11-24 16:15:32,Freelance Payment,Freelance,7306.92,income
+979,2025-11-24 16:18:05,Juice Bar,Food,-78.53,expense
+980,2025-11-24 23:00:08,Laundry Service,Other,-211.19,expense
+985,2025-11-25 06:36:09,Swiggy Order,Food,-157.55,expense
+982,2025-11-25 13:20:59,Laundry Service,Other,-82.81,expense
+981,2025-11-25 18:20:26,Cashback Refund,Other,141.53,income
+983,2025-11-25 20:09:52,Medical Consultation,Other,-282.29,expense
+984,2025-11-25 22:02:39,Swiggy Order,Food,-287.23,expense
+987,2025-11-26 08:26:01,Juice Bar,Food,-63.3,expense
+986,2025-11-26 12:02:13,Lunch Canteen,Food,-89.67,expense
+988,2025-11-26 22:46:30,Petrol Station,Travel,-1176.71,expense
+989,2025-11-27 10:53:32,Books Purchase,Other,-123.81,expense
+992,2025-11-27 12:50:02,Laundry Service,Other,-147.74,expense
+991,2025-11-27 17:26:41,Laundry Service,Other,-216.68,expense
+990,2025-11-27 23:06:37,Cafe Coffee,Food,-66.01,expense
+993,2025-11-28 08:11:13,Salary Deposit,Salary,67642.41,income
+995,2025-11-28 10:33:34,Grocery Store,Food,-241.02,expense
+996,2025-11-28 16:23:24,Uber Ride,Travel,-108.92,expense
+994,2025-11-28 17:00:17,Juice Bar,Food,-49.92,expense
+997,2025-11-29 08:49:05,Sports Event Ticket,Entertainment,-415.52,expense
+998,2025-11-29 17:05:25,Laundry Service,Other,-124.09,expense
+999,2025-11-29 22:54:32,Haircut Salon,Other,-340.99,expense
+1000,2025-11-30 10:07:02,Pharmacy,Shopping,-434.52,expense
+1001,2025-11-30 16:12:26,Juice Bar,Food,-76.46,expense
+1002,2025-11-30 22:07:57,Concert Tickets,Entertainment,-1049.01,expense
+1004,2025-12-01 06:57:33,Laundry Service,Other,-160.96,expense
+1003,2025-12-01 09:36:41,Rent Payment,Rent,-11758.51,expense
+1005,2025-12-01 17:13:41,Gym Membership,Other,-1169.05,expense
+1007,2025-12-02 14:14:19,Restaurant Dinner,Food,-429.22,expense
+1006,2025-12-02 19:40:21,Amazon Prime,Entertainment,-299,expense
+1008,2025-12-02 19:52:11,Grocery Store,Food,-282.48,expense
+1010,2025-12-03 09:22:06,Medical Consultation,Other,-542.8,expense
+1009,2025-12-03 17:50:29,Cashback Refund,Other,398.9,income
+1011,2025-12-03 18:46:14,Bakery,Food,-67.01,expense
+1012,2025-12-04 06:23:51,Grocery Store,Food,-500.08,expense
+1013,2025-12-04 15:23:29,Bus Pass,Travel,-167.36,expense
+1015,2025-12-05 10:08:50,Petrol Station,Travel,-1673.74,expense
+1014,2025-12-05 18:50:10,Netflix Subscription,Entertainment,-649,expense
+1017,2025-12-06 21:13:21,Cafe Coffee,Food,-86.69,expense
+1016,2025-12-06 21:22:44,Amazon Order,Shopping,-1621.34,expense
+1020,2025-12-07 06:14:04,Ola Cab,Travel,-251.77,expense
+1018,2025-12-07 14:43:08,Electricity Bill,Bills,-749.57,expense
+1019,2025-12-07 14:44:29,Movie Tickets,Entertainment,-487.0,expense
+1021,2025-12-07 20:01:48,Medical Consultation,Other,-288.35,expense
+1025,2025-12-08 06:20:00,Street Food,Food,-60.63,expense
+1023,2025-12-08 15:04:06,Freelance Payment,Freelance,12091.47,income
+1022,2025-12-08 20:33:05,Spotify Premium,Entertainment,-119,expense
+1024,2025-12-08 20:51:46,Grocery Store,Food,-225.22,expense
+1026,2025-12-09 07:15:48,Haircut Salon,Other,-237.19,expense
+1027,2025-12-09 12:29:31,Zomato Delivery,Food,-172.77,expense
+1029,2025-12-10 10:53:15,Auto Rickshaw,Travel,-50.31,expense
+1028,2025-12-10 12:38:58,Cafe Coffee,Food,-96.49,expense
+1030,2025-12-10 17:52:49,Auto Rickshaw,Travel,-44.52,expense
+1031,2025-12-10 21:58:06,Cafe Coffee,Food,-106.23,expense
+1032,2025-12-11 11:05:14,Uber Ride,Travel,-193.23,expense
+1033,2025-12-11 20:28:58,Books Purchase,Other,-317.14,expense
+1035,2025-12-12 10:33:33,Auto Rickshaw,Travel,-70.01,expense
+1036,2025-12-12 19:23:22,Bus Pass,Travel,-111.92,expense
+1034,2025-12-12 21:50:34,Auto Rickshaw,Travel,-26.04,expense
+1038,2025-12-13 07:00:30,Cafe Coffee,Food,-35.77,expense
+1040,2025-12-13 14:25:28,Lunch Canteen,Food,-61.68,expense
+1037,2025-12-13 17:48:58,Juice Bar,Food,-46.67,expense
+1039,2025-12-13 21:08:04,Haircut Salon,Other,-327.76,expense
+1042,2025-12-14 11:04:49,Gaming Purchase,Entertainment,-643.04,expense
+1041,2025-12-14 12:51:37,Bus Pass,Travel,-62.82,expense
+1043,2025-12-15 13:52:15,Internet Bill,Bills,-883.83,expense
+1044,2025-12-15 17:06:11,Gym Membership,Other,-794.28,expense
+1045,2025-12-15 22:15:38,Zomato Delivery,Food,-188.19,expense
+1046,2025-12-16 08:37:15,Ola Cab,Travel,-139.95,expense
+1047,2025-12-16 16:42:06,Uber Ride,Travel,-193.5,expense
+1049,2025-12-16 17:13:15,Metro Card Recharge,Travel,-150.53,expense
+1048,2025-12-16 22:35:45,Cafe Coffee,Food,-41.07,expense
+1052,2025-12-17 10:59:35,Zomato Delivery,Food,-278.47,expense
+1051,2025-12-17 15:11:23,Books Purchase,Other,-491.62,expense
+1050,2025-12-17 17:33:04,Grocery Store,Food,-332.48,expense
+1053,2025-12-17 22:35:53,Books Purchase,Other,-313.56,expense
+1055,2025-12-18 07:22:07,Bus Pass,Travel,-178.63,expense
+1054,2025-12-18 20:50:44,Auto Rickshaw,Travel,-80.99,expense
+1057,2025-12-19 14:08:08,Medical Consultation,Other,-553.03,expense
+1058,2025-12-19 17:51:52,Books Purchase,Other,-436.4,expense
+1056,2025-12-19 21:08:09,Juice Bar,Food,-61.7,expense
+1059,2025-12-20 10:39:23,Sports Event Ticket,Entertainment,-646.17,expense
+1060,2025-12-20 16:05:00,Gym Membership,Other,-612.29,expense
+1061,2025-12-21 09:42:12,Shopping Mall,Shopping,-862.11,expense
+1062,2025-12-21 14:09:12,ATM Withdrawal,Other,-1040.84,expense
+1063,2025-12-22 08:08:40,Street Food,Food,-25.66,expense
+1066,2025-12-22 16:25:35,Metro Card Recharge,Travel,-198.36,expense
+1064,2025-12-22 19:22:26,Restaurant Dinner,Food,-318.65,expense
+1065,2025-12-22 21:05:51,Books Purchase,Other,-465.55,expense
+1067,2025-12-23 12:10:44,Petrol Station,Travel,-1185.27,expense
+1068,2025-12-23 17:18:51,Swiggy Order,Food,-98.77,expense
+1072,2025-12-24 08:48:33,Restaurant Dinner,Food,-365.85,expense
+1070,2025-12-24 13:24:10,Bakery,Food,-92.86,expense
+1069,2025-12-24 20:26:39,Street Food,Food,-37.11,expense
+1071,2025-12-24 21:21:31,Auto Rickshaw,Travel,-28.09,expense
+1073,2025-12-25 15:08:47,Zomato Delivery,Food,-314.43,expense
+1074,2025-12-25 20:15:30,Gym Membership,Other,-659.01,expense
+1077,2025-12-26 09:39:11,Ola Cab,Travel,-267.93,expense
+1076,2025-12-26 17:07:09,Juice Bar,Food,-81.45,expense
+1075,2025-12-26 17:42:22,Cashback Refund,Other,359.24,income
+1078,2025-12-26 23:20:28,Cafe Coffee,Food,-75.36,expense
+1079,2025-12-27 06:33:14,Laundry Service,Other,-134.2,expense
+1081,2025-12-27 19:33:16,Amazon Order,Shopping,-838.37,expense
+1080,2025-12-27 23:40:06,Gaming Purchase,Entertainment,-559.13,expense
+1082,2025-12-28 10:30:03,Salary Deposit,Salary,60781.65,income
+1084,2025-12-28 19:19:04,Swiggy Order,Food,-175.77,expense
+1083,2025-12-28 23:29:46,Gym Membership,Other,-809.5,expense
+1085,2025-12-29 08:16:56,Uber Ride,Travel,-143.22,expense
+1087,2025-12-29 14:32:10,ATM Withdrawal,Other,-1116.12,expense
+1086,2025-12-29 19:50:49,Haircut Salon,Other,-161.8,expense
+1088,2025-12-30 09:23:20,Zomato Delivery,Food,-176.94,expense
+1089,2025-12-30 13:47:05,Swiggy Order,Food,-268.85,expense
+1091,2025-12-30 20:14:49,Bus Pass,Travel,-150.99,expense
+1090,2025-12-30 23:55:36,Medical Consultation,Other,-563.55,expense
+1092,2025-12-31 12:42:35,Street Food,Food,-60.95,expense
+1093,2025-12-31 20:14:30,Juice Bar,Food,-46.35,expense
+1094,2026-01-01 09:17:57,Rent Payment,Rent,-12010.71,expense
+1095,2026-01-01 15:45:30,Petrol Station,Travel,-940.2,expense
+1098,2026-01-02 11:59:07,Uber Ride,Travel,-140.22,expense
+1097,2026-01-02 13:45:37,Laundry Service,Other,-229.52,expense
+1096,2026-01-02 22:06:01,Auto Rickshaw,Travel,-36.1,expense
+1101,2026-01-03 10:40:45,Metro Card Recharge,Travel,-210.58,expense
+1100,2026-01-03 19:41:58,Spotify Premium,Entertainment,-119,expense
+1099,2026-01-03 20:42:13,Netflix Subscription,Entertainment,-649,expense
+1102,2026-01-03 22:00:07,Swiggy Order,Food,-97.44,expense
+1104,2026-01-04 07:06:37,Metro Card Recharge,Travel,-258.84,expense
+1106,2026-01-04 12:31:31,ATM Withdrawal,Other,-647.06,expense
+1103,2026-01-04 18:01:39,Grocery Store,Food,-367.15,expense
+1105,2026-01-04 22:15:12,Amazon Order,Shopping,-320.79,expense
+1109,2026-01-05 06:37:37,Cafe Coffee,Food,-96.54,expense
+1110,2026-01-05 12:29:35,Grocery Store,Food,-450.4,expense
+1107,2026-01-05 18:50:45,Swiggy Order,Food,-135.1,expense
+1108,2026-01-05 21:36:26,Bakery,Food,-121.49,expense
+1111,2026-01-06 19:38:32,Uber Ride,Travel,-110.89,expense
+1112,2026-01-06 22:23:42,Petrol Station,Travel,-1586.66,expense
+1115,2026-01-07 09:30:13,Haircut Salon,Other,-294.5,expense
+1116,2026-01-07 16:09:57,Bus Pass,Travel,-138.32,expense
+1113,2026-01-07 18:06:37,Amazon Prime,Entertainment,-299,expense
+1114,2026-01-07 20:35:54,Zomato Delivery,Food,-171.78,expense
+1117,2026-01-07 22:43:49,Swiggy Order,Food,-188.26,expense
+1120,2026-01-08 12:57:35,Swiggy Order,Food,-227.13,expense
+1118,2026-01-08 13:15:09,Electricity Bill,Bills,-802.02,expense
+1119,2026-01-08 18:05:32,Grocery Store,Food,-290.15,expense
+1122,2026-01-09 11:10:55,ATM Withdrawal,Other,-981.39,expense
+1123,2026-01-09 16:23:57,Cafe Coffee,Food,-51.93,expense
+1121,2026-01-09 18:09:33,Uber Ride,Travel,-200.73,expense
+1124,2026-01-09 23:03:38,Uber Ride,Travel,-163.85,expense
+1125,2026-01-10 06:42:16,Bus Pass,Travel,-132.65,expense
+1126,2026-01-10 13:15:05,Metro Card Recharge,Travel,-172.41,expense
+1127,2026-01-11 07:17:44,Juice Bar,Food,-74.25,expense
+1129,2026-01-11 12:39:09,Street Food,Food,-61.5,expense
+1128,2026-01-11 17:55:21,ATM Withdrawal,Other,-505.25,expense
+1130,2026-01-11 22:43:14,Medical Consultation,Other,-334.45,expense
+1131,2026-01-12 14:52:24,ATM Withdrawal,Other,-1232.19,expense
+1132,2026-01-12 20:23:30,Metro Card Recharge,Travel,-318.05,expense
+1133,2026-01-13 20:12:37,Juice Bar,Food,-62.24,expense
+1134,2026-01-13 21:14:11,Bakery,Food,-111.27,expense
+1137,2026-01-14 07:35:27,Gym Membership,Other,-724.07,expense
+1135,2026-01-14 16:41:06,Internet Bill,Bills,-934.27,expense
+1136,2026-01-14 22:21:26,Laundry Service,Other,-203.68,expense
+1140,2026-01-15 10:42:27,Grocery Store,Food,-437.28,expense
+1138,2026-01-15 15:09:15,Uber Ride,Travel,-76.77,expense
+1139,2026-01-15 17:49:29,Ola Cab,Travel,-203.12,expense
+1143,2026-01-16 06:10:27,Cafe Coffee,Food,-35.88,expense
+1141,2026-01-16 15:25:59,Haircut Salon,Other,-277.04,expense
+1142,2026-01-16 23:46:41,Uber Ride,Travel,-181.99,expense
+1145,2026-01-17 14:08:35,Street Food,Food,-64.76,expense
+1144,2026-01-17 19:23:02,Sports Event Ticket,Entertainment,-845.86,expense
+1147,2026-01-18 09:35:47,Street Food,Food,-65.11,expense
+1148,2026-01-18 15:38:52,Gym Membership,Other,-1135.86,expense
+1146,2026-01-18 23:32:38,Lunch Canteen,Food,-131.34,expense
+1151,2026-01-19 07:27:22,Lunch Canteen,Food,-138.15,expense
+1149,2026-01-19 15:33:48,Freelance Payment,Freelance,10299.17,income
+1152,2026-01-19 15:57:14,Petrol Station,Travel,-1127.07,expense
+1150,2026-01-19 19:17:34,ATM Withdrawal,Other,-537.17,expense
+1153,2026-01-20 16:52:47,Juice Bar,Food,-44.58,expense
+1154,2026-01-20 21:54:13,Metro Card Recharge,Travel,-332.34,expense
+1156,2026-01-21 16:26:50,Petrol Station,Travel,-1450.55,expense
+1155,2026-01-21 16:37:41,Freelance Payment,Freelance,11195.78,income
+1157,2026-01-22 07:07:55,Juice Bar,Food,-38.34,expense
+1158,2026-01-22 17:55:11,Books Purchase,Other,-319.12,expense
+1160,2026-01-23 11:51:50,Juice Bar,Food,-43.84,expense
+1159,2026-01-23 16:34:56,Metro Card Recharge,Travel,-326.77,expense
+1161,2026-01-23 20:49:23,Lunch Canteen,Food,-81.45,expense
+1162,2026-01-24 16:31:39,Bus Pass,Travel,-176.48,expense
+1163,2026-01-24 17:57:38,Movie Tickets,Entertainment,-266.42,expense
+1164,2026-01-24 21:22:47,Sports Event Ticket,Entertainment,-405.0,expense
+1166,2026-01-25 11:33:09,Bakery,Food,-77.25,expense
+1167,2026-01-25 16:47:02,Swiggy Order,Food,-235.36,expense
+1165,2026-01-25 22:13:06,Grocery Store,Food,-382.05,expense
+1168,2026-01-26 10:20:56,Restaurant Dinner,Food,-275.98,expense
+1169,2026-01-26 23:56:20,Medical Consultation,Other,-262.19,expense
+1171,2026-01-27 06:56:14,Bus Pass,Travel,-65.52,expense
+1170,2026-01-27 16:47:19,Cafe Coffee,Food,-98.44,expense
+1172,2026-01-28 08:19:48,Salary Deposit,Salary,55633.36,income
+1173,2026-01-28 11:36:16,Auto Rickshaw,Travel,-48.26,expense
+1174,2026-01-28 21:14:44,Auto Rickshaw,Travel,-25.2,expense
+1176,2026-01-29 11:23:10,Gym Membership,Other,-1113.2,expense
+1175,2026-01-29 16:28:19,Uber Ride,Travel,-102.97,expense
+1178,2026-01-30 11:47:38,Zomato Delivery,Food,-326.02,expense
+1179,2026-01-30 15:16:51,Auto Rickshaw,Travel,-70.42,expense
+1177,2026-01-30 17:27:45,Cashback Refund,Other,302.76,income
+1180,2026-01-31 17:38:24,Cashback Refund,Other,417.15,income
+1181,2026-01-31 19:23:23,Bus Pass,Travel,-92.79,expense
+1182,2026-01-31 21:58:15,Pharmacy,Shopping,-92.47,expense
+1185,2026-02-01 10:24:06,ATM Withdrawal,Other,-608.14,expense
+1183,2026-02-01 11:26:31,Rent Payment,Rent,-13123.52,expense
+1184,2026-02-01 22:29:33,Amazon Order,Shopping,-793.91,expense
+1189,2026-02-02 07:46:55,Gym Membership,Other,-625.34,expense
+1187,2026-02-02 15:08:08,Grocery Store,Food,-406.04,expense
+1186,2026-02-02 20:54:11,Amazon Prime,Entertainment,-299,expense
+1188,2026-02-02 22:39:03,Street Food,Food,-26.08,expense
+1191,2026-02-03 06:45:53,Lunch Canteen,Food,-132.26,expense
+1190,2026-02-03 19:26:39,Haircut Salon,Other,-320.81,expense
+1192,2026-02-04 06:55:33,Laundry Service,Other,-197.37,expense
+1193,2026-02-04 16:41:15,Ola Cab,Travel,-143.44,expense
+1195,2026-02-04 18:21:09,Gym Membership,Other,-937.71,expense
+1194,2026-02-04 21:59:14,Swiggy Order,Food,-120.15,expense
+1198,2026-02-05 08:38:39,Petrol Station,Travel,-1437.66,expense
+1196,2026-02-05 13:24:54,Electricity Bill,Bills,-698.54,expense
+1197,2026-02-05 17:40:34,Netflix Subscription,Entertainment,-649,expense
+1201,2026-02-06 11:22:51,Auto Rickshaw,Travel,-25.94,expense
+1199,2026-02-06 18:31:31,Spotify Premium,Entertainment,-119,expense
+1200,2026-02-06 18:43:53,Petrol Station,Travel,-717.72,expense
+1203,2026-02-07 07:57:06,Laundry Service,Other,-118.17,expense
+1204,2026-02-07 20:15:01,Laundry Service,Other,-148.84,expense
+1202,2026-02-07 23:45:40,Gaming Purchase,Entertainment,-250.02,expense
+1206,2026-02-08 10:58:08,Medical Consultation,Other,-578.98,expense
+1205,2026-02-08 17:25:46,Cashback Refund,Other,164.29,income
+1207,2026-02-08 19:59:22,Metro Card Recharge,Travel,-176.16,expense
+1208,2026-02-08 22:41:07,Flipkart Purchase,Shopping,-1281.7,expense
+1211,2026-02-09 10:27:02,Grocery Store,Food,-578.6,expense
+1209,2026-02-09 13:10:18,Flight Ticket,Travel,-4251.92,expense
+1210,2026-02-09 14:43:16,Juice Bar,Food,-83.72,expense
+1212,2026-02-09 21:53:26,Bakery,Food,-64.3,expense
+1215,2026-02-10 11:20:45,Petrol Station,Travel,-1004.36,expense
+1213,2026-02-10 12:08:43,Internet Bill,Bills,-665.16,expense
+1216,2026-02-10 20:06:52,Restaurant Dinner,Food,-167.22,expense
+1214,2026-02-10 20:39:18,Cashback Refund,Other,503.65,income
+1219,2026-02-11 08:55:06,Swiggy Order,Food,-229.78,expense
+1220,2026-02-11 16:26:05,Laundry Service,Other,-98.54,expense
+1218,2026-02-11 18:29:29,Haircut Salon,Other,-199.22,expense
+1217,2026-02-11 22:31:26,Restaurant Dinner,Food,-260.31,expense
+1222,2026-02-12 10:11:38,Haircut Salon,Other,-124.37,expense
+1221,2026-02-12 20:41:46,ATM Withdrawal,Other,-989.5,expense
+1223,2026-02-13 08:06:14,Ola Cab,Travel,-218.57,expense
+1224,2026-02-13 15:31:52,ATM Withdrawal,Other,-653.31,expense
+1225,2026-02-13 20:58:41,Medical Consultation,Other,-479.43,expense
+1229,2026-02-14 10:03:02,Pharmacy,Shopping,-187.49,expense
+1226,2026-02-14 16:46:55,Zomato Delivery,Food,-356.14,expense
+1228,2026-02-14 19:55:31,Auto Rickshaw,Travel,-27.69,expense
+1227,2026-02-14 21:51:19,Uber Ride,Travel,-133.46,expense
+1231,2026-02-15 18:05:17,Laundry Service,Other,-162.93,expense
+1230,2026-02-15 22:37:14,Flipkart Purchase,Shopping,-629.68,expense
+1234,2026-02-16 10:44:38,Restaurant Dinner,Food,-467.47,expense
+1232,2026-02-16 16:49:02,Lunch Canteen,Food,-115.2,expense
+1233,2026-02-16 22:01:46,Medical Consultation,Other,-575.78,expense
+1237,2026-02-17 07:18:56,Grocery Store,Food,-511.43,expense
+1235,2026-02-17 12:01:10,Freelance Payment,Freelance,8105.34,income
+1236,2026-02-17 19:33:05,Laundry Service,Other,-232.28,expense
+1238,2026-02-17 21:57:09,Cafe Coffee,Food,-92.19,expense
+1241,2026-02-18 12:08:05,Petrol Station,Travel,-1424.26,expense
+1239,2026-02-18 15:39:06,Freelance Payment,Freelance,9775.14,income
+1240,2026-02-18 18:03:16,Juice Bar,Food,-60.14,expense
+1243,2026-02-19 15:51:59,Gym Membership,Other,-681.34,expense
+1242,2026-02-19 22:54:12,Bus Pass,Travel,-163.32,expense
+1245,2026-02-20 12:17:12,Gym Membership,Other,-784.81,expense
+1244,2026-02-20 18:39:18,Gym Membership,Other,-741.77,expense
+1247,2026-02-21 11:30:11,Cafe Coffee,Food,-53.81,expense
+1246,2026-02-21 13:42:16,Pharmacy,Shopping,-377.16,expense
+1251,2026-02-22 11:08:14,Grocery Store,Food,-672.54,expense
+1250,2026-02-22 16:19:46,Ola Cab,Travel,-155.1,expense
+1249,2026-02-22 17:27:00,Haircut Salon,Other,-179.47,expense
+1248,2026-02-22 21:00:10,Pharmacy,Shopping,-303.35,expense
+1254,2026-02-23 07:09:24,Cafe Coffee,Food,-83.71,expense
+1253,2026-02-23 19:52:58,Haircut Salon,Other,-163.32,expense
+1252,2026-02-23 22:52:12,Bus Pass,Travel,-150.21,expense
+1255,2026-02-24 08:23:40,Lunch Canteen,Food,-123.64,expense
+1256,2026-02-24 16:25:49,Swiggy Order,Food,-213.44,expense
+1257,2026-02-25 15:36:27,Gym Membership,Other,-829.44,expense
+1258,2026-02-25 22:12:00,Swiggy Order,Food,-170.93,expense
+1260,2026-02-26 11:48:09,Haircut Salon,Other,-180.96,expense
+1259,2026-02-26 12:17:11,Street Food,Food,-62.73,expense
+1262,2026-02-27 06:36:56,Zomato Delivery,Food,-245.46,expense
+1261,2026-02-27 18:17:29,ATM Withdrawal,Other,-1374.75,expense
+1263,2026-02-28 08:01:33,Salary Deposit,Salary,61159.89,income
+1264,2026-02-28 13:06:17,Clothing Store,Shopping,-778.61,expense
+1266,2026-02-28 17:52:32,Books Purchase,Other,-174.55,expense
+1265,2026-02-28 22:09:06,Lunch Canteen,Food,-99.26,expense
+1269,2026-03-01 09:45:15,Street Food,Food,-48.73,expense
+1267,2026-03-01 10:00:50,Rent Payment,Rent,-12811.84,expense
+1268,2026-03-01 19:28:47,Spotify Premium,Entertainment,-119,expense
+1270,2026-03-01 19:29:06,Gym Membership,Other,-727.72,expense
+1271,2026-03-01 21:59:54,Sports Event Ticket,Entertainment,-832.61,expense
+1273,2026-03-02 09:20:57,Swiggy Order,Food,-165.55,expense
+1274,2026-03-02 14:48:22,Books Purchase,Other,-216.29,expense
+1275,2026-03-02 19:58:47,Cafe Coffee,Food,-90.31,expense
+1272,2026-03-02 20:39:44,Cashback Refund,Other,311.05,income
+1279,2026-03-03 07:52:53,Metro Card Recharge,Travel,-286.56,expense
+1276,2026-03-03 13:08:19,Freelance Payment,Freelance,12871.12,income
+1280,2026-03-03 15:53:22,Bus Pass,Travel,-93.71,expense
+1277,2026-03-03 20:38:24,Zomato Delivery,Food,-208.83,expense
+1278,2026-03-03 23:29:18,Bakery,Food,-98.01,expense
+1283,2026-03-04 08:18:20,Cafe Coffee,Food,-46.7,expense
+1281,2026-03-04 15:10:40,Laundry Service,Other,-226.49,expense
+1282,2026-03-04 18:02:43,Swiggy Order,Food,-184.87,expense
+1286,2026-03-05 08:24:53,Swiggy Order,Food,-134.61,expense
+1284,2026-03-05 13:32:14,Electricity Bill,Bills,-691.0,expense
+1285,2026-03-05 15:43:00,Restaurant Dinner,Food,-148.25,expense
+1288,2026-03-05 17:15:21,Zomato Delivery,Food,-344.92,expense
+1287,2026-03-05 23:42:38,Restaurant Dinner,Food,-158.39,expense
+1290,2026-03-06 06:16:04,Haircut Salon,Other,-164.35,expense
+1292,2026-03-06 13:31:32,Bus Pass,Travel,-96.62,expense
+1289,2026-03-06 19:10:26,Netflix Subscription,Entertainment,-649,expense
+1291,2026-03-06 21:12:47,Swiggy Order,Food,-269.11,expense
+1295,2026-03-07 12:04:22,Clothing Store,Shopping,-1259.59,expense
+1293,2026-03-07 17:59:14,Amazon Prime,Entertainment,-299,expense
+1294,2026-03-07 23:21:38,Concert Tickets,Entertainment,-1141.32,expense
+1298,2026-03-08 07:39:11,Bus Pass,Travel,-164.28,expense
+1296,2026-03-08 16:11:37,Bakery,Food,-129.62,expense
+1297,2026-03-08 18:17:22,Books Purchase,Other,-202.09,expense
+1299,2026-03-09 12:04:22,Freelance Payment,Freelance,10351.31,income
+1300,2026-03-09 13:18:30,Grocery Store,Food,-636.15,expense
+1301,2026-03-09 19:28:33,Juice Bar,Food,-40.59,expense
+1302,2026-03-09 22:56:49,ATM Withdrawal,Other,-1095.33,expense
+1305,2026-03-10 16:51:19,Auto Rickshaw,Travel,-51.01,expense
+1303,2026-03-10 20:52:38,Cashback Refund,Other,210.52,income
+1304,2026-03-10 23:39:49,Cafe Coffee,Food,-82.23,expense
+1308,2026-03-11 13:43:12,Bus Pass,Travel,-76.86,expense
+1307,2026-03-11 17:07:44,Ola Cab,Travel,-240.03,expense
+1306,2026-03-11 21:38:20,Restaurant Dinner,Food,-290.85,expense
+1310,2026-03-12 11:57:51,Ola Cab,Travel,-105.8,expense
+1311,2026-03-12 12:49:44,Cafe Coffee,Food,-39.14,expense
+1312,2026-03-12 18:15:48,Gym Membership,Other,-887.18,expense
+1309,2026-03-12 21:21:02,Swiggy Order,Food,-274.73,expense
+1315,2026-03-13 08:07:29,Bus Pass,Travel,-162.62,expense
+1313,2026-03-13 15:02:10,Haircut Salon,Other,-258.25,expense
+1316,2026-03-13 17:49:29,Ola Cab,Travel,-264.5,expense
+1314,2026-03-13 23:57:47,Medical Consultation,Other,-495.89,expense
+1317,2026-03-14 16:19:06,Internet Bill,Bills,-860.18,expense
+1318,2026-03-14 18:24:34,ATM Withdrawal,Other,-1191.91,expense
+1319,2026-03-14 21:41:00,Clothing Store,Shopping,-1856.44,expense
+1321,2026-03-15 06:53:35,Grocery Store,Food,-460.81,expense
+1320,2026-03-15 17:43:52,Uber Ride,Travel,-170.54,expense
+1326,2026-03-16 11:35:22,Metro Card Recharge,Travel,-391.37,expense
+1325,2026-03-16 13:46:35,Uber Ride,Travel,-136.75,expense
+1323,2026-03-16 13:47:52,Hotel Booking,Travel,-3018.82,expense
+1322,2026-03-16 15:47:16,Freelance Payment,Freelance,9206.15,income
+1327,2026-03-16 17:23:02,Cafe Coffee,Food,-104.89,expense
+1324,2026-03-16 23:08:24,Swiggy Order,Food,-285.68,expense
+1328,2026-03-17 11:17:11,Petrol Station,Travel,-1402.69,expense
+1329,2026-03-17 20:41:48,Laundry Service,Other,-173.76,expense
+1330,2026-03-18 15:51:11,Restaurant Dinner,Food,-335.25,expense
+1331,2026-03-18 18:40:13,Uber Ride,Travel,-78.74,expense
+1333,2026-03-19 16:22:55,Haircut Salon,Other,-210.28,expense
+1332,2026-03-19 20:37:55,Cafe Coffee,Food,-92.28,expense
+1337,2026-03-20 15:24:07,Petrol Station,Travel,-1360.3,expense
+1334,2026-03-20 17:34:35,Cashback Refund,Other,555.04,income
+1336,2026-03-20 18:48:23,Uber Ride,Travel,-174.65,expense
+1335,2026-03-20 21:46:54,Bakery,Food,-49.73,expense
+1339,2026-03-21 08:06:28,Flipkart Purchase,Shopping,-1058.71,expense
+1338,2026-03-21 22:39:11,Zomato Delivery,Food,-162.83,expense
+1341,2026-03-22 08:20:30,Street Food,Food,-67.27,expense
+1340,2026-03-22 13:01:09,Books Purchase,Other,-162.01,expense
+1342,2026-03-22 18:13:30,ATM Withdrawal,Other,-822.88,expense
+1344,2026-03-23 06:56:02,Lunch Canteen,Food,-81.45,expense
+1343,2026-03-23 21:11:59,Auto Rickshaw,Travel,-78.13,expense
+1346,2026-03-24 13:59:55,Laundry Service,Other,-202.49,expense
+1345,2026-03-24 21:16:25,Cafe Coffee,Food,-107.11,expense
+1348,2026-03-25 06:40:05,Gym Membership,Other,-961.83,expense
+1347,2026-03-25 23:42:29,Juice Bar,Food,-76.77,expense
+1350,2026-03-26 11:55:55,Gym Membership,Other,-1054.91,expense
+1349,2026-03-26 14:37:44,Books Purchase,Other,-453.4,expense
+1352,2026-03-27 18:41:46,Swiggy Order,Food,-244.13,expense
+1351,2026-03-27 22:09:46,Gym Membership,Other,-689.56,expense
+1353,2026-03-28 10:19:58,Salary Deposit,Salary,52364.18,income
+1355,2026-03-28 12:39:19,Uber Ride,Travel,-180.71,expense
+1354,2026-03-28 23:35:57,Clothing Store,Shopping,-1078.73,expense
+1357,2026-03-29 07:51:34,Street Food,Food,-33.26,expense
+1358,2026-03-29 15:02:04,Laundry Service,Other,-165.63,expense
+1356,2026-03-29 20:42:20,Auto Rickshaw,Travel,-60.52,expense
+1359,2026-03-29 22:45:22,Auto Rickshaw,Travel,-53.52,expense
+1360,2026-03-30 07:22:26,ATM Withdrawal,Other,-1325.38,expense
+1361,2026-03-30 23:41:37,Books Purchase,Other,-147.6,expense
+1362,2026-03-31 18:43:22,Petrol Station,Travel,-1693.76,expense
+1363,2026-03-31 20:10:13,Street Food,Food,-50.16,expense
+1368,2026-04-01 10:28:06,ATM Withdrawal,Other,-1291.52,expense
+1364,2026-04-01 11:44:29,Rent Payment,Rent,-10258.09,expense
+1365,2026-04-01 12:56:01,Street Food,Food,-29.32,expense
+1366,2026-04-01 17:22:23,Cafe Coffee,Food,-36.29,expense
+1367,2026-04-01 22:44:40,Medical Consultation,Other,-680.57,expense
+1370,2026-04-02 06:57:53,Bakery,Food,-83.66,expense
+1369,2026-04-02 20:54:24,Spotify Premium,Entertainment,-119,expense
+1371,2026-04-02 23:29:40,ATM Withdrawal,Other,-1121.47,expense
+1374,2026-04-03 11:50:42,Bakery,Food,-125.83,expense
+1373,2026-04-03 18:05:39,Zomato Delivery,Food,-201.16,expense
+1372,2026-04-03 20:51:29,Netflix Subscription,Entertainment,-649,expense
+1375,2026-04-04 07:32:56,Medical Consultation,Other,-380.17,expense
+1377,2026-04-04 14:51:58,ATM Withdrawal,Other,-581.44,expense
+1376,2026-04-04 22:22:09,Zomato Delivery,Food,-273.92,expense
+1380,2026-04-05 09:25:06,Concert Tickets,Entertainment,-954.24,expense
+1378,2026-04-05 13:25:24,Freelance Payment,Freelance,10438.22,income
+1381,2026-04-05 16:20:00,Shopping Mall,Shopping,-2107.96,expense
+1379,2026-04-05 17:30:58,Cafe Coffee,Food,-78.49,expense
+1385,2026-04-06 16:39:10,Zomato Delivery,Food,-372.04,expense
+1384,2026-04-06 19:02:52,Zomato Delivery,Food,-357.08,expense
+1382,2026-04-06 19:46:02,Amazon Prime,Entertainment,-299,expense
+1383,2026-04-06 23:48:05,Cafe Coffee,Food,-100.27,expense
+1390,2026-04-07 08:39:57,Juice Bar,Food,-84.92,expense
+1386,2026-04-07 12:43:13,Electricity Bill,Bills,-1189.03,expense
+1388,2026-04-07 15:54:20,Auto Rickshaw,Travel,-61.2,expense
+1387,2026-04-07 18:36:14,Zomato Delivery,Food,-377.27,expense
+1389,2026-04-07 21:50:35,Books Purchase,Other,-157.55,expense
+1392,2026-04-08 20:15:48,Juice Bar,Food,-86.0,expense
+1391,2026-04-08 21:09:27,Uber Ride,Travel,-211.2,expense
+1395,2026-04-09 10:49:11,Street Food,Food,-56.65,expense
+1393,2026-04-09 14:13:49,ATM Withdrawal,Other,-412.26,expense
+1394,2026-04-09 18:09:14,Bus Pass,Travel,-84.85,expense
+1397,2026-04-10 11:31:40,Bus Pass,Travel,-105.94,expense
+1396,2026-04-10 12:44:20,Juice Bar,Food,-48.37,expense
+1398,2026-04-11 15:30:39,Stationery Shop,Shopping,-247.64,expense
+1399,2026-04-11 23:22:06,Gym Membership,Other,-665.43,expense
+1402,2026-04-12 10:10:43,Metro Card Recharge,Travel,-363.11,expense
+1400,2026-04-12 12:06:49,Internet Bill,Bills,-658.29,expense
+1401,2026-04-12 14:28:55,Restaurant Dinner,Food,-334.18,expense
+1403,2026-04-12 23:31:00,Gaming Purchase,Entertainment,-361.4,expense
+1406,2026-04-13 09:41:08,Zomato Delivery,Food,-189.36,expense
+1404,2026-04-13 14:20:06,Freelance Payment,Freelance,9909.15,income
+1405,2026-04-13 22:42:24,Grocery Store,Food,-194.71,expense
+1407,2026-04-14 14:17:50,Medical Consultation,Other,-693.51,expense
+1408,2026-04-14 19:36:47,Grocery Store,Food,-502.08,expense
+1410,2026-04-15 12:09:15,Uber Ride,Travel,-83.04,expense
+1409,2026-04-15 19:18:23,Medical Consultation,Other,-533.59,expense
+1411,2026-04-15 22:53:39,Restaurant Dinner,Food,-438.82,expense
+1412,2026-04-16 10:32:24,Medical Consultation,Other,-559.07,expense
+1414,2026-04-16 13:54:27,Bakery,Food,-87.18,expense
+1413,2026-04-16 19:08:57,Books Purchase,Other,-455.95,expense
+1417,2026-04-17 08:55:19,Laundry Service,Other,-194.34,expense
+1416,2026-04-17 19:46:02,Metro Card Recharge,Travel,-254.37,expense
+1415,2026-04-17 22:22:07,ATM Withdrawal,Other,-1074.99,expense
+1418,2026-04-18 06:03:16,Ola Cab,Travel,-225.4,expense
+1419,2026-04-18 21:08:27,Bakery,Food,-119.57,expense
+1420,2026-04-19 08:07:39,Sports Event Ticket,Entertainment,-552.26,expense
+1421,2026-04-19 20:33:10,Sports Event Ticket,Entertainment,-724.47,expense
+1423,2026-04-20 11:53:37,Ola Cab,Travel,-123.95,expense
+1422,2026-04-20 17:16:37,Medical Consultation,Other,-347.99,expense
+1427,2026-04-21 06:17:35,Auto Rickshaw,Travel,-80.96,expense
+1425,2026-04-21 12:21:31,Grocery Store,Food,-631.77,expense
+1424,2026-04-21 18:18:41,Cashback Refund,Other,122.03,income
+1426,2026-04-21 18:33:37,Street Food,Food,-59.26,expense
+1428,2026-04-21 21:00:17,Street Food,Food,-60.13,expense
+1429,2026-04-22 07:44:00,Metro Card Recharge,Travel,-301.39,expense
+1430,2026-04-22 15:46:11,Gym Membership,Other,-774.36,expense
+1431,2026-04-23 08:33:35,Gym Membership,Other,-950.4,expense
+1432,2026-04-23 15:21:48,Street Food,Food,-40.03,expense
+1434,2026-04-23 20:38:14,Haircut Salon,Other,-204.36,expense
+1433,2026-04-23 22:53:44,Medical Consultation,Other,-460.7,expense
+1435,2026-04-24 07:17:35,Ola Cab,Travel,-136.98,expense
+1438,2026-04-24 16:57:34,Medical Consultation,Other,-363.28,expense
+1436,2026-04-24 17:34:27,Laundry Service,Other,-82.48,expense
+1437,2026-04-24 21:14:53,Laundry Service,Other,-230.08,expense
+1441,2026-04-25 11:28:15,ATM Withdrawal,Other,-1381.45,expense
+1440,2026-04-25 18:44:39,Restaurant Dinner,Food,-444.59,expense
+1439,2026-04-25 22:08:36,Gym Membership,Other,-723.04,expense
+1443,2026-04-26 09:34:06,Cafe Coffee,Food,-96.57,expense
+1442,2026-04-26 21:16:26,Sports Event Ticket,Entertainment,-458.2,expense
+1446,2026-04-27 10:18:45,Juice Bar,Food,-75.54,expense
+1447,2026-04-27 12:55:01,Gym Membership,Other,-1062.62,expense
+1445,2026-04-27 17:07:37,Medical Consultation,Other,-278.02,expense
+1444,2026-04-27 22:32:24,Medical Consultation,Other,-467.45,expense
+1448,2026-04-28 09:53:33,Salary Deposit,Salary,68141.77,income
+1450,2026-04-28 10:04:24,Ola Cab,Travel,-204.18,expense
+1449,2026-04-28 12:59:23,Restaurant Dinner,Food,-367.63,expense
+1452,2026-04-28 19:47:04,Bus Pass,Travel,-157.61,expense
+1451,2026-04-28 21:03:53,Cafe Coffee,Food,-105.05,expense
+1454,2026-04-29 12:17:27,Zomato Delivery,Food,-292.26,expense
+1453,2026-04-29 13:30:33,Petrol Station,Travel,-1682.16,expense
+1455,2026-04-30 13:15:31,Restaurant Dinner,Food,-269.16,expense
+1457,2026-04-30 18:02:35,ATM Withdrawal,Other,-549.66,expense
+1456,2026-04-30 22:00:07,Books Purchase,Other,-166.61,expense
