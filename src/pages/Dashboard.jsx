@@ -18,7 +18,7 @@ export default function Dashboard() {
           <div className="lg:col-span-2">
             <BalanceTrend />
           </div>
-          {/* <SpendingDonut /> */}
+          <SpendingDonut />
         </div>
 
         {/* <InsightCards /> */}
