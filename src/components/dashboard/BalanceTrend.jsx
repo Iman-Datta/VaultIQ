@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useRef, useEffect } from "react";
 import { useSelector } from "react-redux";
 import {
   AreaChart,
@@ -10,100 +10,242 @@ import {
   CartesianGrid,
 } from "recharts";
 
-const ranges = ["Today", "7D", "30D", "3M", "1Y", "All"];
+const ranges = ["7D", "30D", "3M", "6M", "1Y", "All"];
 
 const formatCurrency = (value) => `₹${Number(value).toLocaleString("en-IN")}`;
 
 const formatXAxis = (date, range) => {
   const d = new Date(date);
 
-  if (range === "Today") {
-    return d.toLocaleTimeString("en-IN", {
-      hour: "2-digit",
-      minute: "2-digit",
+  if (range === "7D") {
+    return d.toLocaleDateString("en-IN", {
+      day: "numeric",
+      month: "short",
+    });
+  }
+
+  if (range === "30D") {
+    const day = d.getDate();
+
+    if (day <= 7) return "Week 1";
+    if (day <= 14) return "Week 2";
+    if (day <= 21) return "Week 3";
+    return "Week 4";
+  }
+
+  if (range === "3M" || range === "6M") {
+    return d.toLocaleDateString("en-IN", {
+      month: "short",
     });
   }
 
   if (range === "1Y" || range === "All") {
     return d.toLocaleDateString("en-IN", {
       month: "short",
-      year: "2-digit",
     });
   }
 
-  return d.toLocaleDateString("en-IN", {
-    day: "numeric",
-    month: "short",
-  });
+  return "";
 };
 
 const filterByRange = (transactions, range) => {
-  const now = new Date();
   const daysMap = {
-    Today: 1,
     "7D": 7,
     "30D": 30,
     "3M": 90,
+    "6M": 180,
     "1Y": 365,
   };
 
   if (range === "All") return transactions;
 
+  const sorted = [...transactions].sort(
+    (a, b) => new Date(a.timestamp) - new Date(b.timestamp),
+  );
+
+  const latestDate = new Date(sorted[sorted.length - 1].timestamp);
+
   const days = daysMap[range];
-  const cutoff = new Date(now);
-  cutoff.setDate(now.getDate() - days);
 
-  return transactions.filter((t) => new Date(t.timestamp) >= cutoff);
+  const cutoff = new Date(latestDate);
+  cutoff.setDate(latestDate.getDate() - days);
+
+  return sorted.filter((t) => new Date(t.timestamp) >= cutoff);
 };
 
-const buildRunningBalance = (transactions) => {
-  const openingBalance = 50000;
-  let running = openingBalance;
+const buildRunningBalance = (transactions, allTransactions) => {
+  const sortedAll = [...allTransactions].sort(
+    (a, b) => new Date(a.timestamp) - new Date(b.timestamp),
+  );
 
-  return [...transactions]
-    .sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp))
-    .map((t) => {
+  const sortedFiltered = [...transactions].sort(
+    (a, b) => new Date(a.timestamp) - new Date(b.timestamp),
+  );
+
+  if (!sortedFiltered.length) return [];
+
+  const firstFilteredDate = new Date(sortedFiltered[0].timestamp);
+
+  let running = 50000;
+
+  for (const t of sortedAll) {
+    if (new Date(t.timestamp) < firstFilteredDate) {
       running += t.amount;
+    }
+  }
 
-      return {
-        timestamp: t.timestamp,
-        balance: running,
-      };
-    });
+  return sortedFiltered.map((t) => {
+    running += t.amount;
+
+    return {
+      timestamp: t.timestamp,
+      balance: running,
+    };
+  });
 };
 
-const CustomTooltip = ({ active, payload, label, range }) => {
+const CustomTooltip = ({ active, payload, range }) => {
   if (!active || !payload?.length) return null;
+
+  const point = payload[0]?.payload;
 
   return (
     <div className="bg-gray-900 border border-gray-700 rounded-xl px-3 py-2 shadow-lg">
-      <p className="text-xs text-gray-400 mb-1">{formatXAxis(label, range)}</p>
+      <p className="text-xs text-gray-400 mb-1">
+        {formatXAxis(point.timestamp, range)}
+      </p>
       <p className="text-sm text-white font-semibold">
-        {formatCurrency(payload[0].value)}
+        {formatCurrency(point.balance)}
       </p>
     </div>
   );
 };
 
 export default function BalanceTrend() {
-  const [selectedRange, setSelectedRange] = useState("7D");
+  const [selectedRange, setSelectedRange] = useState("30D");
+  const [zoomLevel, setZoomLevel] = useState(1);
+  const chartRef = useRef(null);
+
+  useEffect(() => {
+    const chartElement = chartRef.current;
+
+    if (!chartElement) return;
+
+    const wheelHandler = (e) => {
+      e.preventDefault();
+
+      const delta = e.deltaY < 0 ? 1.2 : 0.8;
+
+      setZoomLevel((prev) => {
+        const next = prev * delta;
+        return Math.max(0.5, Math.min(next, 5));
+      });
+    };
+
+    chartElement.addEventListener("wheel", wheelHandler, {
+      passive: false,
+    });
+
+    return () => {
+      chartElement.removeEventListener("wheel", wheelHandler);
+    };
+  }, []);
 
   const transactions = useSelector((state) => state.transactions.transactions);
 
   const chartData = useMemo(() => {
     const filtered = filterByRange(transactions, selectedRange);
 
-    return buildRunningBalance(filtered);
-  }, [transactions, selectedRange]);
+    const fullData = buildRunningBalance(filtered, transactions);
+
+    const step = Math.max(1, Math.floor(zoomLevel));
+
+    return fullData.filter((_, index) => index % step === 0);
+  }, [transactions, selectedRange, zoomLevel]);
+
+  const xTicks = useMemo(() => {
+    if (!chartData.length) return [];
+
+    if (selectedRange === "7D") {
+      return chartData.map((d) => d.timestamp);
+    }
+
+    if (selectedRange === "30D") {
+      return [
+        chartData[0]?.timestamp,
+        chartData[Math.floor(chartData.length * 0.25)]?.timestamp,
+        chartData[Math.floor(chartData.length * 0.5)]?.timestamp,
+        chartData[Math.floor(chartData.length * 0.75)]?.timestamp,
+        chartData[chartData.length - 1]?.timestamp,
+      ].filter(Boolean);
+    }
+
+    if (selectedRange === "3M") {
+      return [
+        chartData[0]?.timestamp,
+        chartData[Math.floor(chartData.length / 2)]?.timestamp,
+        chartData[chartData.length - 1]?.timestamp,
+      ].filter(Boolean);
+    }
+
+    if (selectedRange === "6M") {
+      const seenMonths = new Set();
+
+      return chartData
+        .filter((d) => {
+          const monthKey = new Date(d.timestamp).getMonth();
+
+          if (seenMonths.has(monthKey)) return false;
+
+          seenMonths.add(monthKey);
+          return true;
+        })
+        .map((d) => d.timestamp);
+    }
+
+    if (selectedRange === "1Y" || selectedRange === "All") {
+      const seenMonths = new Set();
+
+      return chartData
+        .filter((d) => {
+          const dateObj = new Date(d.timestamp);
+          const month = dateObj.getMonth();
+          const year = dateObj.getFullYear();
+
+          const key = `${year}-${month}`;
+
+          if (seenMonths.has(key)) return false;
+
+          seenMonths.add(key);
+          return true;
+        })
+        .map((d) => d.timestamp);
+    }
+
+    return [];
+  }, [chartData, selectedRange]);
 
   const curveType = {
-    Today: "linear",
     "7D": "monotone",
     "30D": "monotone",
     "3M": "natural",
+    "6M": "natural",
     "1Y": "natural",
     All: "natural",
   };
+
+  const yDomain = useMemo(() => {
+    if (!chartData.length) return ["auto", "auto"];
+
+    const balances = chartData.map((d) => d.balance);
+
+    const min = Math.min(...balances);
+    const max = Math.max(...balances);
+
+    const padding = (max - min) * 0.15 || 1000;
+
+    return [min - padding, max + padding];
+  }, [chartData]);
 
   return (
     <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 shadow-sm">
@@ -112,7 +254,7 @@ export default function BalanceTrend() {
           <p className="text-sm font-semibold text-gray-900 dark:text-white">
             Balance Trend
           </p>
-          <p className="text-xs text-gray-400">Running account balance</p>
+          <p className="text-xs text-gray-500 mt-1">Use mouse wheel to zoom</p>
         </div>
 
         <div className="flex gap-2 flex-wrap">
@@ -131,61 +273,81 @@ export default function BalanceTrend() {
           ))}
         </div>
       </div>
+      <div
+        ref={chartRef}
+        className="w-full h-64 overflow-hidden"
+        style={{ overscrollBehavior: "contain" }}
+        onWheel={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
 
-      <ResponsiveContainer width="100%" height={260}>
-        <AreaChart data={chartData}>
-          <defs>
-            <linearGradient id="balanceGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.2} />
-              <stop offset="95%" stopColor="#3b82f6" stopOpacity={0} />
-            </linearGradient>
-          </defs>
+          const delta = e.deltaY < 0 ? 1.2 : 0.8;
 
-          <CartesianGrid
-            strokeDasharray="3 3"
-            vertical={false}
-            stroke="#374151"
-          />
+          setZoomLevel((prev) => {
+            const next = prev * delta;
+            return Math.max(0.5, Math.min(next, 5));
+          });
+        }}
+      >
+        <ResponsiveContainer width="100%" height="100%">
+          <AreaChart data={chartData} syncMethod="value">
+            <defs>
+              <linearGradient id="balanceGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.2} />
+                <stop offset="95%" stopColor="#3b82f6" stopOpacity={0} />
+              </linearGradient>
+            </defs>
 
-          <XAxis
-            dataKey="timestamp"
-            tickFormatter={(v) => formatXAxis(v, selectedRange)}
-            tick={{
-              fill: "#6b7280",
-              fontSize: 11,
-            }}
-            axisLine={false}
-            tickLine={false}
-          />
+            <CartesianGrid
+              strokeDasharray="3 3"
+              vertical={selectedRange !== "7D"}
+              stroke="#374151"
+            />
 
-          <YAxis
-            tickFormatter={(v) => formatCurrency(v)}
-            tick={{
-              fill: "#6b7280",
-              fontSize: 11,
-            }}
-            axisLine={false}
-            tickLine={false}
-            width={80}
-          />
+            <XAxis
+              dataKey="timestamp"
+              ticks={xTicks}
+              tickFormatter={(v) => formatXAxis(v, selectedRange)}
+              tick={{ fill: "#6b7280", fontSize: 11 }}
+              axisLine={false}
+              tickLine={false}
+            />
 
-          <Tooltip content={<CustomTooltip range={selectedRange} />} />
+            <YAxis
+              domain={yDomain}
+              tickFormatter={(v) => formatCurrency(v)}
+              tick={{ fill: "#6b7280", fontSize: 11 }}
+              axisLine={false}
+              tickLine={false}
+              width={90}
+            />
 
-          <Area
-            type={curveType[selectedRange]}
-            dataKey="balance"
-            stroke="#3b82f6"
-            strokeWidth={2.5}
-            fill="url(#balanceGrad)"
-            dot={false}
-            activeDot={{
-              r: 5,
-              fill: "#3b82f6",
-            }}
-            animationDuration={400}
-          />
-        </AreaChart>
-      </ResponsiveContainer>
+            <Tooltip
+              content={<CustomTooltip range={selectedRange} />}
+              cursor={{ stroke: "#9ca3af", strokeWidth: 1 }}
+              trigger="axis"
+              isAnimationActive={false}
+            />
+
+            <Area
+              type={curveType[selectedRange]}
+              isAnimationActive={false}
+              dataKey="balance"
+              stroke="#3b82f6"
+              strokeWidth={3}
+              fill="url(#balanceGrad)"
+              dot={false}
+              activeDot={{
+                r: 6,
+                fill: "#3b82f6",
+                stroke: "#fff",
+                strokeWidth: 2,
+              }}
+              animationDuration={400}
+            />
+          </AreaChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 }
