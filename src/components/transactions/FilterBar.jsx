@@ -5,21 +5,13 @@ import {
   setSortField,
   setSortDir,
 } from "../../store/slices/filterSlice";
-import { Search } from "lucide-react";
+import { Search, ArrowUp, ArrowDown } from "lucide-react";
 
 export default function FilterBar() {
   const dispatch = useDispatch();
   const { searchQuery, typeFilter, sortField, sortDir } = useSelector(
     (s) => s.filter,
   );
-
-  const handleSortField = (e) => {
-    const val = e.target.value;
-    // val is e.g. 'date_desc' or 'amount_asc'
-    const [field, dir] = val.split("_");
-    dispatch(setSortField(field));
-    dispatch(setSortDir(dir));
-  };
 
   return (
     <div className="flex flex-wrap items-center gap-2">
@@ -49,17 +41,23 @@ export default function FilterBar() {
         <option value="expense">Expense</option>
       </select>
 
-      {/* Sort */}
+      {/* Sort Field */}
       <select
-        value={`${sortField}_${sortDir}`}
-        onChange={handleSortField}
+        value={sortField}
+        onChange={(e) => dispatch(setSortField(e.target.value))}
         className="text-sm bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-1.5 text-gray-900 dark:text-gray-300 focus:outline-none"
       >
-        <option value="date_desc">Sort Date ↓</option>
-        <option value="date_asc">Sort Date ↑</option>
-        <option value="amount_desc">Sort Amount ↓</option>
-        <option value="amount_asc">Sort Amount ↑</option>
+        <option value="date">Sort by Date</option>
+        <option value="amount">Sort by Amount</option>
       </select>
+
+      {/* Sort Direction Button */}
+      <button
+        onClick={() => dispatch(setSortDir(sortDir === "asc" ? "desc" : "asc"))}
+        className="flex items-center justify-center px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+      >
+        {sortDir === "asc" ? <ArrowUp size={16} /> : <ArrowDown size={16} />}
+      </button>
     </div>
   );
 }
