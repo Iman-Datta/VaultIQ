@@ -9,6 +9,7 @@ import {
   ResponsiveContainer,
   CartesianGrid,
 } from "recharts";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const ranges = ["7D", "30D", "3M", "6M", "1Y", "All"];
 
@@ -25,30 +26,23 @@ const formatXAxis = (date, range) => {
   }
 
   if (range === "30D") {
-    const day = d.getDate();
-
-    if (day <= 7) return "Week 1";
-    if (day <= 14) return "Week 2";
-    if (day <= 21) return "Week 3";
-    return "Week 4";
-  }
-
-  if (range === "3M" || range === "6M") {
     return d.toLocaleDateString("en-IN", {
+      day: "numeric",
       month: "short",
     });
   }
 
-  if (range === "1Y" || range === "All") {
+  if (range === "3M" || range === "6M" || range === "1Y" || range === "All") {
     return d.toLocaleDateString("en-IN", {
       month: "short",
+      year: "2-digit",
     });
   }
 
   return "";
 };
 
-const filterByRange = (transactions, range) => {
+const filterByRange = (transactions, range, offset = 0) => {
   const daysMap = {
     "7D": 7,
     "30D": 30,
@@ -67,10 +61,16 @@ const filterByRange = (transactions, range) => {
 
   const days = daysMap[range];
 
-  const cutoff = new Date(latestDate);
-  cutoff.setDate(latestDate.getDate() - days);
+  const windowEnd = new Date(latestDate);
+  windowEnd.setDate(windowEnd.getDate() - offset * days);
 
-  return sorted.filter((t) => new Date(t.timestamp) >= cutoff);
+  const cutoff = new Date(windowEnd);
+  cutoff.setDate(windowEnd.getDate() - days);
+
+  return sorted.filter((t) => {
+    const date = new Date(t.timestamp);
+    return date >= cutoff && date <= windowEnd;
+  });
 };
 
 const buildRunningBalance = (transactions, allTransactions) => {
@@ -94,14 +94,24 @@ const buildRunningBalance = (transactions, allTransactions) => {
     }
   }
 
-  return sortedFiltered.map((t) => {
+  const dailyMap = new Map();
+
+  for (const t of sortedFiltered) {
+    const dateObj = new Date(t.timestamp);
+
+    if (isNaN(dateObj.getTime())) continue;
+
+    const dateKey = dateObj.toLocaleDateString("en-CA");
+
     running += t.amount;
 
-    return {
-      timestamp: t.timestamp,
+    dailyMap.set(dateKey, {
+      timestamp: dateKey,
       balance: running,
-    };
-  });
+    });
+  }
+
+  return Array.from(dailyMap.values());
 };
 
 const CustomTooltip = ({ active, payload, range }) => {
@@ -123,8 +133,21 @@ const CustomTooltip = ({ active, payload, range }) => {
 
 export default function BalanceTrend() {
   const [selectedRange, setSelectedRange] = useState("30D");
+  const [windowOffset, setWindowOffset] = useState(0);
   const [zoomLevel, setZoomLevel] = useState(1);
   const chartRef = useRef(null);
+
+  const transactions = useSelector((state) => state.transactions.transactions);
+
+  const chartData = useMemo(() => {
+    const filtered = filterByRange(transactions, selectedRange, windowOffset);
+
+    const fullData = buildRunningBalance(filtered, transactions);
+
+    const step = Math.max(1, Math.floor(zoomLevel));
+
+    return fullData.filter((_, index) => index % step === 0);
+  }, [transactions, selectedRange, windowOffset, zoomLevel]);
 
   useEffect(() => {
     const chartElement = chartRef.current;
@@ -151,17 +174,14 @@ export default function BalanceTrend() {
     };
   }, []);
 
-  const transactions = useSelector((state) => state.transactions.transactions);
+  const isRightDisabled = windowOffset === 0;
 
-  const chartData = useMemo(() => {
-    const filtered = filterByRange(transactions, selectedRange);
+  const nextWindowData =
+    selectedRange === "All"
+      ? []
+      : filterByRange(transactions, selectedRange, windowOffset + 1);
 
-    const fullData = buildRunningBalance(filtered, transactions);
-
-    const step = Math.max(1, Math.floor(zoomLevel));
-
-    return fullData.filter((_, index) => index % step === 0);
-  }, [transactions, selectedRange, zoomLevel]);
+  const isLeftDisabled = selectedRange === "All" || nextWindowData.length === 0;
 
   const xTicks = useMemo(() => {
     if (!chartData.length) return [];
@@ -181,11 +201,19 @@ export default function BalanceTrend() {
     }
 
     if (selectedRange === "3M") {
-      return [
-        chartData[0]?.timestamp,
-        chartData[Math.floor(chartData.length / 2)]?.timestamp,
-        chartData[chartData.length - 1]?.timestamp,
-      ].filter(Boolean);
+      const seenMonths = new Set();
+
+      return chartData
+        .filter((d) => {
+          const dateObj = new Date(d.timestamp);
+          const key = `${dateObj.getFullYear()}-${dateObj.getMonth()}`;
+
+          if (seenMonths.has(key)) return false;
+
+          seenMonths.add(key);
+          return true;
+        })
+        .map((d) => d.timestamp);
     }
 
     if (selectedRange === "6M") {
@@ -249,7 +277,7 @@ export default function BalanceTrend() {
 
   return (
     <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 shadow-sm">
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-start justify-between mb-4">
         <div>
           <p className="text-sm font-semibold text-gray-900 dark:text-white">
             Balance Trend
@@ -257,20 +285,51 @@ export default function BalanceTrend() {
           <p className="text-xs text-gray-500 mt-1">Use mouse wheel to zoom</p>
         </div>
 
-        <div className="flex gap-2 flex-wrap">
-          {ranges.map((range) => (
+        <div className="flex items-center gap-3 flex-wrap">
+          <div className="flex gap-2 flex-wrap">
+            {ranges.map((range) => (
+              <button
+                key={range}
+                onClick={() => {
+                  setSelectedRange(range);
+                  setWindowOffset(0);
+                }}
+                className={`px-3 py-1 rounded-lg text-xs font-medium transition-all duration-300 ${
+                  selectedRange === range
+                    ? "bg-blue-500 text-white shadow-md"
+                    : "bg-gray-100 dark:bg-gray-800 text-gray-500 hover:bg-gray-200"
+                }`}
+              >
+                {range}
+              </button>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-1">
             <button
-              key={range}
-              onClick={() => setSelectedRange(range)}
-              className={`px-3 py-1 rounded-lg text-xs font-medium transition-all duration-300 ${
-                selectedRange === range
-                  ? "bg-blue-500 text-white shadow-md"
-                  : "bg-gray-100 dark:bg-gray-800 text-gray-500 hover:bg-gray-200"
+              onClick={() => setWindowOffset((prev) => prev + 1)}
+              disabled={isLeftDisabled}
+              className={`p-2 rounded-lg border transition ${
+                isLeftDisabled
+                  ? "opacity-40 cursor-not-allowed"
+                  : "hover:bg-gray-100 dark:hover:bg-gray-800"
               }`}
             >
-              {range}
+              <ChevronLeft size={16} />
             </button>
-          ))}
+
+            <button
+              onClick={() => setWindowOffset((prev) => Math.max(0, prev - 1))}
+              disabled={isRightDisabled}
+              className={`p-2 rounded-lg border transition ${
+                isRightDisabled
+                  ? "opacity-40 cursor-not-allowed"
+                  : "hover:bg-gray-100 dark:hover:bg-gray-800"
+              }`}
+            >
+              <ChevronRight size={16} />
+            </button>
+          </div>
         </div>
       </div>
       <div
@@ -311,6 +370,8 @@ export default function BalanceTrend() {
               tick={{ fill: "#6b7280", fontSize: 11 }}
               axisLine={false}
               tickLine={false}
+              angle={-30}
+              textAnchor="end"
             />
 
             <YAxis
@@ -328,7 +389,6 @@ export default function BalanceTrend() {
               trigger="axis"
               isAnimationActive={false}
             />
-
             <Area
               type={curveType[selectedRange]}
               isAnimationActive={false}
