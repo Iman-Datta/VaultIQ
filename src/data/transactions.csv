@@ -1,0 +1,61 @@
+id,timestamp,description,category,amount,type
+1,2025-01-01T09:00:00,Salary Deposit,Salary,5200,income
+2,2025-01-01T13:15:00,Coffee Shop,Food,-120,expense
+3,2025-01-01T19:30:00,Dinner,Food,-340,expense
+4,2025-01-02T10:00:00,Metro Recharge,Travel,-150,expense
+5,2025-01-02T18:45:00,Grocery Store,Food,-680,expense
+6,2025-01-03T11:30:00,Freelance Payment,Freelance,1200,income
+7,2025-01-03T20:00:00,Movie Tickets,Entertainment,-300,expense
+8,2025-01-04T09:15:00,Electric Bill,Bills,-950,expense
+9,2025-01-04T14:20:00,Amazon Purchase,Shopping,-760,expense
+10,2025-01-05T08:45:00,Breakfast,Food,-90,expense
+11,2025-01-05T17:30:00,Internet Bill,Bills,-700,expense
+12,2025-01-06T12:00:00,Restaurant Lunch,Food,-420,expense
+13,2025-01-07T09:00:00,Salary Deposit,Salary,5200,income
+14,2025-01-07T18:10:00,Uber Ride,Travel,-180,expense
+15,2025-01-08T15:00:00,Grocery Store,Food,-850,expense
+16,2025-01-09T20:15:00,Netflix Subscription,Entertainment,-199,expense
+17,2025-01-10T10:30:00,Freelance Payment,Freelance,1500,income
+18,2025-01-10T21:00:00,Shopping Mall,Shopping,-1200,expense
+19,2025-01-11T09:00:00,Rent Payment,Rent,-8500,expense
+20,2025-01-12T19:30:00,Dinner,Food,-390,expense
+21,2025-01-13T08:50:00,Metro Recharge,Travel,-200,expense
+22,2025-01-14T14:00:00,Electric Bill,Bills,-980,expense
+23,2025-01-15T09:00:00,Salary Deposit,Salary,5200,income
+24,2025-01-15T13:30:00,Coffee Shop,Food,-110,expense
+25,2025-01-16T18:00:00,Flight Tickets,Travel,-3500,expense
+26,2025-01-17T11:30:00,Freelance Payment,Freelance,1800,income
+27,2025-01-18T19:00:00,Restaurant Dinner,Food,-500,expense
+28,2025-01-19T15:30:00,Amazon Purchase,Shopping,-950,expense
+29,2025-01-20T09:00:00,Gym Membership,Bills,-1200,expense
+30,2025-01-21T20:00:00,Movie Tickets,Entertainment,-250,expense
+31,2025-02-01T09:00:00,Salary Deposit,Salary,5300,income
+32,2025-02-02T13:15:00,Coffee Shop,Food,-120,expense
+33,2025-02-03T19:30:00,Grocery Store,Food,-720,expense
+34,2025-02-04T10:00:00,Metro Recharge,Travel,-150,expense
+35,2025-02-05T18:45:00,Restaurant Dinner,Food,-430,expense
+36,2025-02-06T11:30:00,Freelance Payment,Freelance,1700,income
+37,2025-02-07T20:00:00,Movie Tickets,Entertainment,-300,expense
+38,2025-02-08T09:15:00,Electric Bill,Bills,-920,expense
+39,2025-02-09T14:20:00,Amazon Purchase,Shopping,-680,expense
+40,2025-02-10T08:45:00,Breakfast,Food,-90,expense
+41,2025-03-01T09:00:00,Salary Deposit,Salary,5400,income
+42,2025-03-02T13:15:00,Coffee Shop,Food,-130,expense
+43,2025-03-03T19:30:00,Grocery Store,Food,-790,expense
+44,2025-03-04T10:00:00,Uber Ride,Travel,-220,expense
+45,2025-03-05T18:45:00,Restaurant Dinner,Food,-470,expense
+46,2025-03-06T11:30:00,Freelance Payment,Freelance,2100,income
+47,2025-03-07T20:00:00,Movie Tickets,Entertainment,-350,expense
+48,2025-03-08T09:15:00,Electric Bill,Bills,-1000,expense
+49,2025-03-09T14:20:00,Amazon Purchase,Shopping,-820,expense
+50,2025-03-10T08:45:00,Breakfast,Food,-95,expense
+51,2026-01-01T09:00:00,Salary Deposit,Salary,6200,income
+52,2026-01-03T13:15:00,Coffee Shop,Food,-140,expense
+53,2026-01-05T19:30:00,Grocery Store,Food,-820,expense
+54,2026-02-01T09:00:00,Salary Deposit,Salary,6300,income
+55,2026-02-04T18:45:00,Restaurant Dinner,Food,-520,expense
+56,2026-03-01T09:00:00,Salary Deposit,Salary,6400,income
+57,2026-03-06T11:30:00,Freelance Payment,Freelance,2200,income
+58,2026-03-09T14:20:00,Amazon Purchase,Shopping,-980,expense
+59,2026-04-01T09:00:00,Salary Deposit,Salary,6500,income
+60,2026-04-03T18:00:00,Shopping Mall,Shopping,-1500,expense

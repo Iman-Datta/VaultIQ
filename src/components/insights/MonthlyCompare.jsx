@@ -29,23 +29,9 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 export default function MonthlyCompare() {
   const data = useSelector(selectMonthlyComparison);
-  const monthOrder = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
 
-  const sortedData = [...data].sort(
-    (a, b) => monthOrder.indexOf(a.month) - monthOrder.indexOf(b.month),
+  const sortedData = [...data].sort((a, b) =>
+    a.dateKey.localeCompare(b.dateKey),
   );
 
   return (
@@ -68,7 +54,7 @@ export default function MonthlyCompare() {
             vertical={false}
           />
           <XAxis
-            dataKey="month"
+            dataKey="label"
             tick={{ fill: "#6b7280", fontSize: 11 }}
             axisLine={false}
             tickLine={false}
