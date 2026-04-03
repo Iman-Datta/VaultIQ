@@ -87,7 +87,7 @@ export const selectInsights = (state) => {
   // Simple month-over-month: compare last 2 months by sum of expenses
   const byMonth = {};
   txns
-    .filter((t) => t.type === "expense")
+    .filter((t) => t.type === "expense" && t.timestamp)
     .forEach((t) => {
       const m = t.timestamp.slice(0, 7);
       byMonth[m] = (byMonth[m] || 0) + Math.abs(t.amount);
@@ -104,11 +104,13 @@ export const selectInsights = (state) => {
 
 export const selectMonthlyComparison = (state) => {
   const txns = state.transactions.transactions;
-
   const monthlyMap = {};
 
   txns.forEach((t) => {
-    const dateKey = t.timestamp.slice(0, 7); // YYYY-MM
+    if (!t.timestamp) return;
+
+    const dateKey = t.timestamp.slice(0, 7);
+
     const month = new Date(t.timestamp).toLocaleString("en-IN", {
       month: "short",
     });
