@@ -31,7 +31,6 @@ const formatXAxis = (date, range) => {
 };
 
 const filterByRange = (transactions, range) => {
-  const now = new Date();
   const daysMap = {
     "7D": 7,
     "30D": 30,
@@ -42,11 +41,22 @@ const filterByRange = (transactions, range) => {
 
   if (range === "All") return transactions;
 
-  const days = daysMap[range];
-  const cutoff = new Date(now);
-  cutoff.setDate(now.getDate() - days);
+  const sorted = [...transactions].sort(
+    (a, b) => new Date(a.timestamp) - new Date(b.timestamp)
+  );
 
-  return transactions.filter((t) => new Date(t.timestamp) >= cutoff);
+  const latestDate = new Date(
+    sorted[sorted.length - 1].timestamp
+  );
+
+  const days = daysMap[range];
+
+  const cutoff = new Date(latestDate);
+  cutoff.setDate(latestDate.getDate() - days);
+
+  return sorted.filter(
+    (t) => new Date(t.timestamp) >= cutoff
+  );
 };
 
 const buildRunningBalance = (transactions, allTransactions) => {
