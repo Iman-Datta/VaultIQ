@@ -100,3 +100,31 @@ export const selectInsights = (state) => {
 
   return { topCategory, topPct, savingsRate, momChange, currExp, prevExp };
 };
+
+export const selectMonthlyComparison = (state) => {
+  const txns = state.transactions.transactions;
+
+  const monthlyMap = {};
+
+  txns.forEach((t) => {
+    const month = new Date(t.date).toLocaleString("en-IN", {
+      month: "short",
+    });
+
+    if (!monthlyMap[month]) {
+      monthlyMap[month] = {
+        month,
+        income: 0,
+        expenses: 0,
+      };
+    }
+
+    if (t.type === "income") {
+      monthlyMap[month].income += Math.abs(t.amount);
+    } else {
+      monthlyMap[month].expenses += Math.abs(t.amount);
+    }
+  });
+
+  return Object.values(monthlyMap);
+};
