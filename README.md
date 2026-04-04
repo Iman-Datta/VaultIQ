@@ -69,6 +69,14 @@ Switch roles live to see the UI adapt in real time.
 
 First-time visitors are greeted with a 4-step modal tour that highlights non-obvious interactions — chart zoom, arrow navigation, and donut hover behavior. The tour only appears once, tracked via localStorage. It can be replayed at any time using the Help button in the sidebar.
 
+## Preview
+
+### Dashboard
+![Dashboard Preview](./screenshots/dashboard.png)
+
+### Transactions
+![Transactions Preview](./screenshots/transactions.png)
+
 ### Other
 
 - Dark and light mode with persistent preference
@@ -161,7 +169,6 @@ This project was built for a Finance Dashboard UI frontend assignment. Every cor
 
 | Issue | Status |
 |-------|--------|
-| A few rows show Invalid Date in the transactions table | Under investigation — likely a CSV timestamp parse edge case on the last few rows |
 | Cards page is a placeholder | Coming soon |
 | Chart touch interactions on mobile not fully optimized | Planned |
 
