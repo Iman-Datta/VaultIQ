@@ -11,7 +11,7 @@ export default function Insights() {
       <Topbar title="Analytics" subtitle="Spending patterns and savings" />
       <main className="flex-1 overflow-y-auto bg-gray-50 dark:bg-gray-950 p-5 space-y-4">
         <InsightCards />
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-stretch">
           <div className="lg:col-span-2">
             <MonthlyCompare />
           </div>

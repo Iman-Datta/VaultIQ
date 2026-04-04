@@ -46,7 +46,7 @@ export default function SpendingDonut() {
   const [activeEntry, setActiveEntry] = useState(null);
 
   return (
-    <div className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-sm transition-all duration-300">
+    <div className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-sm transition-all duration-300 h-full">
       {/* Header */}
       <p className="text-sm font-bold text-slate-900 dark:text-slate-100">
         Spending by Category

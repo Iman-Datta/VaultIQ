@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -10,6 +10,7 @@ import GuidedTour from "./components/tour/GuidedTour";
 
 export default function App() {
   const mode = useSelector((state) => state.theme.mode);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   useEffect(() => {
     console.log("Current mode:", mode);
@@ -25,7 +26,10 @@ export default function App() {
     <BrowserRouter>
       <GuidedTour />
       <div className="flex h-screen overflow-hidden bg-gray-50 dark:bg-gray-950">
-        <Sidebar />
+        <Sidebar
+          isSidebarOpen={isSidebarOpen}
+          setIsSidebarOpen={setIsSidebarOpen}
+        />
         <div className="flex-1 min-w-0 overflow-hidden">
           <Routes>
             <Route path="/" element={<Dashboard />} />
