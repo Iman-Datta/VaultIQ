@@ -84,7 +84,7 @@ export default function MonthlyCompare() {
   const isDarkMode = themeMode === "dark";
 
   return (
-    <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow duration-300">
+    <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow duration-300 h-full flex flex-col">
       {/* Header */}
       <div className="mb-4">
         <p className="text-sm font-semibold text-gray-900 dark:text-white">
@@ -95,103 +95,105 @@ export default function MonthlyCompare() {
         </p>
       </div>
 
-      <ResponsiveContainer width="100%" height={240}>
-        <BarChart
-          data={sortedData}
-          barSize={12}
-          margin={{ top: 4, right: 12, left: 0, bottom: 0 }}
-        >
-          <CartesianGrid
-            strokeDasharray="3 3"
-            vertical={false}
-            stroke={isDarkMode ? "#374151" : "#e5e7eb"}
-          />
-          <XAxis
-            dataKey="label"
-            tick={{
-              fill: isDarkMode ? "#e5e7eb" : "#4b5563",
-              fontSize: 11,
-              fontWeight: 500,
-            }}
-            axisLine={false}
-            tickLine={false}
-          />
+      <div className="flex-1 min-h-48">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart
+            data={sortedData}
+            barSize={12}
+            margin={{ top: 4, right: 12, left: 0, bottom: 0 }}
+          >
+            <CartesianGrid
+              strokeDasharray="3 3"
+              vertical={false}
+              stroke={isDarkMode ? "#374151" : "#e5e7eb"}
+            />
+            <XAxis
+              dataKey="label"
+              tick={{
+                fill: isDarkMode ? "#e5e7eb" : "#4b5563",
+                fontSize: 11,
+                fontWeight: 500,
+              }}
+              axisLine={false}
+              tickLine={false}
+            />
 
-          <YAxis
-            yAxisId="left"
-            tickFormatter={(v) => `₹${(v / 1000).toFixed(0)}k`}
-            tick={{
-              fill: isDarkMode ? "#e5e7eb" : "#4b5563",
-              fontSize: 11,
-              fontWeight: 500,
-            }}
-            axisLine={false}
-            tickLine={false}
-            width={44}
-          />
+            <YAxis
+              yAxisId="left"
+              tickFormatter={(v) => `₹${(v / 1000).toFixed(0)}k`}
+              tick={{
+                fill: isDarkMode ? "#e5e7eb" : "#4b5563",
+                fontSize: 11,
+                fontWeight: 500,
+              }}
+              axisLine={false}
+              tickLine={false}
+              width={44}
+            />
 
-          <YAxis
-            yAxisId="right"
-            orientation="right"
-            tickFormatter={(v) => `₹${(v / 1000).toFixed(0)}k`}
-            tick={{
-              fill: isDarkMode ? "#e5e7eb" : "#4b5563",
-              fontSize: 11,
-              fontWeight: 500,
-            }}
-            axisLine={false}
-            tickLine={false}
-            width={44}
-          />
+            <YAxis
+              yAxisId="right"
+              orientation="right"
+              tickFormatter={(v) => `₹${(v / 1000).toFixed(0)}k`}
+              tick={{
+                fill: isDarkMode ? "#e5e7eb" : "#4b5563",
+                fontSize: 11,
+                fontWeight: 500,
+              }}
+              axisLine={false}
+              tickLine={false}
+              width={44}
+            />
 
-          <Tooltip
-            content={<CustomTooltip />}
-            cursor={{
-              fill: "currentColor",
-              className: "text-gray-100/50 dark:text-gray-800/50",
-            }}
-          />
+            <Tooltip
+              content={<CustomTooltip />}
+              cursor={{
+                fill: "currentColor",
+                className: "text-gray-100/50 dark:text-gray-800/50",
+              }}
+            />
 
-          <Legend
-            formatter={LegendFormatter}
-            iconType="square"
-            iconSize={8}
-            wrapperStyle={{ paddingTop: 12 }}
-          />
+            <Legend
+              formatter={LegendFormatter}
+              iconType="square"
+              iconSize={8}
+              wrapperStyle={{ paddingTop: 12 }}
+            />
 
-          <Bar
-            yAxisId="left"
-            dataKey="income"
-            fill="#22c55e"
-            fillOpacity={0.85}
-            radius={[3, 3, 0, 0]}
-            name="income"
-          />
-          <Bar
-            yAxisId="left"
-            dataKey="expenses"
-            fill="#ef4444"
-            fillOpacity={0.85}
-            radius={[3, 3, 0, 0]}
-            name="expenses"
-          />
-          <Line
-            yAxisId="right"
-            type="monotone"
-            dataKey="balance"
-            stroke="#3b82f6"
-            strokeWidth={2}
-            dot={{ r: 3, fill: "#3b82f6", stroke: "#fff", strokeWidth: 1.5 }}
-            activeDot={{
-              r: 5,
-              fill: "#3b82f6",
-              stroke: "#fff",
-              strokeWidth: 2,
-            }}
-            name="balance"
-          />
-        </BarChart>
-      </ResponsiveContainer>
+            <Bar
+              yAxisId="left"
+              dataKey="income"
+              fill="#22c55e"
+              fillOpacity={0.85}
+              radius={[3, 3, 0, 0]}
+              name="income"
+            />
+            <Bar
+              yAxisId="left"
+              dataKey="expenses"
+              fill="#ef4444"
+              fillOpacity={0.85}
+              radius={[3, 3, 0, 0]}
+              name="expenses"
+            />
+            <Line
+              yAxisId="right"
+              type="monotone"
+              dataKey="balance"
+              stroke="#3b82f6"
+              strokeWidth={2}
+              dot={{ r: 3, fill: "#3b82f6", stroke: "#fff", strokeWidth: 1.5 }}
+              activeDot={{
+                r: 5,
+                fill: "#3b82f6",
+                stroke: "#fff",
+                strokeWidth: 2,
+              }}
+              name="balance"
+            />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 }

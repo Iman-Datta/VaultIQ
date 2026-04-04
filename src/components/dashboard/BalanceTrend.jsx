@@ -276,7 +276,7 @@ export default function BalanceTrend() {
   }, [chartData]);
 
   return (
-    <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 shadow-sm">
+    <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 shadow-sm h-full flex flex-col">
       <div className="flex items-start justify-between mb-4">
         <div>
           <p className="text-sm font-semibold text-gray-900 dark:text-white">

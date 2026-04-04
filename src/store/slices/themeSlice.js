@@ -1,21 +1,21 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 const themeSlice = createSlice({
-  name: 'theme',
+  name: "theme",
   initialState: {
-    mode: localStorage.getItem('vaultiq_theme') || 'dark',
+    mode: localStorage.getItem("vaultiq_theme") || "light",
   },
   reducers: {
     toggleTheme(state) {
-      state.mode = state.mode === 'dark' ? 'light' : 'dark'
-      localStorage.setItem('vaultiq_theme', state.mode)
+      state.mode = state.mode === "dark" ? "light" : "dark";
+      localStorage.setItem("vaultiq_theme", state.mode);
     },
     setTheme(state, action) {
-      state.mode = action.payload
-      localStorage.setItem('vaultiq_theme', action.payload)
+      state.mode = action.payload;
+      localStorage.setItem("vaultiq_theme", action.payload);
     },
   },
-})
+});
 
-export const { toggleTheme, setTheme } = themeSlice.actions
-export default themeSlice.reducer
+export const { toggleTheme, setTheme } = themeSlice.actions;
+export default themeSlice.reducer;
