@@ -67,7 +67,7 @@ export default function TransactionTable() {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-gray-100 dark:border-gray-800">
-                {["Date", "Description", "Category", "Amount", "Status"].map(
+                {["timestamp", "Description", "Category", "Amount", "Status"].map(
                   (h) => (
                     <th
                       key={h}
@@ -101,7 +101,7 @@ export default function TransactionTable() {
                   className="border-b border-gray-50 dark:border-gray-800/60 hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors"
                 >
                   <td className="px-4 py-3 text-gray-500 dark:text-gray-400 whitespace-nowrap">
-                    {formatDate(txn.date)}
+                    {formatDate(txn.timestamp)}
                   </td>
                   <td className="px-4 py-3 text-gray-900 dark:text-white font-medium">
                     {txn.description}
