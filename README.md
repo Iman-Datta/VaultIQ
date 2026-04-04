@@ -6,7 +6,7 @@
 
 **A personal finance dashboard built for clarity, not complexity.**
 
-Track income, visualize spending patterns, and forecast your balance — all in one place.
+Track income, visualize spending patterns, and forecast your balance: all in one place.
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-vaultiq.imandatta.com-0ea5e9?style=flat-square)](https://vaultiq.imandatta.com)
 [![GitHub](https://img.shields.io/badge/Source-GitHub-181717?style=flat-square&logo=github)](https://github.com/Iman-Datta/VaultIQ)
@@ -33,7 +33,7 @@ No backend. No authentication. Just a fast, clean, data-rich frontend.
 The main view. Four KPI summary cards show Total Balance, Total Income, Total Expenses, and Net Savings — each with a month-over-month percentage delta. Below that, a Balance Trend area chart sits alongside a Spending by Category donut chart. A Financial Insights strip rounds out the page with contextual observations drawn from the data.
 
 ### Analytics
-A deeper look at the numbers. Monthly income vs expense bars with a running balance line, a Budget vs Actual tracker that turns red when a month goes over budget, a 3-month Balance Forecast, and a full spending breakdown donut — all in one view.
+A deeper look at the numbers. Monthly income vs expense bars with a running balance line, a Budget vs Actual tracker that turns red when a month goes over budget, a 3-month Balance Forecast, and a full spending breakdown donut: all in one view.
 
 ### Transactions
 1,457 records spanning January 2025 to April 2026. Searchable, filterable by type, sortable by date or amount, and paginated at 12 rows per page across 122 pages.
