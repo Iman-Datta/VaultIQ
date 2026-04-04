@@ -16,7 +16,6 @@ const navItems = [
   { to: "/", label: "Dashboard", icon: LayoutDashboard },
   { to: "/transactions", label: "Transactions", icon: ArrowLeftRight },
   { to: "/insights", label: "Analytics", icon: BarChart2 },
-  { to: "/cards", label: "Cards", icon: CreditCard },
 ];
 
 export default function Sidebar() {

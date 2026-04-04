@@ -83,6 +83,9 @@ export default function BalanceForecast() {
     return entries;
   }, [transactions]);
 
+  const themeMode = useSelector((state) => state.theme.mode);
+  const isDarkMode = themeMode === "dark";
+
   return (
     <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow duration-300">
       {/* Header */}
@@ -129,21 +132,25 @@ export default function BalanceForecast() {
             <CartesianGrid
               strokeDasharray="3 3"
               vertical={false}
-              stroke="currentColor"
-              className="text-gray-100 dark:text-gray-800"
+              stroke={isDarkMode ? "#374151" : "#d1d5db"}
             />
-
             <XAxis
               dataKey="month"
-              tick={{ fill: "currentColor", fontSize: 11 }}
-              className="text-gray-400"
+              tick={{
+                fill: isDarkMode ? "#e5e7eb" : "#4b5563",
+                fontSize: 11,
+                fontWeight: 500,
+              }}
               axisLine={false}
               tickLine={false}
             />
             <YAxis
               tickFormatter={(v) => `₹${(v / 1000).toFixed(0)}k`}
-              tick={{ fill: "currentColor", fontSize: 11 }}
-              className="text-gray-400"
+              tick={{
+                fill: isDarkMode ? "#e5e7eb" : "#4b5563",
+                fontSize: 11,
+                fontWeight: 500,
+              }}
               axisLine={false}
               tickLine={false}
               width={48}

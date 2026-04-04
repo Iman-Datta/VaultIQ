@@ -305,29 +305,21 @@ export default function BalanceTrend() {
             ))}
           </div>
 
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-2">
             <button
               onClick={() => setWindowOffset((prev) => prev + 1)}
               disabled={isLeftDisabled}
-              className={`p-2 rounded-lg border transition ${
-                isLeftDisabled
-                  ? "opacity-40 cursor-not-allowed"
-                  : "hover:bg-gray-100 dark:hover:bg-gray-800"
-              }`}
+              className={`flex items-center justify-center h-9 w-9 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 shadow-sm transition-all duration-200 ${isLeftDisabled ? "opacity-40 cursor-not-allowed" : "hover:bg-gray-100 dark:hover:bg-gray-700 hover:shadow-md active:scale-95"}`}
             >
-              <ChevronLeft size={16} />
+              <ChevronLeft size={18} />
             </button>
 
             <button
               onClick={() => setWindowOffset((prev) => Math.max(0, prev - 1))}
               disabled={isRightDisabled}
-              className={`p-2 rounded-lg border transition ${
-                isRightDisabled
-                  ? "opacity-40 cursor-not-allowed"
-                  : "hover:bg-gray-100 dark:hover:bg-gray-800"
-              }`}
+              className={`flex items-center justify-center h-9 w-9 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-70 dark:text-gray-200 shadow-sm transition-all duration-200 ${isRightDisabled ? "opacity-40 cursor-not-allowed" : "hover:bg-gray-100 dark:hover:bg-gray-700 hover:shadow-md active:scale-95"} `}
             >
-              <ChevronRight size={16} />
+              <ChevronRight size={18} />
             </button>
           </div>
         </div>

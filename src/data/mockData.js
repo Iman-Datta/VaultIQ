@@ -18,8 +18,6 @@ export const mockTransactions = csvData
     };
   });
 
-console.log("csv transactions", mockTransactions);
-
 export const CATEGORIES = [
   "Salary",
   "Freelance",
