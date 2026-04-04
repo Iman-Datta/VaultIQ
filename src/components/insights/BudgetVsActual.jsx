@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import {
   BarChart,
@@ -10,6 +10,7 @@ import {
   CartesianGrid,
   Cell,
 } from "recharts";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const formatCurrency = (value) => `₹${Number(value).toLocaleString("en-IN")}`;
 
@@ -64,24 +65,52 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 export default function BudgetVsActual() {
   const transactions = useSelector((state) => state.transactions.transactions);
+  const [monthOffset, setMonthOffset] = useState(0);
+  const visibleMonths = 4;
 
-  const data = useMemo(() => {
+  const fullData = useMemo(() => {
     const expenses = transactions.filter((t) => t.amount < 0);
     const grouped = {};
+
     expenses.forEach((txn) => {
-      const month = new Date(txn.timestamp).toLocaleDateString("en-IN", {
-        month: "short",
-      });
-      grouped[month] = (grouped[month] || 0) + Math.abs(txn.amount);
+      const date = new Date(txn.timestamp);
+
+      if (isNaN(date.getTime())) return;
+
+      const key = `${date.getFullYear()}-${date.getMonth()}`;
+
+      if (!grouped[key]) {
+        grouped[key] = {
+          date,
+          month: date.toLocaleDateString("en-IN", {
+            month: "short",
+            year: "2-digit",
+          }),
+          actual: 0,
+        };
+      }
+
+      grouped[key].actual += Math.abs(txn.amount);
     });
-    const months = Object.entries(grouped);
-    const avgBudget = months.reduce((sum, [, v]) => sum + v, 0) / months.length;
-    return months.map(([month, spent]) => ({
-      month,
+
+    const months = Object.values(grouped).sort((a, b) => a.date - b.date);
+
+    const avgBudget =
+      months.reduce((sum, m) => sum + m.actual, 0) / months.length;
+
+    return months.map((m) => ({
+      ...m,
       budget: +avgBudget.toFixed(0),
-      actual: +spent.toFixed(0),
     }));
   }, [transactions]);
+
+  const data = useMemo(() => {
+    const start = Math.max(0, fullData.length - visibleMonths - monthOffset);
+
+    const end = fullData.length - monthOffset;
+
+    return fullData.slice(start, end);
+  }, [fullData, monthOffset]);
 
   const themeMode = useSelector((state) => state.theme.mode);
   const isDarkMode = themeMode === "dark";
@@ -90,22 +119,51 @@ export default function BudgetVsActual() {
     <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow duration-300">
       {/* Header */}
       <div className="flex items-start justify-between mb-5">
+        {/* Left Title */}
         <div>
           <p className="text-sm font-semibold text-gray-900 dark:text-white">
             Budget vs Actual
           </p>
-          <p className="text-xs text-gray-400 mt-0.5">
+          <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
             Monthly spending against average budget
           </p>
         </div>
-        <div className="flex items-center gap-4 text-xs">
-          <div className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-sm bg-slate-400 dark:bg-slate-500 inline-block" />
-            <span className="text-gray-400">Budget</span>
+
+        {/* Right Controls */}
+        <div className="flex items-center gap-4">
+          {/* Legend */}
+          <div className="flex items-center gap-4 text-xs">
+            <div className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-sm bg-slate-400 dark:bg-slate-500 inline-block" />
+              <span className="text-gray-600 dark:text-gray-300">Budget</span>
+            </div>
+
+            <div className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-sm bg-blue-500 inline-block" />
+              <span className="text-gray-600 dark:text-gray-300">Actual</span>
+            </div>
           </div>
-          <div className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-sm bg-blue-500 inline-block" />
-            <span className="text-gray-400">Actual</span>
+
+          {/* Navigation Buttons */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setMonthOffset((prev) => prev + visibleMonths)}
+              disabled={monthOffset + visibleMonths >= fullData.length}
+              className={`flex items-center justify-center h-9 w-9 rounded-xl border 
+          border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 shadow-sm transition-all duration-200 ${monthOffset + visibleMonths >= fullData.length ? "opacity-40 cursor-not-allowed" : "hover:bg-gray-100 dark:hover:bg-gray-700 hover:shadow-md active:scale-95"}`}
+            >
+              <ChevronLeft size={18} />
+            </button>
+
+            <button
+              onClick={() =>
+                setMonthOffset((prev) => Math.max(0, prev - visibleMonths))
+              }
+              disabled={monthOffset === 0}
+              className={`flex items-center justify-center h-9 w-9 rounded-xl border  border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 shadow-sm transition-all duration-200 ${monthOffset === 0 ? "opacity-40 cursor-not-allowed" : "hover:bg-gray-100 dark:hover:bg-gray-700 hover:shadow-md active:scale-95"}`}
+            >
+              <ChevronRight size={18} />
+            </button>
           </div>
         </div>
       </div>
