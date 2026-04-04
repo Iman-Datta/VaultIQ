@@ -5,7 +5,6 @@ import {
   LayoutDashboard,
   ArrowLeftRight,
   BarChart2,
-  CreditCard,
   Settings,
   HelpCircle,
 } from "lucide-react";
@@ -75,13 +74,15 @@ export default function Sidebar() {
           <Settings size={16} />
           <span className="hidden md:block">Settings</span>
         </NavLink>
-        <NavLink
-          to="/"
-          className="flex items-center gap-3 px-2 py-2 rounded-md text-sm text-gray-400 hover:text-white hover:bg-gray-800"
+        <button
+          onClick={() =>
+            window.dispatchEvent(new CustomEvent("vaultiq:replay-tour"))
+          }
+          className="w-full flex items-center gap-3 px-2 py-2 rounded-md text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition-colors"
         >
-          <HelpCircle size={16} />
+          <HelpCircle size={16} className="shrink-0" />
           <span className="hidden md:block">Help</span>
-        </NavLink>
+        </button>
       </div>
     </aside>
   );

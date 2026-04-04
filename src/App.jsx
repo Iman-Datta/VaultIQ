@@ -6,7 +6,7 @@ import Sidebar from "./components/shared/Sidebar";
 import Dashboard from "./pages/Dashboard";
 import Transactions from "./pages/Transactions";
 import Insights from "./pages/Insights";
-
+import GuidedTour from "./components/tour/GuidedTour";
 
 export default function App() {
   const mode = useSelector((state) => state.theme.mode);
@@ -23,6 +23,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
+      <GuidedTour />
       <div className="flex h-screen overflow-hidden bg-gray-50 dark:bg-gray-950">
         <Sidebar />
         <div className="flex-1 min-w-0 overflow-hidden">
