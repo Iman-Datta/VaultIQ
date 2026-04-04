@@ -1,34 +1,19 @@
 <div align="center">
 
-<br/>
+<img src="public/favicon.svg" width="64" alt="VaultIQ Logo" />
 
-<img src="public/favicon.svg" width="64" height="64" alt="VaultIQ Logo" />
+# VaultIQ
 
-<h1>VaultIQ</h1>
+**A personal finance dashboard built for clarity, not complexity.**
 
-<p><strong>A personal finance dashboard built for clarity, not complexity.</strong><br/>
-Track income, visualize spending patterns, and forecast your balance — all in one place.</p>
+Track income, visualize spending patterns, and forecast your balance — all in one place.
 
-<p>
-  <a href="https://vaultiq.imandatta.com" target="_blank">
-    <img src="https://img.shields.io/badge/Live%20Demo-vaultiq.imandatta.com-0ea5e9?style=for-the-badge&logo=vercel&logoColor=white" />
-  </a>
-  &nbsp;
-  <a href="https://github.com/Iman-Datta/VaultIQ" target="_blank">
-    <img src="https://img.shields.io/badge/Source-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
-  </a>
-</p>
-
-<p>
-  <img src="https://img.shields.io/badge/React-18-61dafb?style=flat-square&logo=react&logoColor=black" />
-  <img src="https://img.shields.io/badge/Redux%20Toolkit-2.0-764abc?style=flat-square&logo=redux&logoColor=white" />
-  <img src="https://img.shields.io/badge/Tailwind%20CSS-3.0-38bdf8?style=flat-square&logo=tailwindcss&logoColor=white" />
-  <img src="https://img.shields.io/badge/Recharts-2.x-22c55e?style=flat-square" />
-  <img src="https://img.shields.io/badge/Vite-5.0-646cff?style=flat-square&logo=vite&logoColor=white" />
-  <img src="https://img.shields.io/badge/Status-WIP-f59e0b?style=flat-square" />
-</p>
-
-<br/>
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-vaultiq.imandatta.com-0ea5e9?style=flat-square)](https://vaultiq.imandatta.com)
+[![GitHub](https://img.shields.io/badge/Source-GitHub-181717?style=flat-square&logo=github)](https://github.com/Iman-Datta/VaultIQ)
+[![React](https://img.shields.io/badge/React-18-61dafb?style=flat-square&logo=react&logoColor=black)](https://react.dev)
+[![Redux Toolkit](https://img.shields.io/badge/Redux%20Toolkit-2.0-764abc?style=flat-square&logo=redux&logoColor=white)](https://redux-toolkit.js.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.0-38bdf8?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![Vite](https://img.shields.io/badge/Vite-5.0-646cff?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev)
 
 </div>
 
@@ -36,64 +21,76 @@ Track income, visualize spending patterns, and forecast your balance — all in 
 
 ## What is VaultIQ?
 
-VaultIQ is a frontend finance dashboard that lets you explore, filter, and understand 16 months of personal transaction data — from salary credits to daily Swiggy orders. Built as a college frontend assignment, it goes beyond the requirements with real chart interactivity, a synthetic dataset of 1,457 transactions, role-based UI, dark mode, and localStorage persistence.
+VaultIQ is a frontend finance dashboard built to explore, filter, and understand 16 months of personal transaction data — from salary credits to daily expenses. It goes beyond a standard dashboard with real chart interactivity, a synthetic dataset of 1,457 transactions, role-based UI, dark mode, and localStorage persistence.
 
-> **No backend. No auth. Just a fast, clean, data-rich frontend.**
-
----
-
-## Preview
-
-| Page | Description |
-|------|-------------|
-| **Dashboard** | Balance trend chart with zoom + pan, 4 KPI cards, spending donut, insights strip |
-| **Analytics** | Monthly income vs expense bars, budget tracker, 3-month balance forecast |
-| **Transactions** | 1,457 rows · search · filter · sort · paginated (122 pages) |
-| **Cards** | Coming soon |
+No backend. No authentication. Just a fast, clean, data-rich frontend.
 
 ---
 
-## Feature Breakdown
+## Pages
 
-###  Dashboard
+### Dashboard
+The main view. Four KPI summary cards show Total Balance, Total Income, Total Expenses, and Net Savings — each with a month-over-month percentage delta. Below that, a Balance Trend area chart sits alongside a Spending by Category donut chart. A Financial Insights strip rounds out the page with contextual observations drawn from the data.
 
-- **4 Summary Cards** — Total Balance, Total Income, Total Expenses, Net Savings — each with a month-over-month percentage delta
-- **Balance Trend Chart** — Area chart with range buttons `7D · 30D · 3M · 6M · 1Y · All` and **mouse-wheel zoom + pan**
-- **Spending by Category** — Donut chart with hover-to-center detail (no tooltip noise). Hovered slice highlights; others fade.
-- **Financial Insights Strip** — Highest spending category · MoM change · Savings rate · Smart tip
+### Analytics
+A deeper look at the numbers. Monthly income vs expense bars with a running balance line, a Budget vs Actual tracker that turns red when a month goes over budget, a 3-month Balance Forecast, and a full spending breakdown donut — all in one view.
 
-###  Analytics
+### Transactions
+1,457 records spanning January 2025 to April 2026. Searchable, filterable by type, sortable by date or amount, and paginated at 12 rows per page across 122 pages.
 
-- **Monthly Comparison** — Grouped bar + line chart: income (green) vs expenses (red) vs running balance (blue line) across all 16 months
-- **Budget vs Actual** — Month-by-month bars that turn **red when over budget**, **blue when under** — you can see problem months at a glance
-- **Balance Forecast** — Projects the next 3 months using recent growth trend; actual line in blue, forecast dashed in green
-- **Spending Breakdown** — Full category donut, synced with all-time data
+---
 
-###  Transactions
+## Features
 
-- 1,457 records spanning **Jan 2025 → Apr 2026**
-- **Search** by description or category
-- **Filter** by type — All / Income / Expense
-- **Sort** by date or amount (ascending / descending toggle)
-- Paginated — 122 pages, 12 rows each
+### Charts and Interactions
 
-###  Role-Based UI
+**Balance Trend** — Area chart with time range selectors (7D, 30D, 3M, 6M, 1Y, All). Scroll the mouse wheel on the chart to zoom in and out. Use the arrow buttons to pan backward through historical windows.
 
-No backend needed — roles are simulated on the frontend via a sidebar dropdown.
+**Spending Donut** — Hover over any slice to highlight it and update the center label with that category's name, value, and percentage. Other slices fade out.
 
-| Role | Permissions |
-|------|-------------|
-| `Viewer` | Read-only — browse all data, charts, transactions |
-| `Admin` | Full access — add, edit, and delete transactions |
+**Monthly Comparison** — Grouped bar chart showing income (green) and expenses (red) side by side, with a running balance line overlaid.
 
-Switch between roles live to see the UI adapt in real time.
+**Budget vs Actual** — Month-by-month bars that turn red when spending exceeds the budget and blue when under. Navigate between months using arrow buttons.
 
-###  Other
+**Balance Forecast** — Projects the next 3 months using recent trend data. Actual history in blue, forecast in dashed green.
 
-- **Dark / Light mode** with persistent preference
-- **localStorage sync** — transactions survive hard refresh
-- **Pure SVG logo** — no image files, pixel-perfect at any size
-- **Fully responsive** — sidebar collapses on mobile, charts reflow
+### Role-Based UI
+
+Roles are simulated entirely on the frontend via a sidebar dropdown. No backend required.
+
+| Role | Access |
+|------|--------|
+| Viewer | Read-only access to all data, charts, and transactions |
+| Admin | Full access including add, edit, and delete on transactions |
+
+Switch roles live to see the UI adapt in real time.
+
+### Guided Tour
+
+First-time visitors are greeted with a 4-step modal tour that highlights non-obvious interactions — chart zoom, arrow navigation, and donut hover behavior. The tour only appears once, tracked via localStorage. It can be replayed at any time using the Help button in the sidebar.
+
+### Other
+
+- Dark and light mode with persistent preference
+- localStorage sync — transactions survive hard refresh
+- Fully responsive — sidebar collapses on mobile, charts reflow
+- Pure SVG logo — pixel-perfect at any size
+
+---
+
+## The Dataset
+
+Transactions are synthetically generated in Python to simulate a realistic working-professional finance history.
+
+| Property | Detail |
+|----------|--------|
+| Period | January 2025 to April 2026 (16 months) |
+| Volume | 1,457 transactions, 2–5 per day |
+| Timestamps | Spread across morning, afternoon, evening, and night slots |
+| Income | Monthly salary (52k–70k) plus irregular freelance (4k–14k, 1–3 times per month) |
+| Categories | Salary, Freelance, Food, Rent, Bills, Entertainment, Shopping, Travel, Other |
+
+Every month has income greater than expenses. The running balance grows consistently over time.
 
 ---
 
@@ -107,21 +104,21 @@ Switch between roles live to see the UI adapt in real time.
 | Charts | Recharts |
 | Build Tool | Vite |
 | Persistence | localStorage |
-| Data | Synthetic CSV (1,457 rows) |
+| Data | Synthetic CSV — 1,457 rows |
 
 ---
 
 ## Getting Started
 
 ```bash
-# 1. Clone the repo
+# Clone the repository
 git clone https://github.com/Iman-Datta/VaultIQ.git
 cd VaultIQ
 
-# 2. Install dependencies
+# Install dependencies
 npm install
 
-# 3. Start dev server
+# Start the development server
 npm run dev
 ```
 
@@ -131,91 +128,32 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 # Production build
 npm run build
 
-# Preview production build locally
+# Preview the production build locally
 npm run preview
 ```
 
 ---
 
-## Project Structure
+## Assignment Coverage
 
-```
-VaultIQ/
-├── public/
-│   └── favicon.svg                  # Pure SVG logo
-├── src/
-│   ├── components/
-│   │   ├── charts/
-│   │   │   ├── BalanceTrend.jsx     # Zoom/pan area chart with range selector
-│   │   │   ├── BalanceForecast.jsx  # 3-month projection line chart
-│   │   │   ├── BudgetVsActual.jsx   # Over/under budget bar chart
-│   │   │   ├── MonthlyCompare.jsx   # Income vs expense grouped bars + balance line
-│   │   │   └── SpendingDonut.jsx    # Category donut with hover center detail
-│   │   ├── dashboard/
-│   │   │   ├── SummaryCards.jsx     # 4 KPI cards with MoM delta
-│   │   │   └── FinancialInsights.jsx
-│   │   ├── transactions/
-│   │   │   └── TransactionTable.jsx # Search · filter · sort · paginate
-│   │   ├── layout/
-│   │   │   ├── Sidebar.jsx          # Nav + role switcher
-│   │   │   └── Topbar.jsx           # Dark mode toggle + user info
-│   │   └── VaultLogo.jsx            # Inline SVG logo (no image file)
-│   ├── store/
-│   │   ├── slices/
-│   │   │   ├── transactionSlice.js  # CRUD actions + localStorage sync
-│   │   │   ├── filterSlice.js       # Search, type, sort state
-│   │   │   └── roleSlice.js         # Viewer / Admin
-│   │   └── selectors.js             # Memoized derived selectors
-│   ├── data/
-│   │   ├── mockData.js              # CSV parser + CATEGORY_COLORS map
-│   │   └── transactions.csv         # 1,457 synthetic transaction rows
-│   ├── pages/
-│   │   ├── Dashboard.jsx
-│   │   ├── Analytics.jsx
-│   │   ├── Transactions.jsx
-│   │   └── Cards.jsx
-│   └── utils/
-│       └── formatCurrency.js        # ₹ INR formatter
-└── README.md
-```
+This project was built for a Finance Dashboard UI frontend assignment. Every core requirement and all optional enhancements are implemented.
 
----
+**Core requirements**
 
-## The Dataset
+- Dashboard with summary cards and multiple visualizations
+- Transactions section with date, amount, category, and type
+- Filtering by type, sorting by date and amount, and search
+- Role-based UI — Viewer (read-only) and Admin (full CRUD)
+- Insights section with highest category, MoM comparison, savings rate, and a smart tip
+- State management via Redux Toolkit for transactions, filters, and role
+- Responsive design across mobile, tablet, and desktop
 
-Transactions are synthetically generated in Python to simulate a realistic working-professional / student-freelancer finance history.
+**Optional enhancements — all implemented**
 
-- **Period:** 1 January 2025 → 30 April 2026 (16 months)
-- **Volume:** 1,457 transactions, 2–5 per day, no missing dates
-- **Timestamps:** Spread across morning · afternoon · evening · night slots
-- **Income:** Monthly salary (₹52k–₹70k) + irregular freelance (₹4k–₹14k, 1–3×/month)
-- **Expenses:** Rent · bills · food · travel · subscriptions · shopping · one-off spends
-- **Financial realism:** Monthly income > monthly expenses every single month; running balance grows consistently over time
-
-**Categories:** `Salary` · `Freelance` · `Food` · `Rent` · `Bills` · `Entertainment` · `Shopping` · `Travel` · `Other`
-
----
-
-## Assignment Requirements Coverage
-
-This project was built for a **Finance Dashboard UI** frontend assignment. All core and optional requirements are addressed:
-
-**Core**
-
-- [x] Dashboard with summary cards and at least two visualizations
-- [x] Transactions section with date, amount, category, type
-- [x] Filtering and sorting on transactions
-- [x] Role-based UI — Viewer (read-only) and Admin (full CRUD)
-- [x] Insights section — highest category, MoM comparison, savings rate, smart tip
-- [x] State management with Redux Toolkit (transactions, filters, role)
-- [x] Responsive design across mobile, tablet, desktop
-
-**Optional (all implemented)**
-
-- [x] Dark mode
-- [x] localStorage persistence
-- [x] Animations and transitions on charts and hover states
-- [x] Advanced filtering — by type, sort field, sort direction, and search
+- Dark mode
+- localStorage persistence
+- Animations and transitions on charts and hover states
+- Advanced filtering with type, sort field, sort direction, and date range
 
 ---
 
@@ -223,14 +161,16 @@ This project was built for a **Finance Dashboard UI** frontend assignment. All c
 
 | Issue | Status |
 |-------|--------|
-| Some rows show `Invalid Date` in the transactions table |  Investigating — likely a CSV timestamp parse edge case on the last few rows |
-| Cards page is a placeholder |  Coming soon |
-| Chart touch interactions on mobile not fully optimized |  Planned |
+| A few rows show Invalid Date in the transactions table | Under investigation — likely a CSV timestamp parse edge case on the last few rows |
+| Cards page is a placeholder | Coming soon |
+| Chart touch interactions on mobile not fully optimized | Planned |
 
 ---
 
-
-
 <div align="center">
-  <sub>Built with React, Redux Toolkit, Tailwind CSS, and Recharts · MIT License</sub>
+
+Built with React, Redux Toolkit, Tailwind CSS, and Recharts.
+
+[vaultiq.imandatta.com](https://vaultiq.imandatta.com)
+
 </div>
