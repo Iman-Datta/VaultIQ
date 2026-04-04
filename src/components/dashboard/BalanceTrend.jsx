@@ -388,7 +388,16 @@ export default function BalanceTrend() {
               stroke="#3b82f6"
               strokeWidth={3}
               fill="url(#balanceGrad)"
-              dot={false}
+              dot={
+                selectedRange === "7D"
+                  ? {
+                      r: 4,
+                      fill: "#3b82f6",
+                      stroke: "#ffffff",
+                      strokeWidth: 2,
+                    }
+                  : false
+              }
               activeDot={{
                 r: 6,
                 fill: "#3b82f6",
