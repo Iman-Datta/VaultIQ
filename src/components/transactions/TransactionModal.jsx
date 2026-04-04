@@ -39,8 +39,11 @@ export default function TransactionModal({ open, onClose, existing }) {
       return setError("Enter a valid amount.");
     if (!form.date) return setError("Date is required.");
 
+    const { date, ...rest } = form;
+
     const payload = {
-      ...form,
+      ...rest,
+      timestamp: date,
       amount:
         form.type === "expense"
           ? -Math.abs(Number(form.amount))
