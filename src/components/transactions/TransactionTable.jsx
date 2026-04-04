@@ -6,6 +6,7 @@ import { deleteTransaction } from "../../store/slices/transactionSlice";
 import { selectFilteredTransactions } from "../../store/selectors";
 import { formatCurrency, formatDate } from "../../utils/formatCurrency";
 import { CATEGORY_COLORS } from "../../data/mockData";
+import { exportAsCSV, exportAsJSON } from "../../utils/exportTransactions";
 
 import RoleGuard from "../shared/RoleGuard";
 import TransactionModal from "./TransactionModal";
@@ -48,6 +49,21 @@ export default function TransactionTable() {
             <p className="text-xs text-gray-400">
               {transactions.length} records
             </p>
+            <div className="flex gap-2">
+              <button
+                onClick={() => exportAsCSV(transactions)}
+                className="px-3 py-2 rounded-lg text-xs font-medium bg-gray-100 dark:bg-gray-800"
+              >
+                CSV
+              </button>
+
+              <button
+                onClick={() => exportAsJSON(transactions)}
+                className="px-3 py-2 rounded-lg text-xs font-medium bg-gray-100 dark:bg-gray-800"
+              >
+                JSON
+              </button>
+            </div>
           </div>
           <RoleGuard>
             <button
@@ -67,16 +83,20 @@ export default function TransactionTable() {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-gray-100 dark:border-gray-800">
-                {["timestamp", "Description", "Category", "Amount", "Status"].map(
-                  (h) => (
-                    <th
-                      key={h}
-                      className="text-left text-xs text-gray-400 font-medium px-4 py-2.5"
-                    >
-                      {h}
-                    </th>
-                  ),
-                )}
+                {[
+                  "timestamp",
+                  "Description",
+                  "Category",
+                  "Amount",
+                  "Status",
+                ].map((h) => (
+                  <th
+                    key={h}
+                    className="text-left text-xs text-gray-400 font-medium px-4 py-2.5"
+                  >
+                    {h}
+                  </th>
+                ))}
                 <RoleGuard>
                   <th className="text-left text-xs text-gray-400 font-medium px-4 py-2.5">
                     Actions
