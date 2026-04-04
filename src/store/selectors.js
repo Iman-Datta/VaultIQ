@@ -6,27 +6,39 @@ export const selectAllTransactions = (state) => state.transactions.transactions;
 // Filtered + sorted list
 export const selectFilteredTransactions = (state) => {
   const { transactions } = state.transactions;
-  const { searchQuery, typeFilter, sortField, sortDir } = state.filter;
+  const { searchQuery, typeFilter, startDate, endDate } = state.filter;
 
   let result = [...transactions];
 
-  if (typeFilter !== "all")
+  // Filter by type
+  if (typeFilter !== "all") {
     result = result.filter((t) => t.type === typeFilter);
+  }
 
-  if (searchQuery.trim())
+  // Search filter
+  if (searchQuery.trim()) {
     result = result.filter(
       (t) =>
         t.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
         t.category.toLowerCase().includes(searchQuery.toLowerCase()),
     );
+  }
 
-  result.sort((a, b) => {
-    let diff = 0;
-    if (sortField === "date")
-      diff = new Date(a.timestamp) - new Date(b.timestamp);
-    if (sortField === "amount") diff = Math.abs(a.amount) - Math.abs(b.amount);
-    return sortDir === "asc" ? diff : -diff;
-  });
+  // Start date filter
+  if (startDate) {
+    result = result.filter((t) => new Date(t.timestamp) >= new Date(startDate));
+  }
+
+  // End date filter
+  if (endDate) {
+    const end = new Date(endDate);
+    end.setHours(23, 59, 59, 999); // include full day
+
+    result = result.filter((t) => new Date(t.timestamp) <= end);
+  }
+
+  // Default sorting by latest first
+  result.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
 
   return result;
 };
